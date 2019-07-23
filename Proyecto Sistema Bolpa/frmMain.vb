@@ -11,16 +11,16 @@
     Dim detalle As clsDetalleFactura = New clsDetalleFactura(1, articulo1, 10)
 
     Private Sub Btn_Click(sender As Object, e As EventArgs) Handles btn.Click
-        'lblEdad.Text = empleado1.ToString
-        'bodega = New clsBodega()
-        'bodega.AgregarArticulo = articulo1
-        'bodega.AgregarArticulo = articulo2
-        'bodega.AgregarArticulo = articulo3
-        'lblEdad.Text = bodega.ContarArticulos(InputBox("Ingrese el codigo del Articulo", "Articulo"))
-        empleado1.AgregarFactura(New clsFactura("sed344", 1, empleado1, empleado2, detalle))
-        empleado1.AgregarFactura(New clsFactura("sed344", 1, empleado1, empleado2, detalle))
-        empleado1.AgregarFactura(New clsFactura("sed344", 1, empleado1, empleado2, detalle))
-        empleado1.DefinirDescuento(empleado1.ContarFacturas(New Date(2010, 10, 25), Now))
+		'lblEdad.Text = empleado1.ToString
+		'bodega = New clsBodega()
+		'bodega.AgregarArticulo = articulo1
+		'bodega.AgregarArticulo = articulo2
+		'bodega.AgregarArticulo = articulo3
+		'lblEdad.Text = bodega.ContarArticulos(InputBox("Ingrese el codigo del Articulo", "Articulo"))
+		'empleado1.AgregarFactura(New clsFactura("sed344", 1, empleado1, empleado2, detalle))
+		'empleado1.AgregarFactura(New clsFactura("sed344", 1, empleado1, empleado2, detalle))
+		'empleado1.AgregarFactura(New clsFactura("sed344", 1, empleado1, empleado2, detalle))
+		empleado1.DefinirDescuento(empleado1.ContarFacturas(New Date(2010, 10, 25), Now))
         lblEdad.Text = empleado1.Descuento
 
 
