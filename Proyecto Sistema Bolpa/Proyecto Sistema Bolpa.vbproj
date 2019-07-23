@@ -82,6 +82,8 @@
     <Compile Include="Clases\clsPersona.vb" />
     <Compile Include="Clases\clsProveedor.vb" />
     <Compile Include="Clases\clsUsuario.vb" />
+    <Compile Include="Controladores\ControladorArticulo.vb" />
+    <Compile Include="Controladores\ControladorFactura.vb" />
     <Compile Include="frmMain.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -146,8 +148,6 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controladores\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
