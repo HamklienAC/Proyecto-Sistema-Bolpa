@@ -28,7 +28,7 @@ Partial Class FrmArticulo
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.ClientSize = New System.Drawing.Size(800, 597)
+		Me.ClientSize = New System.Drawing.Size(1151, 643)
 		Me.Name = "FrmArticulo"
 		Me.Text = "FrmArticulo"
 		Me.ResumeLayout(False)
