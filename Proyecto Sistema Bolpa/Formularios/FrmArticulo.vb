@@ -5,7 +5,6 @@
 		Size = New Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height)
 		' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 	End Sub
-	'Hamklien es el caesar
-	'''
+
 
 End Class
