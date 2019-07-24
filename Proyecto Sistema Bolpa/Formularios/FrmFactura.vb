@@ -1,4 +1,8 @@
-﻿Public Class FrmFactura
+﻿Imports System.ComponentModel
+
+Public Class FrmFactura
+	Private WithEvents cellTextBox As DataGridViewTextBoxEditingControl
+
 	Public Sub New()
 		' Esta llamada es exigida por el diseñador.
 		InitializeComponent()
@@ -38,8 +42,8 @@
 			tblProductos.CellBorderStyle = DataGridViewCellBorderStyle.None
 			Label1.Text = DataGridViewCellBorderStyle.None.ToString
 		End If
-
 	End Sub
+
 
 
 End Class

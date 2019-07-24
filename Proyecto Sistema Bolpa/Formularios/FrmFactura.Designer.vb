@@ -28,16 +28,16 @@ Partial Class FrmFactura
 		Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
 		Me.txtIngresarCodigo = New System.Windows.Forms.TextBox()
 		Me.tblProductos = New System.Windows.Forms.DataGridView()
+		Me.Producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+		Me.Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+		Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+		Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
 		Me.Button1 = New System.Windows.Forms.Button()
 		Me.Label1 = New System.Windows.Forms.Label()
 		Me.cbBuscarProducto = New System.Windows.Forms.ComboBox()
 		Me.lblSubtotal = New System.Windows.Forms.Label()
 		Me.lblIVA = New System.Windows.Forms.Label()
 		Me.lblTotal = New System.Windows.Forms.Label()
-		Me.Producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-		Me.Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-		Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-		Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
 		CType(Me.tblProductos, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
@@ -58,6 +58,49 @@ Partial Class FrmFactura
 		Me.tblProductos.Name = "tblProductos"
 		Me.tblProductos.Size = New System.Drawing.Size(644, 601)
 		Me.tblProductos.TabIndex = 2
+		'
+		'Producto
+		'
+		DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+		DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+		DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlLight
+		DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
+		Me.Producto.DefaultCellStyle = DataGridViewCellStyle1
+		Me.Producto.HeaderText = "Producto"
+		Me.Producto.Name = "Producto"
+		Me.Producto.ReadOnly = True
+		Me.Producto.Width = 150
+		'
+		'Codigo
+		'
+		DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlLight
+		DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
+		Me.Codigo.DefaultCellStyle = DataGridViewCellStyle2
+		Me.Codigo.HeaderText = "Codigo"
+		Me.Codigo.Name = "Codigo"
+		Me.Codigo.ReadOnly = True
+		Me.Codigo.Width = 150
+		'
+		'Cantidad
+		'
+		DataGridViewCellStyle3.Format = "N0"
+		DataGridViewCellStyle3.NullValue = Nothing
+		DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlLight
+		DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+		Me.Cantidad.DefaultCellStyle = DataGridViewCellStyle3
+		Me.Cantidad.HeaderText = "Cantidad"
+		Me.Cantidad.Name = "Cantidad"
+		Me.Cantidad.Width = 150
+		'
+		'Precio
+		'
+		DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlLight
+		DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
+		Me.Precio.DefaultCellStyle = DataGridViewCellStyle4
+		Me.Precio.HeaderText = "Precio"
+		Me.Precio.Name = "Precio"
+		Me.Precio.ReadOnly = True
+		Me.Precio.Width = 150
 		'
 		'Button1
 		'
@@ -111,49 +154,6 @@ Partial Class FrmFactura
 		Me.lblTotal.Size = New System.Drawing.Size(31, 13)
 		Me.lblTotal.TabIndex = 9
 		Me.lblTotal.Text = "Total"
-		'
-		'Producto
-		'
-		DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-		DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-		DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlLight
-		DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
-		Me.Producto.DefaultCellStyle = DataGridViewCellStyle1
-		Me.Producto.HeaderText = "Producto"
-		Me.Producto.Name = "Producto"
-		Me.Producto.ReadOnly = True
-		Me.Producto.Width = 150
-		'
-		'Codigo
-		'
-		DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlLight
-		DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
-		Me.Codigo.DefaultCellStyle = DataGridViewCellStyle2
-		Me.Codigo.HeaderText = "Codigo"
-		Me.Codigo.Name = "Codigo"
-		Me.Codigo.ReadOnly = True
-		Me.Codigo.Width = 150
-		'
-		'Cantidad
-		'
-		DataGridViewCellStyle3.Format = "N0"
-		DataGridViewCellStyle3.NullValue = Nothing
-		DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlLight
-		DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
-		Me.Cantidad.DefaultCellStyle = DataGridViewCellStyle3
-		Me.Cantidad.HeaderText = "Cantidad"
-		Me.Cantidad.Name = "Cantidad"
-		Me.Cantidad.Width = 150
-		'
-		'Precio
-		'
-		DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlLight
-		DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
-		Me.Precio.DefaultCellStyle = DataGridViewCellStyle4
-		Me.Precio.HeaderText = "Precio"
-		Me.Precio.Name = "Precio"
-		Me.Precio.ReadOnly = True
-		Me.Precio.Width = 150
 		'
 		'FrmFactura
 		'
