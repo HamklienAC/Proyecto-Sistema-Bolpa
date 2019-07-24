@@ -82,6 +82,7 @@
     <Compile Include="Clases\clsPersona.vb" />
     <Compile Include="Clases\clsProveedor.vb" />
     <Compile Include="Clases\clsUsuario.vb" />
+    <Compile Include="Clases\Prueba.vb" />
     <Compile Include="Controladores\ControladorArticulo.vb" />
     <Compile Include="Controladores\ControladorFactura.vb" />
     <Compile Include="frmMain.vb">
