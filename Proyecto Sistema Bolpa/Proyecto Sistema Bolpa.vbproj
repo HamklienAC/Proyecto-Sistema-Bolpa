@@ -48,10 +48,19 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -83,11 +92,10 @@
     <Compile Include="Clases\clsProveedor.vb" />
     <Compile Include="Clases\clsUsuario.vb" />
     <Compile Include="Controladores\ControladorArticulo.vb" />
-    <Compile Include="Controladores\ControladorFactura.vb" />
-    <Compile Include="frmMain.vb">
+    <Compile Include="Formularios\frmMain.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.Designer.vb">
+    <Compile Include="Formularios\frmMain.Designer.vb">
       <DependentUpon>frmMain.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
@@ -118,9 +126,60 @@
     <Compile Include="Formularios\FrmFactura.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ProyectoBD.Context.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProyectoBD.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProyectoBD.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProyectoBD.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ProyectoBD.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProyectoBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.vb">
+      <DependentUpon>ProyectoBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.vb">
+      <DependentUpon>ProyectoBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.vb">
+      <DependentUpon>ProyectoBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblArticulo.vb">
+      <DependentUpon>ProyectoBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblCliente.vb">
+      <DependentUpon>ProyectoBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDetalleFactura.vb">
+      <DependentUpon>ProyectoBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblEmpleado.vb">
+      <DependentUpon>ProyectoBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblFacturaCliente.vb">
+      <DependentUpon>ProyectoBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblFacturaProveedor.vb">
+      <DependentUpon>ProyectoBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblInventario.vb">
+      <DependentUpon>ProyectoBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProveedor.vb">
+      <DependentUpon>ProyectoBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblUsuario.vb">
+      <DependentUpon>ProyectoBD.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmMain.resx">
+    <EmbeddedResource Include="Formularios\frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -147,7 +206,29 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <EntityDeploy Include="ProyectoBD.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ProyectoBD.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <None Include="packages.config" />
+    <None Include="ProyectoBD.edmx.diagram">
+      <DependentUpon>ProyectoBD.edmx</DependentUpon>
+    </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="ProyectoBD.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ProyectoBD.Context.vb</LastGenOutput>
+      <DependentUpon>ProyectoBD.edmx</DependentUpon>
+    </Content>
+    <Content Include="ProyectoBD.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ProyectoBD.edmx</DependentUpon>
+      <LastGenOutput>ProyectoBD.vb</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
