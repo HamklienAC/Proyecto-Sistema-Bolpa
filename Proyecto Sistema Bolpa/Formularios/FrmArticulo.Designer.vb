@@ -158,6 +158,7 @@ Partial Class FrmArticulo
 		Me.Controls.Add(Me.TextBox1)
 		Me.Name = "FrmArticulo"
 		Me.Text = "FrmArticulo"
+		Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 

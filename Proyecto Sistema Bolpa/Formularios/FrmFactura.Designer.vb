@@ -43,7 +43,7 @@ Partial Class FrmFactura
 		'
 		'txtIngresarCodigo
 		'
-		Me.txtIngresarCodigo.Location = New System.Drawing.Point(856, 26)
+		Me.txtIngresarCodigo.Location = New System.Drawing.Point(749, 31)
 		Me.txtIngresarCodigo.Name = "txtIngresarCodigo"
 		Me.txtIngresarCodigo.Size = New System.Drawing.Size(283, 20)
 		Me.txtIngresarCodigo.TabIndex = 3
@@ -104,7 +104,7 @@ Partial Class FrmFactura
 		'
 		'Button1
 		'
-		Me.Button1.Location = New System.Drawing.Point(856, 555)
+		Me.Button1.Location = New System.Drawing.Point(749, 457)
 		Me.Button1.Name = "Button1"
 		Me.Button1.Size = New System.Drawing.Size(283, 23)
 		Me.Button1.TabIndex = 4
@@ -114,7 +114,7 @@ Partial Class FrmFactura
 		'Label1
 		'
 		Me.Label1.AutoSize = True
-		Me.Label1.Location = New System.Drawing.Point(853, 600)
+		Me.Label1.Location = New System.Drawing.Point(746, 506)
 		Me.Label1.Name = "Label1"
 		Me.Label1.Size = New System.Drawing.Size(39, 13)
 		Me.Label1.TabIndex = 5
@@ -123,7 +123,7 @@ Partial Class FrmFactura
 		'cbBuscarProducto
 		'
 		Me.cbBuscarProducto.FormattingEnabled = True
-		Me.cbBuscarProducto.Location = New System.Drawing.Point(856, 179)
+		Me.cbBuscarProducto.Location = New System.Drawing.Point(749, 181)
 		Me.cbBuscarProducto.Name = "cbBuscarProducto"
 		Me.cbBuscarProducto.Size = New System.Drawing.Size(283, 21)
 		Me.cbBuscarProducto.TabIndex = 6
@@ -131,7 +131,7 @@ Partial Class FrmFactura
 		'lblSubtotal
 		'
 		Me.lblSubtotal.AutoSize = True
-		Me.lblSubtotal.Location = New System.Drawing.Point(853, 360)
+		Me.lblSubtotal.Location = New System.Drawing.Point(746, 244)
 		Me.lblSubtotal.Name = "lblSubtotal"
 		Me.lblSubtotal.Size = New System.Drawing.Size(46, 13)
 		Me.lblSubtotal.TabIndex = 7
@@ -140,7 +140,7 @@ Partial Class FrmFactura
 		'lblIVA
 		'
 		Me.lblIVA.AutoSize = True
-		Me.lblIVA.Location = New System.Drawing.Point(853, 394)
+		Me.lblIVA.Location = New System.Drawing.Point(746, 278)
 		Me.lblIVA.Name = "lblIVA"
 		Me.lblIVA.Size = New System.Drawing.Size(24, 13)
 		Me.lblIVA.TabIndex = 8
@@ -149,7 +149,7 @@ Partial Class FrmFactura
 		'lblTotal
 		'
 		Me.lblTotal.AutoSize = True
-		Me.lblTotal.Location = New System.Drawing.Point(853, 430)
+		Me.lblTotal.Location = New System.Drawing.Point(746, 314)
 		Me.lblTotal.Name = "lblTotal"
 		Me.lblTotal.Size = New System.Drawing.Size(31, 13)
 		Me.lblTotal.TabIndex = 9
@@ -159,7 +159,7 @@ Partial Class FrmFactura
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.ClientSize = New System.Drawing.Size(1167, 625)
+		Me.ClientSize = New System.Drawing.Size(1169, 625)
 		Me.Controls.Add(Me.lblTotal)
 		Me.Controls.Add(Me.lblIVA)
 		Me.Controls.Add(Me.lblSubtotal)

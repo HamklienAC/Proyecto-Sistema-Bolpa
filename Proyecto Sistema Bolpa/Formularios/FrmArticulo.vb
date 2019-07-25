@@ -8,22 +8,41 @@
 
 	Private Sub CbAgregarFam_CheckedChanged(sender As Object, e As EventArgs) Handles cbAgregarFam.CheckedChanged
 		If cbAgregarFam.Checked Then
-			cbFamilia.Enabled = False
-			txtNuevaFamilia.Enabled = True
+			CambiarEstado(1)
 		Else
-			cbFamilia.Enabled = True
-			txtNuevaFamilia.Enabled = False
+			CambiarEstado(2)
 		End If
 	End Sub
 
 	Private Sub CbAgregarSub_CheckedChanged(sender As Object, e As EventArgs) Handles cbAgregarSub.CheckedChanged
 		If cbAgregarSub.Checked Then
-			cbSubfamilia.Enabled = False
-			txtNuevaSubfamilia.Enabled = True
+			CambiarEstado(3)
 		Else
-			cbSubfamilia.Enabled = True
-			txtNuevaSubfamilia.Enabled = False
+			CambiarEstado(4)
 		End If
+	End Sub
+
+	Private Sub CambiarEstado(ByVal Opc As Integer)
+		Select Case (Opc)
+			Case 1
+				cbFamilia.Enabled = False
+				txtNuevaFamilia.Enabled = True
+				txtNuevaSubfamilia.Enabled = True
+				cbSubfamilia.Enabled = False
+			Case 2
+				cbFamilia.Enabled = True
+				txtNuevaFamilia.Enabled = False
+				txtNuevaSubfamilia.Enabled = False
+				cbSubfamilia.Enabled = True
+			Case 3
+				cbSubfamilia.Enabled = False
+				txtNuevaSubfamilia.Enabled = True
+				cbAgregarSub.Enabled = True
+			Case 4
+				cbSubfamilia.Enabled = True
+				txtNuevaSubfamilia.Enabled = False
+				cbAgregarSub.Enabled = True
+		End Select
 	End Sub
 
 End Class
