@@ -29,16 +29,20 @@
 				txtNuevaFamilia.Enabled = True
 				txtNuevaSubfamilia.Enabled = True
 				cbSubfamilia.Enabled = False
+				cbAgregarSub.Enabled = False
 			Case 2
 				cbFamilia.Enabled = True
 				txtNuevaFamilia.Enabled = False
 				txtNuevaSubfamilia.Enabled = False
 				cbSubfamilia.Enabled = True
+				cbAgregarSub.Enabled = True
 			Case 3
 				cbSubfamilia.Enabled = False
 				txtNuevaSubfamilia.Enabled = True
 				cbAgregarSub.Enabled = True
+				cbAgregarFam.Enabled = False
 			Case 4
+				cbAgregarFam.Enabled = True
 				cbSubfamilia.Enabled = True
 				txtNuevaSubfamilia.Enabled = False
 				cbAgregarSub.Enabled = True

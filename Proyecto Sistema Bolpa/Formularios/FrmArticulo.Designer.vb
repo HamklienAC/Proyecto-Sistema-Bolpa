@@ -35,6 +35,7 @@ Partial Class FrmArticulo
 		Me.cbSubfamilia = New System.Windows.Forms.ComboBox()
 		Me.cbAgregarFam = New System.Windows.Forms.CheckBox()
 		Me.cbAgregarSub = New System.Windows.Forms.CheckBox()
+		Me.btnAgregarProducto = New System.Windows.Forms.Button()
 		Me.SuspendLayout()
 		'
 		'TextBox1
@@ -138,11 +139,21 @@ Partial Class FrmArticulo
 		Me.cbAgregarSub.Text = "Agregar una nueva subfamilia"
 		Me.cbAgregarSub.UseVisualStyleBackColor = True
 		'
+		'btnAgregarProducto
+		'
+		Me.btnAgregarProducto.Location = New System.Drawing.Point(13, 352)
+		Me.btnAgregarProducto.Name = "btnAgregarProducto"
+		Me.btnAgregarProducto.Size = New System.Drawing.Size(325, 58)
+		Me.btnAgregarProducto.TabIndex = 14
+		Me.btnAgregarProducto.Text = "Agregar producto"
+		Me.btnAgregarProducto.UseVisualStyleBackColor = True
+		'
 		'FrmArticulo
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(843, 643)
+		Me.Controls.Add(Me.btnAgregarProducto)
 		Me.Controls.Add(Me.cbAgregarSub)
 		Me.Controls.Add(Me.cbAgregarFam)
 		Me.Controls.Add(Me.cbSubfamilia)
@@ -177,4 +188,5 @@ Partial Class FrmArticulo
 	Friend WithEvents cbSubfamilia As ComboBox
 	Friend WithEvents cbAgregarFam As CheckBox
 	Friend WithEvents cbAgregarSub As CheckBox
+	Friend WithEvents btnAgregarProducto As Button
 End Class
