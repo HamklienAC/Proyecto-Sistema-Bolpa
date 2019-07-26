@@ -69,7 +69,11 @@
             Return _cedula
         End Get
         Set(value As String)
-            _cedula = value
+            If value Is Nothing Then
+                MsgBox("El campo de Cedula esta vacío")
+            Else
+                _cedula = value
+            End If
         End Set
     End Property
 
@@ -78,7 +82,11 @@
             Return _nombre
         End Get
         Set(value As String)
-            _nombre = value
+            If value Is Nothing Then
+                MsgBox("El campo de Nombre esta vacío")
+            Else
+                _nombre = value
+            End If
         End Set
     End Property
 
@@ -87,7 +95,12 @@
             Return _primerApe
         End Get
         Set(value As String)
-            _primerApe = value
+            If value Is Nothing Then
+                MsgBox("El campo de Primer Apellido esta vacío")
+            Else
+                _primerApe = value
+            End If
+
         End Set
     End Property
 
@@ -96,7 +109,12 @@
             Return _segundoApe
         End Get
         Set(valor As String)
-            _segundoApe = valor
+            If valor Is Nothing Then
+                MsgBox("El campo de Segundo Apellido esta vacío")
+            Else
+                _segundoApe = valor
+            End If
+
         End Set
     End Property
 
@@ -124,7 +142,12 @@
             Return _nacionalidad
         End Get
         Set(valor As String)
-            _nacionalidad = valor
+            If valor Is Nothing Then
+                MsgBox("El campo de Nacionalidad esta vacío")
+            Else
+                _nacionalidad = valor
+            End If
+
         End Set
     End Property
 
@@ -133,7 +156,12 @@
             Return _telefono
         End Get
         Set(valor As String)
-            _telefono = valor
+            If IsNumeric(valor) Then
+                _telefono = valor
+            Else
+                MsgBox("En el campo de Telefono solo se permiten números.")
+            End If
+
         End Set
     End Property
 
@@ -142,7 +170,12 @@
             Return _direccion
         End Get
         Set(valor As String)
-            _direccion = valor
+            If valor Is Nothing Then
+                MsgBox("El campo de Dirección esta vacío")
+            Else
+                _direccion = valor
+            End If
+
         End Set
     End Property
 
@@ -151,7 +184,12 @@
             Return _email
         End Get
         Set(valor As String)
-            _email = valor
+            If ValidarEMail(valor) Then
+                _email = valor
+            Else
+                MsgBox("El correo es invalido")
+            End If
+
         End Set
     End Property
 
@@ -175,5 +213,24 @@
     Public Overrides Function ToString() As String
         Return "Cedula: " + Me.Cedula + vbNewLine + "Nombre Completo: " + Me.Nombre + " " + Me.PrimerApe + " " + Me.SegundoApe + vbNewLine +
                 "Nacionalidad: " + Me.Nacionalidad + " Telefono: " + Me.Telefono + " Direccion: " + Me.Direccion + " E-Mail: " + Me.Email
+    End Function
+
+    Private Function ValidarEMail(ByVal EMail As String) As Boolean
+        If Not EMail.Contains("@") Then
+            Return False
+        End If
+
+        Dim SeccionesEMail As String() = EMail.Split(CChar("@"))
+
+        If SeccionesEMail.Length <> 2 Then
+            Return False
+        End If
+
+        If Not SeccionesEMail(1).Contains(".") Or Not SeccionesEMail(1).Length >= 3 Then
+            Return False
+        End If
+
+        Return True
+
     End Function
 End Class
