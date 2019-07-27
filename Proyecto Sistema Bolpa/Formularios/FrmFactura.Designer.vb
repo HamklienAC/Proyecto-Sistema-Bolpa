@@ -22,6 +22,7 @@ Partial Class FrmFactura
 	'No lo modifique con el editor de código.
 	<System.Diagnostics.DebuggerStepThrough()>
 	Private Sub InitializeComponent()
+		Me.components = New System.ComponentModel.Container()
 		Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
 		Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
 		Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -32,18 +33,20 @@ Partial Class FrmFactura
 		Me.Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
 		Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
 		Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+		Me.MenuDesplegable = New System.Windows.Forms.ContextMenuStrip(Me.components)
+		Me.EliminarArticulosDeLaCompraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.Button1 = New System.Windows.Forms.Button()
 		Me.Label1 = New System.Windows.Forms.Label()
-		Me.cbBuscarProducto = New System.Windows.Forms.ComboBox()
 		Me.lblSubtotal = New System.Windows.Forms.Label()
 		Me.lblIVA = New System.Windows.Forms.Label()
 		Me.lblTotal = New System.Windows.Forms.Label()
 		CType(Me.tblProductos, System.ComponentModel.ISupportInitialize).BeginInit()
+		Me.MenuDesplegable.SuspendLayout()
 		Me.SuspendLayout()
 		'
 		'txtIngresarCodigo
 		'
-		Me.txtIngresarCodigo.Location = New System.Drawing.Point(749, 31)
+		Me.txtIngresarCodigo.Location = New System.Drawing.Point(705, 12)
 		Me.txtIngresarCodigo.Name = "txtIngresarCodigo"
 		Me.txtIngresarCodigo.Size = New System.Drawing.Size(283, 20)
 		Me.txtIngresarCodigo.TabIndex = 3
@@ -54,6 +57,7 @@ Partial Class FrmFactura
 		Me.tblProductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal
 		Me.tblProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.tblProductos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Producto, Me.Codigo, Me.Cantidad, Me.Precio})
+		Me.tblProductos.ContextMenuStrip = Me.MenuDesplegable
 		Me.tblProductos.Location = New System.Drawing.Point(12, 12)
 		Me.tblProductos.Name = "tblProductos"
 		Me.tblProductos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
@@ -103,6 +107,18 @@ Partial Class FrmFactura
 		Me.Precio.ReadOnly = True
 		Me.Precio.Width = 150
 		'
+		'MenuDesplegable
+		'
+		Me.MenuDesplegable.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EliminarArticulosDeLaCompraToolStripMenuItem})
+		Me.MenuDesplegable.Name = "ContextMenuStrip1"
+		Me.MenuDesplegable.Size = New System.Drawing.Size(233, 26)
+		'
+		'EliminarArticulosDeLaCompraToolStripMenuItem
+		'
+		Me.EliminarArticulosDeLaCompraToolStripMenuItem.Name = "EliminarArticulosDeLaCompraToolStripMenuItem"
+		Me.EliminarArticulosDeLaCompraToolStripMenuItem.Size = New System.Drawing.Size(232, 22)
+		Me.EliminarArticulosDeLaCompraToolStripMenuItem.Text = "Eliminar articulo de la compra"
+		'
 		'Button1
 		'
 		Me.Button1.Location = New System.Drawing.Point(749, 457)
@@ -121,18 +137,10 @@ Partial Class FrmFactura
 		Me.Label1.TabIndex = 5
 		Me.Label1.Text = "Label1"
 		'
-		'cbBuscarProducto
-		'
-		Me.cbBuscarProducto.FormattingEnabled = True
-		Me.cbBuscarProducto.Location = New System.Drawing.Point(749, 181)
-		Me.cbBuscarProducto.Name = "cbBuscarProducto"
-		Me.cbBuscarProducto.Size = New System.Drawing.Size(283, 21)
-		Me.cbBuscarProducto.TabIndex = 6
-		'
 		'lblSubtotal
 		'
 		Me.lblSubtotal.AutoSize = True
-		Me.lblSubtotal.Location = New System.Drawing.Point(746, 244)
+		Me.lblSubtotal.Location = New System.Drawing.Point(702, 160)
 		Me.lblSubtotal.Name = "lblSubtotal"
 		Me.lblSubtotal.Size = New System.Drawing.Size(46, 13)
 		Me.lblSubtotal.TabIndex = 7
@@ -141,7 +149,7 @@ Partial Class FrmFactura
 		'lblIVA
 		'
 		Me.lblIVA.AutoSize = True
-		Me.lblIVA.Location = New System.Drawing.Point(746, 278)
+		Me.lblIVA.Location = New System.Drawing.Point(702, 194)
 		Me.lblIVA.Name = "lblIVA"
 		Me.lblIVA.Size = New System.Drawing.Size(24, 13)
 		Me.lblIVA.TabIndex = 8
@@ -150,7 +158,7 @@ Partial Class FrmFactura
 		'lblTotal
 		'
 		Me.lblTotal.AutoSize = True
-		Me.lblTotal.Location = New System.Drawing.Point(746, 314)
+		Me.lblTotal.Location = New System.Drawing.Point(702, 227)
 		Me.lblTotal.Name = "lblTotal"
 		Me.lblTotal.Size = New System.Drawing.Size(31, 13)
 		Me.lblTotal.TabIndex = 9
@@ -164,7 +172,6 @@ Partial Class FrmFactura
 		Me.Controls.Add(Me.lblTotal)
 		Me.Controls.Add(Me.lblIVA)
 		Me.Controls.Add(Me.lblSubtotal)
-		Me.Controls.Add(Me.cbBuscarProducto)
 		Me.Controls.Add(Me.Label1)
 		Me.Controls.Add(Me.Button1)
 		Me.Controls.Add(Me.txtIngresarCodigo)
@@ -173,6 +180,7 @@ Partial Class FrmFactura
 		Me.Text = "FrmFactura"
 		Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
 		CType(Me.tblProductos, System.ComponentModel.ISupportInitialize).EndInit()
+		Me.MenuDesplegable.ResumeLayout(False)
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -182,7 +190,6 @@ Partial Class FrmFactura
 	Friend WithEvents tblProductos As DataGridView
 	Friend WithEvents Button1 As Button
 	Friend WithEvents Label1 As Label
-	Friend WithEvents cbBuscarProducto As ComboBox
 	Friend WithEvents lblSubtotal As Label
 	Friend WithEvents lblIVA As Label
 	Friend WithEvents lblTotal As Label
@@ -190,4 +197,6 @@ Partial Class FrmFactura
 	Friend WithEvents Codigo As DataGridViewTextBoxColumn
 	Friend WithEvents Cantidad As DataGridViewTextBoxColumn
 	Friend WithEvents Precio As DataGridViewTextBoxColumn
+	Friend WithEvents MenuDesplegable As ContextMenuStrip
+	Friend WithEvents EliminarArticulosDeLaCompraToolStripMenuItem As ToolStripMenuItem
 End Class

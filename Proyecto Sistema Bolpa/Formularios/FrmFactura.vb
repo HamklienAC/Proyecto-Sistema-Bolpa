@@ -1,12 +1,20 @@
 ﻿Imports System.ComponentModel
 
 Public Class FrmFactura
+	Private posicionCelda As String = String.Empty
+
 
 	Public Sub New()
 		' Esta llamada es exigida por el diseñador.
 		InitializeComponent()
 		Size = New Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height)
+		SurroundingSub()
 		' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+	End Sub
+
+	Private Sub SurroundingSub()
+		tblProductos.Rows.Add("Peras", "101", "508.3", "5")
+		tblProductos.Rows.Add("Arroz tio pelon", "102", "1980", "5")
 	End Sub
 
 	Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -45,8 +53,24 @@ Public Class FrmFactura
 
 	Private Sub TblProductos_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles tblProductos.CellMouseClick
 		If e.Button = MouseButtons.Right Then
-
+			If e.ColumnIndex < 0 OrElse e.RowIndex < 0 Then
+				posicionCelda = tblProductos(e.ColumnIndex, e.RowIndex).Value.ToString()
+				MenuDesplegable.Show(MousePosition)
+			End If
 		End If
+	End Sub
 
+	Private Sub MenuDesplegable_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuDesplegable.ItemClicked
+		Try
+			Select Case e.ClickedItem.Name
+				Case "EliminarArticulosDeLaCompraToolStripMenuItem"
+					Dim row As DataGridViewRow = tblProductos.CurrentRow
+					If row IsNot Nothing Then
+						tblProductos.Rows.Remove(row)
+					End If
+			End Select
+		Catch ex As Exception
+
+		End Try
 	End Sub
 End Class

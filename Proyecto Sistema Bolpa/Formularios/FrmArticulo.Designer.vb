@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class FrmArticulo
+Partial Class FrmAgregarArticulo
 	Inherits System.Windows.Forms.Form
 
 	'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -242,14 +242,14 @@ Partial Class FrmArticulo
 		'
 		'btnBuscarProveedor
 		'
-		Me.btnBuscarProveedor.Location = New System.Drawing.Point(328, 35)
+		Me.btnBuscarProveedor.Location = New System.Drawing.Point(328, 38)
 		Me.btnBuscarProveedor.Name = "btnBuscarProveedor"
-		Me.btnBuscarProveedor.Size = New System.Drawing.Size(62, 23)
+		Me.btnBuscarProveedor.Size = New System.Drawing.Size(54, 22)
 		Me.btnBuscarProveedor.TabIndex = 24
 		Me.btnBuscarProveedor.Text = "Buscar"
 		Me.btnBuscarProveedor.UseVisualStyleBackColor = True
 		'
-		'FrmArticulo
+		'FrmAgregarArticulo
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -278,8 +278,8 @@ Partial Class FrmArticulo
 		Me.Controls.Add(Me.txtCodigo)
 		Me.Controls.Add(Me.txtProveedor)
 		Me.Controls.Add(Me.txtNombre)
-		Me.Name = "FrmArticulo"
-		Me.Text = "FrmArticulo"
+		Me.Name = "FrmAgregarArticulo"
+		Me.Text = "FrmAgregarArticulo"
 		Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
