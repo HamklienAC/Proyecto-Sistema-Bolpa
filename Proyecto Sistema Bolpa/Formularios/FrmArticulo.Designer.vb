@@ -154,7 +154,7 @@ Partial Class FrmArticulo
 		'
 		Me.btnAgregarProducto.Location = New System.Drawing.Point(122, 351)
 		Me.btnAgregarProducto.Name = "btnAgregarProducto"
-		Me.btnAgregarProducto.Size = New System.Drawing.Size(325, 58)
+		Me.btnAgregarProducto.Size = New System.Drawing.Size(201, 39)
 		Me.btnAgregarProducto.TabIndex = 14
 		Me.btnAgregarProducto.Text = "Agregar producto"
 		Me.btnAgregarProducto.UseVisualStyleBackColor = True
@@ -253,7 +253,7 @@ Partial Class FrmArticulo
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.ClientSize = New System.Drawing.Size(843, 643)
+		Me.ClientSize = New System.Drawing.Size(843, 619)
 		Me.Controls.Add(Me.btnBuscarProveedor)
 		Me.Controls.Add(Me.lblSubfamilia)
 		Me.Controls.Add(Me.lblFamilia)

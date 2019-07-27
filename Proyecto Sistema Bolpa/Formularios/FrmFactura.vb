@@ -1,7 +1,6 @@
 ﻿Imports System.ComponentModel
 
 Public Class FrmFactura
-	Private WithEvents cellTextBox As DataGridViewTextBoxEditingControl
 
 	Public Sub New()
 		' Esta llamada es exigida por el diseñador.
@@ -44,6 +43,10 @@ Public Class FrmFactura
 		End If
 	End Sub
 
+	Private Sub TblProductos_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles tblProductos.CellMouseClick
+		If e.Button = MouseButtons.Right Then
 
+		End If
 
+	End Sub
 End Class

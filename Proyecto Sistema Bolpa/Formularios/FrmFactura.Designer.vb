@@ -56,6 +56,7 @@ Partial Class FrmFactura
 		Me.tblProductos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Producto, Me.Codigo, Me.Cantidad, Me.Precio})
 		Me.tblProductos.Location = New System.Drawing.Point(12, 12)
 		Me.tblProductos.Name = "tblProductos"
+		Me.tblProductos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
 		Me.tblProductos.Size = New System.Drawing.Size(644, 601)
 		Me.tblProductos.TabIndex = 2
 		'
