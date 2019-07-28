@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="84a4011861c14e26920b0c31f6aade58" Name="Diagram1">
+        <EntityTypeShape EntityType="ProyectoBDModel.sysdiagrams" Width="1.5" PointX="0.625" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoBDModel.tblArticulo" Width="1.5" PointX="7.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoBDModel.tblCliente" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoBDModel.tblDetalleFactura" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoBDModel.tblEmpleado" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoBDModel.tblFacturaCliente" Width="1.5" PointX="0.625" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoBDModel.tblFacturaProveedor" Width="1.5" PointX="5.625" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoBDModel.tblInventario" Width="1.5" PointX="7.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoBDModel.tblProveedor" Width="1.5" PointX="5.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoBDModel.tblUsuario" Width="1.5" PointX="3" PointY="0.5" IsExpanded="true" />
+        <AssociationConnector Association="ProyectoBDModel.FK_tblDetalleFactura_tblArticulo" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoBDModel.FK_tblInventario_tblArticulo" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoBDModel.FK_tblFacturaCliente_tblCliente" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoBDModel.FK_tblFacturaCliente_tblDetalleFactura" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoBDModel.FK_tblFacturaProveedor_tblDetalleFactura" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoBDModel.FK_tblFacturaCliente_tblEmpleado" ManuallyRouted="true" >
+          <ConnectorPoint PointX="3" PointY="6.3267876667736864" />
+          <ConnectorPoint PointX="2.125" PointY="6.333333333333333" />
+        </AssociationConnector>
+        <AssociationConnector Association="ProyectoBDModel.FK_tblFacturaProveedor_tblEmpleado" ManuallyRouted="true" >
+          <ConnectorPoint PointX="4.5" PointY="6.4479166666666661" />
+          <ConnectorPoint PointX="4.62375" PointY="6.4651171123798079" />
+          <ConnectorPoint PointX="5.625" PointY="6.4651171123798079" />
+        </AssociationConnector>
+        <AssociationConnector Association="ProyectoBDModel.FK_tblUsuario_tblEmpleado" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoBDModel.FK_tblFacturaProveedor_tblProveedor" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoBDModel.FK_tblInventario_tblProveedor" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
