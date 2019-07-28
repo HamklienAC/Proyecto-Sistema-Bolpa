@@ -207,7 +207,7 @@ Partial Class FrmAgregarArticulo
 		'lblCaducidad
 		'
 		Me.lblCaducidad.AutoSize = True
-		Me.lblCaducidad.Location = New System.Drawing.Point(13, 125)
+		Me.lblCaducidad.Location = New System.Drawing.Point(11, 122)
 		Me.lblCaducidad.Name = "lblCaducidad"
 		Me.lblCaducidad.Size = New System.Drawing.Size(105, 13)
 		Me.lblCaducidad.TabIndex = 20

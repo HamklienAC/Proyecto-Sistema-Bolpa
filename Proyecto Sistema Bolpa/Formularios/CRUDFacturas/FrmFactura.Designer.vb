@@ -40,13 +40,15 @@ Partial Class FrmFactura
 		Me.lblSubtotal = New System.Windows.Forms.Label()
 		Me.lblIVA = New System.Windows.Forms.Label()
 		Me.lblTotal = New System.Windows.Forms.Label()
+		Me.btnBuscar = New System.Windows.Forms.Button()
+		Me.lblIngreseProducto = New System.Windows.Forms.Label()
 		CType(Me.tblProductos, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.MenuDesplegable.SuspendLayout()
 		Me.SuspendLayout()
 		'
 		'txtIngresarCodigo
 		'
-		Me.txtIngresarCodigo.Location = New System.Drawing.Point(705, 12)
+		Me.txtIngresarCodigo.Location = New System.Drawing.Point(696, 33)
 		Me.txtIngresarCodigo.Name = "txtIngresarCodigo"
 		Me.txtIngresarCodigo.Size = New System.Drawing.Size(283, 20)
 		Me.txtIngresarCodigo.TabIndex = 3
@@ -164,11 +166,31 @@ Partial Class FrmFactura
 		Me.lblTotal.TabIndex = 9
 		Me.lblTotal.Text = "Total"
 		'
+		'btnBuscar
+		'
+		Me.btnBuscar.Location = New System.Drawing.Point(985, 31)
+		Me.btnBuscar.Name = "btnBuscar"
+		Me.btnBuscar.Size = New System.Drawing.Size(76, 23)
+		Me.btnBuscar.TabIndex = 10
+		Me.btnBuscar.Text = "Buscar"
+		Me.btnBuscar.UseVisualStyleBackColor = True
+		'
+		'lblIngreseProducto
+		'
+		Me.lblIngreseProducto.AutoSize = True
+		Me.lblIngreseProducto.Location = New System.Drawing.Point(693, 12)
+		Me.lblIngreseProducto.Name = "lblIngreseProducto"
+		Me.lblIngreseProducto.Size = New System.Drawing.Size(101, 13)
+		Me.lblIngreseProducto.TabIndex = 11
+		Me.lblIngreseProducto.Text = "Ingrese el producto "
+		'
 		'FrmFactura
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(1169, 625)
+		Me.Controls.Add(Me.lblIngreseProducto)
+		Me.Controls.Add(Me.btnBuscar)
 		Me.Controls.Add(Me.lblTotal)
 		Me.Controls.Add(Me.lblIVA)
 		Me.Controls.Add(Me.lblSubtotal)
@@ -199,4 +221,6 @@ Partial Class FrmFactura
 	Friend WithEvents Precio As DataGridViewTextBoxColumn
 	Friend WithEvents MenuDesplegable As ContextMenuStrip
 	Friend WithEvents EliminarArticulosDeLaCompraToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents btnBuscar As Button
+	Friend WithEvents lblIngreseProducto As Label
 End Class

@@ -52,12 +52,10 @@ Public Class FrmFactura
 	End Sub
 
 	Private Sub TblProductos_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles tblProductos.CellMouseClick
-		If e.Button = MouseButtons.Right Then
-			If e.ColumnIndex < 0 OrElse e.RowIndex < 0 Then
-				posicionCelda = tblProductos(e.ColumnIndex, e.RowIndex).Value.ToString()
-				MenuDesplegable.Show(MousePosition)
-			End If
-		End If
+		'If e.Button = MouseButtons.Right AndAlso e.ColumnIndex < 0 OrElse e.RowIndex < 0 Then
+		'	posicionCelda = tblProductos(e.ColumnIndex, e.RowIndex).Value.ToString()
+		'	MenuDesplegable.Show(MousePosition)
+		'End If
 	End Sub
 
 	Private Sub MenuDesplegable_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuDesplegable.ItemClicked
@@ -65,12 +63,13 @@ Public Class FrmFactura
 			Select Case e.ClickedItem.Name
 				Case "EliminarArticulosDeLaCompraToolStripMenuItem"
 					Dim row As DataGridViewRow = tblProductos.CurrentRow
-					If row IsNot Nothing Then
-						tblProductos.Rows.Remove(row)
-					End If
+					tblProductos.Rows.Remove(row)
+				Case "ModificarCantidad"
+
 			End Select
 		Catch ex As Exception
 
 		End Try
 	End Sub
+
 End Class
