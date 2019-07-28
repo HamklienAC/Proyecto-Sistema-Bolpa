@@ -23,10 +23,10 @@ Partial Class FrmFactura
 	<System.Diagnostics.DebuggerStepThrough()>
 	Private Sub InitializeComponent()
 		Me.components = New System.ComponentModel.Container()
-		Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-		Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-		Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-		Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
 		Me.txtIngresarCodigo = New System.Windows.Forms.TextBox()
 		Me.tblProductos = New System.Windows.Forms.DataGridView()
 		Me.Producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -66,11 +66,11 @@ Partial Class FrmFactura
 		'
 		'Producto
 		'
-		DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-		DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-		DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlLight
-		DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
-		Me.Producto.DefaultCellStyle = DataGridViewCellStyle1
+		DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
+		DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
+		DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ControlLight
+		DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black
+		Me.Producto.DefaultCellStyle = DataGridViewCellStyle5
 		Me.Producto.HeaderText = "Producto"
 		Me.Producto.Name = "Producto"
 		Me.Producto.ReadOnly = True
@@ -78,9 +78,9 @@ Partial Class FrmFactura
 		'
 		'Codigo
 		'
-		DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlLight
-		DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
-		Me.Codigo.DefaultCellStyle = DataGridViewCellStyle2
+		DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ControlLight
+		DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black
+		Me.Codigo.DefaultCellStyle = DataGridViewCellStyle6
 		Me.Codigo.HeaderText = "Codigo"
 		Me.Codigo.Name = "Codigo"
 		Me.Codigo.ReadOnly = True
@@ -88,20 +88,20 @@ Partial Class FrmFactura
 		'
 		'Cantidad
 		'
-		DataGridViewCellStyle3.Format = "N0"
-		DataGridViewCellStyle3.NullValue = Nothing
-		DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlLight
-		DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
-		Me.Cantidad.DefaultCellStyle = DataGridViewCellStyle3
+		DataGridViewCellStyle7.Format = "N0"
+		DataGridViewCellStyle7.NullValue = Nothing
+		DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ControlLight
+		DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black
+		Me.Cantidad.DefaultCellStyle = DataGridViewCellStyle7
 		Me.Cantidad.HeaderText = "Cantidad"
 		Me.Cantidad.Name = "Cantidad"
 		Me.Cantidad.Width = 150
 		'
 		'Precio
 		'
-		DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlLight
-		DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
-		Me.Precio.DefaultCellStyle = DataGridViewCellStyle4
+		DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ControlLight
+		DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black
+		Me.Precio.DefaultCellStyle = DataGridViewCellStyle8
 		Me.Precio.HeaderText = "Precio"
 		Me.Precio.Name = "Precio"
 		Me.Precio.ReadOnly = True

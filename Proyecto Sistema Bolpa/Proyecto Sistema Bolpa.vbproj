@@ -85,6 +85,12 @@
     <Compile Include="Clases\clsUsuario.vb" />
     <Compile Include="Controladores\ControladorArticulo.vb" />
     <Compile Include="Controladores\ControladorFactura.vb" />
+    <Compile Include="Formularios\FrmBuscarArticulo.Designer.vb">
+      <DependentUpon>FrmBuscarArticulo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmBuscarArticulo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmMain.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -107,20 +113,23 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Formularios\FrmArticulo.Designer.vb">
+    <Compile Include="Formularios\Articulos\FrmArticulo.Designer.vb">
       <DependentUpon>FrmArticulo.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmArticulo.vb">
+    <Compile Include="Formularios\Articulos\FrmArticulo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmFactura.Designer.vb">
+    <Compile Include="Formularios\Facturas\FrmFactura.Designer.vb">
       <DependentUpon>FrmFactura.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmFactura.vb">
+    <Compile Include="Formularios\Facturas\FrmFactura.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Formularios\FrmBuscarArticulo.resx">
+      <DependentUpon>FrmBuscarArticulo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
     </EmbeddedResource>
@@ -130,10 +139,10 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmArticulo.resx">
+    <EmbeddedResource Include="Formularios\Articulos\FrmArticulo.resx">
       <DependentUpon>FrmArticulo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmFactura.resx">
+    <EmbeddedResource Include="Formularios\Facturas\FrmFactura.resx">
       <DependentUpon>FrmFactura.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
