@@ -1,8 +1,9 @@
-﻿Public Class FrmFactura
+﻿Public Class ModificarArticulo
 	Public Sub New()
 		' Esta llamada es exigida por el diseñador.
 		InitializeComponent()
-		Size = New Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height)
+		txtCodigo.Enabled = False
+		btnAgregarProducto.Text = "Modificar artículo"
 		' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 	End Sub
 
