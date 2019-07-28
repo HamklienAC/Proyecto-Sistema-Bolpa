@@ -97,6 +97,12 @@
     <Compile Include="Formularios\CRUDArticulos\ModificarArticulo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\CRUDFacturaCliente\FrmModificarFacturaCliente.Designer.vb">
+      <DependentUpon>FrmModificarFacturaCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\CRUDFacturaCliente\FrmModificarFacturaCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmMain.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -125,10 +131,10 @@
     <Compile Include="Formularios\CRUDArticulos\FrmAgregarArticulo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\CRUDFacturas\FrmFactura.Designer.vb">
-      <DependentUpon>FrmFactura.vb</DependentUpon>
+    <Compile Include="Formularios\CRUDFacturaCliente\FrmFacturaCliente.Designer.vb">
+      <DependentUpon>FrmFacturaCliente.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\CRUDFacturas\FrmFactura.vb">
+    <Compile Include="Formularios\CRUDFacturaCliente\FrmFacturaCliente.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -138,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\CRUDArticulos\ModificarArticulo.resx">
       <DependentUpon>ModificarArticulo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\CRUDFacturaCliente\FrmModificarFacturaCliente.resx">
+      <DependentUpon>FrmModificarFacturaCliente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
@@ -151,8 +160,8 @@
     <EmbeddedResource Include="Formularios\CRUDArticulos\FrmAgregarArticulo.resx">
       <DependentUpon>FrmAgregarArticulo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\CRUDFacturas\FrmFactura.resx">
-      <DependentUpon>FrmFactura.vb</DependentUpon>
+    <EmbeddedResource Include="Formularios\CRUDFacturaCliente\FrmFacturaCliente.resx">
+      <DependentUpon>FrmFacturaCliente.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

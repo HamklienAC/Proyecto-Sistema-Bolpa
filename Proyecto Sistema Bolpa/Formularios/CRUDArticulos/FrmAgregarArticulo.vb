@@ -58,13 +58,15 @@
 	End Sub
 
 	''' <summary>
-	''' Metodo se encarga de verificar que solo sean numeros 
+	''' Metodo se encarga de verificar que solo sean numeros, puntos y controles
 	''' </summary>
 	''' <param name="e"></param>
 	''' <param name="Valor"></param>
 	Private Sub VerificarContenidosTXTPP(e As KeyPressEventArgs, ByVal Valor As String)
 		e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar) AndAlso Not VerificarContenidoPuntos(Valor)
+
 	End Sub
+
 	''' <summary>
 	''' Método se encarga se verificar si la cifra tiene un punto
 	''' </summary>
