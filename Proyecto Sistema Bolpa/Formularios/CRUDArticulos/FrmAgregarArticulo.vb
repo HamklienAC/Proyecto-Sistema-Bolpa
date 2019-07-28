@@ -51,18 +51,19 @@
 	End Sub
 
 	Private Sub TxtPrecio_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPrecio.KeyPress
-		If Char.IsNumber(e.KeyChar) OrElse Char.IsPunctuation(e.KeyChar) And VerificarContenidoPuntos(txtPrecio.Text) Then
-			e.Handled = False
-		Else
-			e.Handled = True
-		End If
+		VerificarContenidosTXTPP(e, txtPrecio.Text)
 	End Sub
 	Private Sub TxtPeso_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPeso.KeyPress
-		If Char.IsNumber(e.KeyChar) Or Char.IsPunctuation(e.KeyChar) And VerificarContenidoPuntos(txtPrecio.Text) Then
-			e.Handled = False
-		Else
-			e.Handled = True
-		End If
+		VerificarContenidosTXTPP(e, txtPeso.Text)
+	End Sub
+
+	''' <summary>
+	''' Metodo se encarga de verificar que solo sean numeros 
+	''' </summary>
+	''' <param name="e"></param>
+	''' <param name="Valor"></param>
+	Private Sub VerificarContenidosTXTPP(e As KeyPressEventArgs, ByVal Valor As String)
+		e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar) AndAlso Not VerificarContenidoPuntos(Valor)
 	End Sub
 	''' <summary>
 	''' Método se encarga se verificar si la cifra tiene un punto
@@ -73,7 +74,6 @@
 		Try
 			Dim Verificacion As Double = Cadena
 		Catch ex As Exception
-			MsgBox(ex.Message)
 			Return False
 		End Try
 		Return True

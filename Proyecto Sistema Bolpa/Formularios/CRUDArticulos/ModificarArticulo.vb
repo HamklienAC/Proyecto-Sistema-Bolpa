@@ -5,7 +5,6 @@
 		txtCodigo.Enabled = False
 		btnAgregarProducto.Text = "Modificar artículo"
 		' Agregue cualquier inicialización después de la llamada a InitializeComponent().
-
 	End Sub
 
 End Class
