@@ -99,6 +99,12 @@
     <Compile Include="Formularios\CRUDArticulos\FrmBuscarArticulo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\CRUDArticulos\FrmModificarArticulo.Designer.vb">
+      <DependentUpon>FrmModificarArticulo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\CRUDArticulos\FrmModificarArticulo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\CRUDFacturaCliente\FrmModificarFacturaCliente.Designer.vb">
       <DependentUpon>FrmModificarFacturaCliente.vb</DependentUpon>
     </Compile>
@@ -191,6 +197,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Formularios\CRUDArticulos\FrmBuscarArticulo.resx">
       <DependentUpon>FrmBuscarArticulo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\CRUDArticulos\FrmModificarArticulo.resx">
+      <DependentUpon>FrmModificarArticulo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\CRUDFacturaCliente\FrmModificarFacturaCliente.resx">
       <DependentUpon>FrmModificarFacturaCliente.vb</DependentUpon>
