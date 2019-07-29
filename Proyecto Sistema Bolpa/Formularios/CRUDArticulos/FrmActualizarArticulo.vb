@@ -3,7 +3,7 @@
 		Try
 			Dim valor = tblArticulos.CurrentRow.Cells(0).Value.ToString
 		Catch ex As Exception
-
+			'Ejemplo
 		End Try
 
 	End Sub
