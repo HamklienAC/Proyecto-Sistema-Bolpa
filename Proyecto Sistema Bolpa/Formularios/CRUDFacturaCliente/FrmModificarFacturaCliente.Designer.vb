@@ -29,9 +29,9 @@ Partial Class FrmModificarFacturaCliente
 		'tblFactura
 		'
 		Me.tblFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.tblFactura.Location = New System.Drawing.Point(13, 13)
+		Me.tblFactura.Location = New System.Drawing.Point(13, 12)
 		Me.tblFactura.Name = "tblFactura"
-		Me.tblFactura.Size = New System.Drawing.Size(775, 590)
+		Me.tblFactura.Size = New System.Drawing.Size(775, 591)
 		Me.tblFactura.TabIndex = 0
 		'
 		'FrmModificarFacturaCliente
