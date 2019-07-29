@@ -9,7 +9,7 @@
 						tblProductos.Rows.Remove(row)
 					End If
 				Case "ModificarArtículoToolStripMenuItem"
-					'Es provisional'
+					FrmActualizarArticulo.Show()
 			End Select
 		Catch ex As Exception
 
@@ -32,4 +32,5 @@
 			e.Handled = True
 		End If
 	End Sub
+
 End Class

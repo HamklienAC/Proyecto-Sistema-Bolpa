@@ -27,7 +27,7 @@ Partial Class FrmBuscarArticulo
 		Me.MenuFlotante = New System.Windows.Forms.ContextMenuStrip(Me.components)
 		Me.EliminarArticuloToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.ModificarArtículoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-		Me.lblOpciones = New System.Windows.Forms.Label()
+		Me.lblCodigo = New System.Windows.Forms.Label()
 		Me.txtFiltro = New System.Windows.Forms.TextBox()
 		Me.btnBuscar = New System.Windows.Forms.Button()
 		CType(Me.tblProductos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -61,14 +61,15 @@ Partial Class FrmBuscarArticulo
 		Me.ModificarArtículoToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
 		Me.ModificarArtículoToolStripMenuItem.Text = "Modificar Artículo"
 		'
-		'lblOpciones
+		'lblCodigo
 		'
-		Me.lblOpciones.AutoSize = True
-		Me.lblOpciones.Location = New System.Drawing.Point(12, 9)
-		Me.lblOpciones.Name = "lblOpciones"
-		Me.lblOpciones.Size = New System.Drawing.Size(39, 13)
-		Me.lblOpciones.TabIndex = 2
-		Me.lblOpciones.Text = "Label1"
+		Me.lblCodigo.AutoSize = True
+		Me.lblCodigo.Location = New System.Drawing.Point(12, 9)
+		Me.lblCodigo.Name = "lblCodigo"
+		Me.lblCodigo.Size = New System.Drawing.Size(144, 13)
+		Me.lblCodigo.TabIndex = 2
+		Me.lblCodigo.Text = "Ingrese el código del artículo"
+		Me.lblCodigo.UseMnemonic = False
 		'
 		'txtFiltro
 		'
@@ -93,7 +94,7 @@ Partial Class FrmBuscarArticulo
 		Me.ClientSize = New System.Drawing.Size(736, 515)
 		Me.Controls.Add(Me.btnBuscar)
 		Me.Controls.Add(Me.txtFiltro)
-		Me.Controls.Add(Me.lblOpciones)
+		Me.Controls.Add(Me.lblCodigo)
 		Me.Controls.Add(Me.tblProductos)
 		Me.Name = "FrmBuscarArticulo"
 		Me.Text = "FrmBuscarArticulo"
@@ -104,7 +105,7 @@ Partial Class FrmBuscarArticulo
 
 	End Sub
 	Friend WithEvents tblProductos As DataGridView
-	Friend WithEvents lblOpciones As Label
+	Friend WithEvents lblCodigo As Label
 	Friend WithEvents txtFiltro As TextBox
 	Friend WithEvents btnBuscar As Button
 	Friend WithEvents MenuFlotante As ContextMenuStrip

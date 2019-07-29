@@ -14,6 +14,21 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -99,16 +114,16 @@
     <Compile Include="Formularios\CRUDArticulos\FrmBuscarArticulo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\CRUDArticulos\FrmModificarArticulo.Designer.vb">
-      <DependentUpon>FrmModificarArticulo.vb</DependentUpon>
+    <Compile Include="Formularios\CRUDArticulos\FrmActualizarArticulo.Designer.vb">
+      <DependentUpon>FrmActualizarArticulo.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\CRUDArticulos\FrmModificarArticulo.vb">
+    <Compile Include="Formularios\CRUDArticulos\FrmActualizarArticulo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\CRUDFacturaCliente\FrmModificarFacturaCliente.Designer.vb">
-      <DependentUpon>FrmModificarFacturaCliente.vb</DependentUpon>
+    <Compile Include="Formularios\CRUDFacturaCliente\FrmActualizarFacturaCliente.Designer.vb">
+      <DependentUpon>FrmActualizarFacturaCliente.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\CRUDFacturaCliente\FrmModificarFacturaCliente.vb">
+    <Compile Include="Formularios\CRUDFacturaCliente\FrmActualizarFacturaCliente.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\frmMain.Designer.vb">
@@ -136,10 +151,10 @@
     <Compile Include="Formularios\CRUDArticulos\FrmAgregarArticulo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\CRUDFacturaCliente\FrmFacturaCliente.Designer.vb">
-      <DependentUpon>FrmFacturaCliente.vb</DependentUpon>
+    <Compile Include="Formularios\CRUDFacturaCliente\FrmAgregarFacturaCliente.Designer.vb">
+      <DependentUpon>FrmAgregarFacturaCliente.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\CRUDFacturaCliente\FrmFacturaCliente.vb">
+    <Compile Include="Formularios\CRUDFacturaCliente\FrmAgregarFacturaCliente.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ProyectoBD.Context.vb">
@@ -155,15 +170,6 @@
     <Compile Include="ProyectoBD.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProyectoBD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_helpdiagramdefinition_Result.vb">
-      <DependentUpon>ProyectoBD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_helpdiagrams_Result.vb">
-      <DependentUpon>ProyectoBD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagrams.vb">
       <DependentUpon>ProyectoBD.tt</DependentUpon>
     </Compile>
     <Compile Include="tblArticulo.vb">
@@ -198,11 +204,11 @@
     <EmbeddedResource Include="Formularios\CRUDArticulos\FrmBuscarArticulo.resx">
       <DependentUpon>FrmBuscarArticulo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\CRUDArticulos\FrmModificarArticulo.resx">
-      <DependentUpon>FrmModificarArticulo.vb</DependentUpon>
+    <EmbeddedResource Include="Formularios\CRUDArticulos\FrmActualizarArticulo.resx">
+      <DependentUpon>FrmActualizarArticulo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\CRUDFacturaCliente\FrmModificarFacturaCliente.resx">
-      <DependentUpon>FrmModificarFacturaCliente.vb</DependentUpon>
+    <EmbeddedResource Include="Formularios\CRUDFacturaCliente\FrmActualizarFacturaCliente.resx">
+      <DependentUpon>FrmActualizarFacturaCliente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -213,8 +219,8 @@
     <EmbeddedResource Include="Formularios\CRUDArticulos\FrmAgregarArticulo.resx">
       <DependentUpon>FrmAgregarArticulo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\CRUDFacturaCliente\FrmFacturaCliente.resx">
-      <DependentUpon>FrmFacturaCliente.vb</DependentUpon>
+    <EmbeddedResource Include="Formularios\CRUDFacturaCliente\FrmAgregarFacturaCliente.resx">
+      <DependentUpon>FrmAgregarFacturaCliente.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -228,20 +234,23 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="packages.config" />
     <EntityDeploy Include="ProyectoBD.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ProyectoBD.Designer.vb</LastGenOutput>
     </EntityDeploy>
-    <None Include="packages.config" />
     <None Include="ProyectoBD.edmx.diagram">
       <DependentUpon>ProyectoBD.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="ProyectoBD.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ProyectoBD.Context.vb</LastGenOutput>
       <DependentUpon>ProyectoBD.edmx</DependentUpon>
+      <LastGenOutput>ProyectoBD.Context.vb</LastGenOutput>
     </Content>
     <Content Include="ProyectoBD.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -250,7 +259,19 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Folder Include="Formularios\CRUDFacturaProveedor\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

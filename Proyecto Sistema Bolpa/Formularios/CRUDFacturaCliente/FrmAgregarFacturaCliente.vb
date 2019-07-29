@@ -1,6 +1,6 @@
 ﻿Imports System.ComponentModel
 
-Public Class FrmFacturaCliente
+Public Class FrmAgregarFacturaCliente
 	Private posicionCelda As String = String.Empty
 
 

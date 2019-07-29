@@ -1,25 +1,25 @@
-﻿Public Class ControladorArticulo
-    Dim articulo As clsArticulo
+﻿Imports Proyecto_Sistema_Bolpa.Proyecto_Sistema_Bolpa
+'Esto le sirve a Hamklien'
 
-    Public Sub AgregarArticulo(datos() As String)
-        articulo = New clsArticulo(0, datos(0), datos(1), datos(2), datos(3), datos(4), datos(5), datos(6), datos(7), datos(8))
+Public Class ControladorArticulo
+	Dim articulo As clsArticulo
 
-        Using BD As New Proyecto_Sistema_Bolpa.ProyectoBD
-            Dim tblArticulo As New Proyecto_Sistema_Bolpa.tblArticulo With {
-            .Codigo = articulo.Codigo,
-            .Nombre = articulo.Nombre,
-            .Familia = articulo.Familia,
-            .SubFamilia = articulo.SubFamilia,
-            .Descripcion = articulo.Descripcion,
-            .Peso = articulo.Peso,
-            .FechaCaducidad = articulo.FechaCaducidad,
-            .Impuesto = articulo.CalcularIVA(),
-            .Estado = articulo.Estado}
-
-            BD.tblArticulo.Add(tblArticulo)
-            BD.SaveChanges()
-        End Using
-
-    End Sub
+	Public Sub AgregarArticulo(datos() As String)
+		articulo = New clsArticulo(0, datos(0), datos(1), datos(2), datos(3), datos(4), datos(5), datos(6), datos(7), datos(8))
+		Using BD As New ProyectoBDEntities
+			Dim tblArticulo As New Proyecto_Sistema_Bolpa.tblArticulo With {
+			.Codigo = articulo.Codigo,
+			.Nombre = articulo.Nombre,
+			.Familia = articulo.Familia,
+			.SubFamilia = articulo.SubFamilia,
+			.Descripcion = articulo.Descripcion,
+			.Peso = articulo.Peso,
+			.FechaCaducidad = articulo.FechaCaducidad,
+			.Impuesto = articulo.CalcularIVA(),
+			.Estado = articulo.Estado}
+			BD.tblArticulo.Add(tblArticulo)
+			BD.SaveChanges()
+		End Using
+	End Sub
 
 End Class
