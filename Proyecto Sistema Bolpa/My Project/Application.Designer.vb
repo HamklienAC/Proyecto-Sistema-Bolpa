@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.Proyecto_Sistema_Bolpa.FrmAgregarArticulo
+            Me.MainForm = Global.Proyecto_Sistema_Bolpa.FrmBuscarArticulo
         End Sub
     End Class
 End Namespace
