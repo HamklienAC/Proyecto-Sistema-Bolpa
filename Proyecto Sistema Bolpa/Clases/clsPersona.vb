@@ -171,7 +171,7 @@
         End Get
         Set(valor As String)
             If valor Is Nothing Then
-                MsgBox("El campo de Dirección esta vacío")
+                MsgBox("El campo de Dirección esta vacío ")
             Else
                 _direccion = valor
             End If
