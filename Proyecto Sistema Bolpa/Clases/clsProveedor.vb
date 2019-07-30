@@ -27,7 +27,12 @@ Public Class clsProveedor
             Return _sitioWeb
         End Get
         Set(value As String)
-            _sitioWeb = value
+            If value Is Nothing Then
+                MsgBox("El campo Sitio Web esta vacío")
+            Else
+                _sitioWeb = value
+            End If
+
         End Set
     End Property
 

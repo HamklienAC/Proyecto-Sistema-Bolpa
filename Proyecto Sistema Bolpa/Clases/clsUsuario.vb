@@ -14,7 +14,12 @@
             Return _nomUsuario
         End Get
         Set(value As String)
-            _nomUsuario = value
+            If value Is Nothing Then
+                MsgBox("El campo de Nombre de Usuario esta vacío")
+            Else
+                _nomUsuario = value
+            End If
+
         End Set
     End Property
 
@@ -23,7 +28,12 @@
             Return _contraseña
         End Get
         Set(value As String)
-            _contraseña = value
+            If value > 8 AndAlso value < 16 Then
+                _contraseña = value
+            Else
+                MsgBox("La contraseña debe contener entre 8 y 16 caracteres")
+            End If
+
         End Set
     End Property
 
