@@ -72,4 +72,7 @@ Public Class FrmFacturaCliente
 		End Try
 	End Sub
 
+	Private Sub TblProductos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles tblProductos.CellContentClick
+
+	End Sub
 End Class

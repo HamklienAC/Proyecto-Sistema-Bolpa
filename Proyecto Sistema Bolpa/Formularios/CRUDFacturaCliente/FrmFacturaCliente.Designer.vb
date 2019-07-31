@@ -23,10 +23,10 @@ Partial Class FrmFacturaCliente
 	<System.Diagnostics.DebuggerStepThrough()>
 	Private Sub InitializeComponent()
 		Me.components = New System.ComponentModel.Container()
-		Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-		Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-		Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-		Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
 		Me.txtIngresarCodigo = New System.Windows.Forms.TextBox()
 		Me.tblProductos = New System.Windows.Forms.DataGridView()
 		Me.Producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -68,11 +68,11 @@ Partial Class FrmFacturaCliente
 		'
 		'Producto
 		'
-		DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
-		DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
-		DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ControlLight
-		DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black
-		Me.Producto.DefaultCellStyle = DataGridViewCellStyle5
+		DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+		DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+		DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlLight
+		DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
+		Me.Producto.DefaultCellStyle = DataGridViewCellStyle1
 		Me.Producto.HeaderText = "Producto"
 		Me.Producto.Name = "Producto"
 		Me.Producto.ReadOnly = True
@@ -80,9 +80,9 @@ Partial Class FrmFacturaCliente
 		'
 		'Codigo
 		'
-		DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ControlLight
-		DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black
-		Me.Codigo.DefaultCellStyle = DataGridViewCellStyle6
+		DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlLight
+		DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
+		Me.Codigo.DefaultCellStyle = DataGridViewCellStyle2
 		Me.Codigo.HeaderText = "Codigo"
 		Me.Codigo.Name = "Codigo"
 		Me.Codigo.ReadOnly = True
@@ -90,20 +90,20 @@ Partial Class FrmFacturaCliente
 		'
 		'Cantidad
 		'
-		DataGridViewCellStyle7.Format = "N0"
-		DataGridViewCellStyle7.NullValue = Nothing
-		DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ControlLight
-		DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black
-		Me.Cantidad.DefaultCellStyle = DataGridViewCellStyle7
+		DataGridViewCellStyle3.Format = "N0"
+		DataGridViewCellStyle3.NullValue = Nothing
+		DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlLight
+		DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+		Me.Cantidad.DefaultCellStyle = DataGridViewCellStyle3
 		Me.Cantidad.HeaderText = "Cantidad"
 		Me.Cantidad.Name = "Cantidad"
 		Me.Cantidad.Width = 150
 		'
 		'Precio
 		'
-		DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ControlLight
-		DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black
-		Me.Precio.DefaultCellStyle = DataGridViewCellStyle8
+		DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlLight
+		DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
+		Me.Precio.DefaultCellStyle = DataGridViewCellStyle4
 		Me.Precio.HeaderText = "Precio"
 		Me.Precio.Name = "Precio"
 		Me.Precio.ReadOnly = True
@@ -184,7 +184,7 @@ Partial Class FrmFacturaCliente
 		Me.lblIngreseProducto.TabIndex = 11
 		Me.lblIngreseProducto.Text = "Ingrese el producto "
 		'
-		'FrmFactura
+		'FrmFacturaCliente
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -198,7 +198,7 @@ Partial Class FrmFacturaCliente
 		Me.Controls.Add(Me.Button1)
 		Me.Controls.Add(Me.txtIngresarCodigo)
 		Me.Controls.Add(Me.tblProductos)
-		Me.Name = "FrmFactura"
+		Me.Name = "FrmFacturaCliente"
 		Me.Text = "FrmFactura"
 		Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
 		CType(Me.tblProductos, System.ComponentModel.ISupportInitialize).EndInit()

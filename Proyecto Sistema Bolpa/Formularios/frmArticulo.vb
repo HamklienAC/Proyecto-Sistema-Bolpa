@@ -1,13 +1,21 @@
-﻿Public Class FrmAgregarArticulo
+﻿Public Class frmArticulo
 	Public Sub New()
 		' Esta llamada es exigida por el diseñador.
 		InitializeComponent()
 		Size = New Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height)
-		dtpCaducidad.MinDate = Date.Now
+		tblArticulo.Visible = False
+		Tamano()
 		' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 	End Sub
 
+	Private Sub Tamano()
+		Try
+			txtNombre.Width = Int(Width * 0.33)
+		Catch ex As Exception
+			MsgBox(ex.Message)
+		End Try
 
+	End Sub
 
 	Private Sub CbAgregarFam_CheckedChanged(sender As Object, e As EventArgs) Handles cbAgregarFam.CheckedChanged
 		If cbAgregarFam.Checked Then
@@ -111,6 +119,20 @@
 		End If
 	End Sub
 
+	Private Sub cmsOpciones_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles cmsOpciones.ItemClicked
+		Try
+			Select Case e.ClickedItem.Name
+				Case "EliminarArticulosDeLaCompraToolStripMenuItem"
+					Dim row As DataGridViewRow = tblArticulo.CurrentRow
+					tblArticulo.Rows.Remove(row)
+				Case "ModificarCantidad"
+
+			End Select
+		Catch ex As Exception
+
+		End Try
+	End Sub
+
 	Public ReadOnly Property Nombre() As String
 		Get
 			Return txtNombre.Text
@@ -129,11 +151,6 @@
 	Public ReadOnly Property Peso() As Double
 		Get
 			Return txtPeso.Text
-		End Get
-	End Property
-	Public ReadOnly Property FechaCaducidad() As String
-		Get
-			Return dtpCaducidad.Text
 		End Get
 	End Property
 	Public ReadOnly Property Precio() As Double
@@ -165,5 +182,9 @@
 		End Get
 	End Property
 
+	Public ReadOnly Property DatosArticulo() As Array
+		Get
 
+		End Get
+	End Property
 End Class
