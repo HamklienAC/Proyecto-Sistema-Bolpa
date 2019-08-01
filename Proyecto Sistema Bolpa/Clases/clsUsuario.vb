@@ -14,7 +14,12 @@
             Return _nomUsuario
         End Get
         Set(value As String)
-            _nomUsuario = value
+            If value Is Nothing Then
+                MsgBox("hola")
+            Else
+                _nomUsuario = value
+            End If
+
         End Set
     End Property
 
