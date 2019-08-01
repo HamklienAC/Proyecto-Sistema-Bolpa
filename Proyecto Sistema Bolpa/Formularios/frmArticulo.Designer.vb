@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class FrmAgregarArticulo
+Partial Class frmArticulo
 	Inherits System.Windows.Forms.Form
 
 	'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,13 +22,13 @@ Partial Class FrmAgregarArticulo
 	'No lo modifique con el editor de código.
 	<System.Diagnostics.DebuggerStepThrough()>
 	Private Sub InitializeComponent()
+		Me.components = New System.ComponentModel.Container()
 		Me.txtNombre = New System.Windows.Forms.TextBox()
 		Me.txtProveedor = New System.Windows.Forms.TextBox()
 		Me.txtCodigo = New System.Windows.Forms.TextBox()
 		Me.txtDescripcion = New System.Windows.Forms.TextBox()
 		Me.txtPeso = New System.Windows.Forms.TextBox()
 		Me.txtPrecio = New System.Windows.Forms.TextBox()
-		Me.dtpCaducidad = New System.Windows.Forms.DateTimePicker()
 		Me.txtNuevaSubfamilia = New System.Windows.Forms.TextBox()
 		Me.txtNuevaFamilia = New System.Windows.Forms.TextBox()
 		Me.cbFamilia = New System.Windows.Forms.ComboBox()
@@ -41,99 +41,101 @@ Partial Class FrmAgregarArticulo
 		Me.lblCodigo = New System.Windows.Forms.Label()
 		Me.lblDescripcion = New System.Windows.Forms.Label()
 		Me.lblPeso = New System.Windows.Forms.Label()
-		Me.lblCaducidad = New System.Windows.Forms.Label()
 		Me.lblPrecio = New System.Windows.Forms.Label()
 		Me.lblFamilia = New System.Windows.Forms.Label()
 		Me.lblSubfamilia = New System.Windows.Forms.Label()
-		Me.btnBuscarProveedor = New System.Windows.Forms.Button()
+		Me.tblArticulo = New System.Windows.Forms.DataGridView()
+		Me.cmsOpciones = New System.Windows.Forms.ContextMenuStrip(Me.components)
+		Me.ModificarArtículoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.EliminarArtículoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.cmsProveedor = New System.Windows.Forms.ContextMenuStrip(Me.components)
+		Me.BuscarCodígoProveedorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		CType(Me.tblArticulo, System.ComponentModel.ISupportInitialize).BeginInit()
+		Me.cmsOpciones.SuspendLayout()
+		Me.cmsProveedor.SuspendLayout()
 		Me.SuspendLayout()
 		'
 		'txtNombre
 		'
 		Me.txtNombre.Location = New System.Drawing.Point(122, 12)
 		Me.txtNombre.Name = "txtNombre"
-		Me.txtNombre.Size = New System.Drawing.Size(200, 20)
+		Me.txtNombre.Size = New System.Drawing.Size(259, 20)
 		Me.txtNombre.TabIndex = 0
 		'
 		'txtProveedor
 		'
+		Me.txtProveedor.ContextMenuStrip = Me.cmsProveedor
 		Me.txtProveedor.Location = New System.Drawing.Point(122, 38)
 		Me.txtProveedor.Name = "txtProveedor"
-		Me.txtProveedor.Size = New System.Drawing.Size(200, 20)
+		Me.txtProveedor.Size = New System.Drawing.Size(259, 20)
 		Me.txtProveedor.TabIndex = 1
 		'
 		'txtCodigo
 		'
 		Me.txtCodigo.Location = New System.Drawing.Point(122, 64)
 		Me.txtCodigo.Name = "txtCodigo"
-		Me.txtCodigo.Size = New System.Drawing.Size(200, 20)
+		Me.txtCodigo.Size = New System.Drawing.Size(259, 20)
 		Me.txtCodigo.TabIndex = 2
 		'
 		'txtDescripcion
 		'
-		Me.txtDescripcion.Location = New System.Drawing.Point(122, 222)
+		Me.txtDescripcion.Location = New System.Drawing.Point(122, 196)
 		Me.txtDescripcion.Name = "txtDescripcion"
-		Me.txtDescripcion.Size = New System.Drawing.Size(200, 20)
+		Me.txtDescripcion.Size = New System.Drawing.Size(259, 20)
 		Me.txtDescripcion.TabIndex = 3
 		'
 		'txtPeso
 		'
 		Me.txtPeso.Location = New System.Drawing.Point(122, 90)
 		Me.txtPeso.Name = "txtPeso"
-		Me.txtPeso.Size = New System.Drawing.Size(200, 20)
+		Me.txtPeso.Size = New System.Drawing.Size(259, 20)
 		Me.txtPeso.TabIndex = 4
 		'
 		'txtPrecio
 		'
-		Me.txtPrecio.Location = New System.Drawing.Point(122, 142)
+		Me.txtPrecio.Location = New System.Drawing.Point(122, 116)
 		Me.txtPrecio.Name = "txtPrecio"
-		Me.txtPrecio.Size = New System.Drawing.Size(200, 20)
+		Me.txtPrecio.Size = New System.Drawing.Size(259, 20)
 		Me.txtPrecio.TabIndex = 5
-		'
-		'dtpCaducidad
-		'
-		Me.dtpCaducidad.Location = New System.Drawing.Point(122, 116)
-		Me.dtpCaducidad.MinDate = New Date(1755, 7, 17, 0, 0, 0, 0)
-		Me.dtpCaducidad.Name = "dtpCaducidad"
-		Me.dtpCaducidad.Size = New System.Drawing.Size(200, 20)
-		Me.dtpCaducidad.TabIndex = 6
 		'
 		'txtNuevaSubfamilia
 		'
 		Me.txtNuevaSubfamilia.Enabled = False
-		Me.txtNuevaSubfamilia.Location = New System.Drawing.Point(122, 325)
+		Me.txtNuevaSubfamilia.Location = New System.Drawing.Point(122, 299)
 		Me.txtNuevaSubfamilia.Name = "txtNuevaSubfamilia"
-		Me.txtNuevaSubfamilia.Size = New System.Drawing.Size(201, 20)
+		Me.txtNuevaSubfamilia.Size = New System.Drawing.Size(260, 20)
 		Me.txtNuevaSubfamilia.TabIndex = 7
 		'
 		'txtNuevaFamilia
 		'
 		Me.txtNuevaFamilia.Enabled = False
-		Me.txtNuevaFamilia.Location = New System.Drawing.Point(122, 271)
+		Me.txtNuevaFamilia.Location = New System.Drawing.Point(122, 245)
 		Me.txtNuevaFamilia.Name = "txtNuevaFamilia"
-		Me.txtNuevaFamilia.Size = New System.Drawing.Size(200, 20)
+		Me.txtNuevaFamilia.Size = New System.Drawing.Size(259, 20)
 		Me.txtNuevaFamilia.TabIndex = 8
 		'
 		'cbFamilia
 		'
 		Me.cbFamilia.FormattingEnabled = True
-		Me.cbFamilia.Location = New System.Drawing.Point(122, 168)
+		Me.cbFamilia.Location = New System.Drawing.Point(122, 142)
 		Me.cbFamilia.Name = "cbFamilia"
-		Me.cbFamilia.Size = New System.Drawing.Size(200, 21)
+		Me.cbFamilia.Size = New System.Drawing.Size(259, 21)
 		Me.cbFamilia.TabIndex = 9
 		'
 		'cbSubfamilia
 		'
 		Me.cbSubfamilia.FormattingEnabled = True
-		Me.cbSubfamilia.Location = New System.Drawing.Point(122, 195)
+		Me.cbSubfamilia.Location = New System.Drawing.Point(122, 169)
 		Me.cbSubfamilia.Name = "cbSubfamilia"
-		Me.cbSubfamilia.Size = New System.Drawing.Size(199, 21)
+		Me.cbSubfamilia.Size = New System.Drawing.Size(258, 21)
 		Me.cbSubfamilia.TabIndex = 10
 		'
 		'cbAgregarFam
 		'
+		Me.cbAgregarFam.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 		Me.cbAgregarFam.AutoSize = True
-		Me.cbAgregarFam.Location = New System.Drawing.Point(122, 248)
+		Me.cbAgregarFam.Location = New System.Drawing.Point(122, 222)
 		Me.cbAgregarFam.Name = "cbAgregarFam"
 		Me.cbAgregarFam.Size = New System.Drawing.Size(152, 17)
 		Me.cbAgregarFam.TabIndex = 12
@@ -143,7 +145,7 @@ Partial Class FrmAgregarArticulo
 		'cbAgregarSub
 		'
 		Me.cbAgregarSub.AutoSize = True
-		Me.cbAgregarSub.Location = New System.Drawing.Point(122, 302)
+		Me.cbAgregarSub.Location = New System.Drawing.Point(122, 276)
 		Me.cbAgregarSub.Name = "cbAgregarSub"
 		Me.cbAgregarSub.Size = New System.Drawing.Size(166, 17)
 		Me.cbAgregarSub.TabIndex = 13
@@ -152,15 +154,17 @@ Partial Class FrmAgregarArticulo
 		'
 		'btnAgregarProducto
 		'
-		Me.btnAgregarProducto.Location = New System.Drawing.Point(122, 351)
+		Me.btnAgregarProducto.Location = New System.Drawing.Point(122, 325)
 		Me.btnAgregarProducto.Name = "btnAgregarProducto"
-		Me.btnAgregarProducto.Size = New System.Drawing.Size(201, 39)
+		Me.btnAgregarProducto.Size = New System.Drawing.Size(260, 39)
 		Me.btnAgregarProducto.TabIndex = 14
 		Me.btnAgregarProducto.Text = "Agregar producto"
 		Me.btnAgregarProducto.UseVisualStyleBackColor = True
 		'
 		'lblNombre
 		'
+		Me.lblNombre.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 		Me.lblNombre.AutoSize = True
 		Me.lblNombre.Location = New System.Drawing.Point(13, 19)
 		Me.lblNombre.Name = "lblNombre"
@@ -170,6 +174,8 @@ Partial Class FrmAgregarArticulo
 		'
 		'lblIdprovedor
 		'
+		Me.lblIdprovedor.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 		Me.lblIdprovedor.AutoSize = True
 		Me.lblIdprovedor.Location = New System.Drawing.Point(12, 45)
 		Me.lblIdprovedor.Name = "lblIdprovedor"
@@ -179,6 +185,8 @@ Partial Class FrmAgregarArticulo
 		'
 		'lblCodigo
 		'
+		Me.lblCodigo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 		Me.lblCodigo.AutoSize = True
 		Me.lblCodigo.Location = New System.Drawing.Point(12, 71)
 		Me.lblCodigo.Name = "lblCodigo"
@@ -188,8 +196,10 @@ Partial Class FrmAgregarArticulo
 		'
 		'lblDescripcion
 		'
+		Me.lblDescripcion.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 		Me.lblDescripcion.AutoSize = True
-		Me.lblDescripcion.Location = New System.Drawing.Point(13, 229)
+		Me.lblDescripcion.Location = New System.Drawing.Point(13, 203)
 		Me.lblDescripcion.Name = "lblDescripcion"
 		Me.lblDescripcion.Size = New System.Drawing.Size(63, 13)
 		Me.lblDescripcion.TabIndex = 18
@@ -197,6 +207,8 @@ Partial Class FrmAgregarArticulo
 		'
 		'lblPeso
 		'
+		Me.lblPeso.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 		Me.lblPeso.AutoSize = True
 		Me.lblPeso.Location = New System.Drawing.Point(13, 97)
 		Me.lblPeso.Name = "lblPeso"
@@ -204,19 +216,12 @@ Partial Class FrmAgregarArticulo
 		Me.lblPeso.TabIndex = 19
 		Me.lblPeso.Text = "Peso del artículo"
 		'
-		'lblCaducidad
-		'
-		Me.lblCaducidad.AutoSize = True
-		Me.lblCaducidad.Location = New System.Drawing.Point(11, 122)
-		Me.lblCaducidad.Name = "lblCaducidad"
-		Me.lblCaducidad.Size = New System.Drawing.Size(105, 13)
-		Me.lblCaducidad.TabIndex = 20
-		Me.lblCaducidad.Text = "Fecha de caducidad"
-		'
 		'lblPrecio
 		'
+		Me.lblPrecio.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 		Me.lblPrecio.AutoSize = True
-		Me.lblPrecio.Location = New System.Drawing.Point(13, 151)
+		Me.lblPrecio.Location = New System.Drawing.Point(13, 125)
 		Me.lblPrecio.Name = "lblPrecio"
 		Me.lblPrecio.Size = New System.Drawing.Size(93, 13)
 		Me.lblPrecio.TabIndex = 21
@@ -224,8 +229,10 @@ Partial Class FrmAgregarArticulo
 		'
 		'lblFamilia
 		'
+		Me.lblFamilia.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 		Me.lblFamilia.AutoSize = True
-		Me.lblFamilia.Location = New System.Drawing.Point(13, 176)
+		Me.lblFamilia.Location = New System.Drawing.Point(13, 150)
 		Me.lblFamilia.Name = "lblFamilia"
 		Me.lblFamilia.Size = New System.Drawing.Size(39, 13)
 		Me.lblFamilia.TabIndex = 22
@@ -233,32 +240,65 @@ Partial Class FrmAgregarArticulo
 		'
 		'lblSubfamilia
 		'
+		Me.lblSubfamilia.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 		Me.lblSubfamilia.AutoSize = True
-		Me.lblSubfamilia.Location = New System.Drawing.Point(13, 204)
+		Me.lblSubfamilia.Location = New System.Drawing.Point(13, 178)
 		Me.lblSubfamilia.Name = "lblSubfamilia"
 		Me.lblSubfamilia.Size = New System.Drawing.Size(53, 13)
 		Me.lblSubfamilia.TabIndex = 23
 		Me.lblSubfamilia.Text = "Subfamila"
 		'
-		'btnBuscarProveedor
+		'tblArticulo
 		'
-		Me.btnBuscarProveedor.Location = New System.Drawing.Point(328, 38)
-		Me.btnBuscarProveedor.Name = "btnBuscarProveedor"
-		Me.btnBuscarProveedor.Size = New System.Drawing.Size(54, 22)
-		Me.btnBuscarProveedor.TabIndex = 24
-		Me.btnBuscarProveedor.Text = "Buscar"
-		Me.btnBuscarProveedor.UseVisualStyleBackColor = True
+		Me.tblArticulo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.tblArticulo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+		Me.tblArticulo.ContextMenuStrip = Me.cmsOpciones
+		Me.tblArticulo.Location = New System.Drawing.Point(388, 12)
+		Me.tblArticulo.Name = "tblArticulo"
+		Me.tblArticulo.Size = New System.Drawing.Size(611, 573)
+		Me.tblArticulo.TabIndex = 25
 		'
-		'FrmAgregarArticulo
+		'cmsOpciones
+		'
+		Me.cmsOpciones.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ModificarArtículoToolStripMenuItem, Me.EliminarArtículoToolStripMenuItem})
+		Me.cmsOpciones.Name = "cmsOpciones"
+		Me.cmsOpciones.Size = New System.Drawing.Size(169, 48)
+		'
+		'ModificarArtículoToolStripMenuItem
+		'
+		Me.ModificarArtículoToolStripMenuItem.Name = "ModificarArtículoToolStripMenuItem"
+		Me.ModificarArtículoToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+		Me.ModificarArtículoToolStripMenuItem.Text = "Modificar artículo"
+		'
+		'EliminarArtículoToolStripMenuItem
+		'
+		Me.EliminarArtículoToolStripMenuItem.Name = "EliminarArtículoToolStripMenuItem"
+		Me.EliminarArtículoToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+		Me.EliminarArtículoToolStripMenuItem.Text = "Eliminar artículo"
+		'
+		'cmsProveedor
+		'
+		Me.cmsProveedor.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscarCodígoProveedorToolStripMenuItem})
+		Me.cmsProveedor.Name = "cmsProveedor"
+		Me.cmsProveedor.Size = New System.Drawing.Size(210, 26)
+		'
+		'BuscarCodígoProveedorToolStripMenuItem
+		'
+		Me.BuscarCodígoProveedorToolStripMenuItem.Name = "BuscarCodígoProveedorToolStripMenuItem"
+		Me.BuscarCodígoProveedorToolStripMenuItem.Size = New System.Drawing.Size(209, 22)
+		Me.BuscarCodígoProveedorToolStripMenuItem.Text = "Buscar codígo proveedor "
+		'
+		'frmArticulo
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.ClientSize = New System.Drawing.Size(843, 619)
-		Me.Controls.Add(Me.btnBuscarProveedor)
+		Me.ClientSize = New System.Drawing.Size(1011, 597)
+		Me.Controls.Add(Me.tblArticulo)
 		Me.Controls.Add(Me.lblSubfamilia)
 		Me.Controls.Add(Me.lblFamilia)
 		Me.Controls.Add(Me.lblPrecio)
-		Me.Controls.Add(Me.lblCaducidad)
 		Me.Controls.Add(Me.lblPeso)
 		Me.Controls.Add(Me.lblDescripcion)
 		Me.Controls.Add(Me.lblCodigo)
@@ -271,16 +311,18 @@ Partial Class FrmAgregarArticulo
 		Me.Controls.Add(Me.cbFamilia)
 		Me.Controls.Add(Me.txtNuevaFamilia)
 		Me.Controls.Add(Me.txtNuevaSubfamilia)
-		Me.Controls.Add(Me.dtpCaducidad)
 		Me.Controls.Add(Me.txtPrecio)
 		Me.Controls.Add(Me.txtPeso)
 		Me.Controls.Add(Me.txtDescripcion)
 		Me.Controls.Add(Me.txtCodigo)
 		Me.Controls.Add(Me.txtProveedor)
 		Me.Controls.Add(Me.txtNombre)
-		Me.Name = "FrmAgregarArticulo"
+		Me.Name = "frmArticulo"
 		Me.Text = "FrmAgregarArticulo"
 		Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
+		CType(Me.tblArticulo, System.ComponentModel.ISupportInitialize).EndInit()
+		Me.cmsOpciones.ResumeLayout(False)
+		Me.cmsProveedor.ResumeLayout(False)
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -292,7 +334,6 @@ Partial Class FrmAgregarArticulo
 	Friend WithEvents txtDescripcion As TextBox
 	Friend WithEvents txtPeso As TextBox
 	Friend WithEvents txtPrecio As TextBox
-	Friend WithEvents dtpCaducidad As DateTimePicker
 	Friend WithEvents txtNuevaSubfamilia As TextBox
 	Friend WithEvents txtNuevaFamilia As TextBox
 	Friend WithEvents cbFamilia As ComboBox
@@ -305,9 +346,13 @@ Partial Class FrmAgregarArticulo
 	Friend WithEvents lblCodigo As Label
 	Friend WithEvents lblDescripcion As Label
 	Friend WithEvents lblPeso As Label
-	Friend WithEvents lblCaducidad As Label
 	Friend WithEvents lblPrecio As Label
 	Friend WithEvents lblFamilia As Label
 	Friend WithEvents lblSubfamilia As Label
-	Friend WithEvents btnBuscarProveedor As Button
+	Friend WithEvents tblArticulo As DataGridView
+	Friend WithEvents cmsOpciones As ContextMenuStrip
+	Friend WithEvents ModificarArtículoToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents EliminarArtículoToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents cmsProveedor As ContextMenuStrip
+	Friend WithEvents BuscarCodígoProveedorToolStripMenuItem As ToolStripMenuItem
 End Class
