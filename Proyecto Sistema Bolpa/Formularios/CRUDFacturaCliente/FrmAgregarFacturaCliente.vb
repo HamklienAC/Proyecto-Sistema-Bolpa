@@ -16,7 +16,7 @@ Public Class FrmAgregarFacturaCliente
 		tblProductos.Rows.Add("Peras", "101", "508.3", "5")
 		tblProductos.Rows.Add("Arroz tio pelon", "102", "1980", "5")
 	End Sub
-
+	''
 	Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 		If tblProductos.CellBorderStyle = 4 Then
 			tblProductos.CellBorderStyle = DataGridViewCellBorderStyle.Raised
