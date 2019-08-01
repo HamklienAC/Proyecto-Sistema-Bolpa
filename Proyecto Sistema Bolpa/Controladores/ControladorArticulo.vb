@@ -21,5 +21,5 @@ Public Class ControladorArticulo
 			BD.SaveChanges()
 		End Using
 	End Sub
-
+	''
 End Class
