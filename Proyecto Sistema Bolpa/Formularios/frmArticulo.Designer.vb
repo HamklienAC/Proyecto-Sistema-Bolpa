@@ -44,11 +44,17 @@ Partial Class frmArticulo
 		Me.lblPrecio = New System.Windows.Forms.Label()
 		Me.lblFamilia = New System.Windows.Forms.Label()
 		Me.lblSubfamilia = New System.Windows.Forms.Label()
-		Me.btnBuscarProveedor = New System.Windows.Forms.Button()
 		Me.tblArticulos = New System.Windows.Forms.DataGridView()
 		Me.cmsOpciones = New System.Windows.Forms.ContextMenuStrip(Me.components)
-		Me.ModificarArtículoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.ActualizarArtículoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.EliminarArtículoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.tblNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+		Me.tblcodigoAr = New System.Windows.Forms.DataGridViewTextBoxColumn()
+		Me.tblpeso = New System.Windows.Forms.DataGridViewTextBoxColumn()
+		Me.tblPrecio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+		Me.tblFamilia = New System.Windows.Forms.DataGridViewTextBoxColumn()
+		Me.tblSubFamilia = New System.Windows.Forms.DataGridViewTextBoxColumn()
+		Me.tblDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
 		CType(Me.tblArticulos, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.cmsOpciones.SuspendLayout()
 		Me.SuspendLayout()
@@ -168,7 +174,7 @@ Partial Class frmArticulo
 		'lblIdprovedor
 		'
 		Me.lblIdprovedor.AutoSize = True
-		Me.lblIdprovedor.Location = New System.Drawing.Point(12, 45)
+		Me.lblIdprovedor.Location = New System.Drawing.Point(13, 45)
 		Me.lblIdprovedor.Name = "lblIdprovedor"
 		Me.lblIdprovedor.Size = New System.Drawing.Size(106, 13)
 		Me.lblIdprovedor.TabIndex = 16
@@ -177,7 +183,7 @@ Partial Class frmArticulo
 		'lblCodigo
 		'
 		Me.lblCodigo.AutoSize = True
-		Me.lblCodigo.Location = New System.Drawing.Point(12, 71)
+		Me.lblCodigo.Location = New System.Drawing.Point(13, 71)
 		Me.lblCodigo.Name = "lblCodigo"
 		Me.lblCodigo.Size = New System.Drawing.Size(96, 13)
 		Me.lblCodigo.TabIndex = 17
@@ -228,49 +234,76 @@ Partial Class frmArticulo
 		Me.lblSubfamilia.TabIndex = 23
 		Me.lblSubfamilia.Text = "Subfamila"
 		'
-		'btnBuscarProveedor
-		'
-		Me.btnBuscarProveedor.Location = New System.Drawing.Point(328, 38)
-		Me.btnBuscarProveedor.Name = "btnBuscarProveedor"
-		Me.btnBuscarProveedor.Size = New System.Drawing.Size(54, 22)
-		Me.btnBuscarProveedor.TabIndex = 24
-		Me.btnBuscarProveedor.Text = "Buscar"
-		Me.btnBuscarProveedor.UseVisualStyleBackColor = True
-		'
 		'tblArticulos
 		'
 		Me.tblArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+		Me.tblArticulos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.tblNombre, Me.tblcodigoAr, Me.tblpeso, Me.tblPrecio, Me.tblFamilia, Me.tblSubFamilia, Me.tblDescripcion})
 		Me.tblArticulos.ContextMenuStrip = Me.cmsOpciones
-		Me.tblArticulos.Location = New System.Drawing.Point(402, 12)
+		Me.tblArticulos.Location = New System.Drawing.Point(328, 12)
 		Me.tblArticulos.Name = "tblArticulos"
-		Me.tblArticulos.Size = New System.Drawing.Size(429, 377)
+		Me.tblArticulos.ReadOnly = True
+		Me.tblArticulos.Size = New System.Drawing.Size(739, 377)
 		Me.tblArticulos.TabIndex = 13
 		'
 		'cmsOpciones
 		'
-		Me.cmsOpciones.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ModificarArtículoToolStripMenuItem, Me.EliminarArtículoToolStripMenuItem})
+		Me.cmsOpciones.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ActualizarArtículoToolStripMenuItem, Me.EliminarArtículoToolStripMenuItem})
 		Me.cmsOpciones.Name = "cmsOpciones"
-		Me.cmsOpciones.Size = New System.Drawing.Size(169, 48)
+		Me.cmsOpciones.Size = New System.Drawing.Size(164, 48)
 		'
-		'ModificarArtículoToolStripMenuItem
+		'ActualizarArtículoToolStripMenuItem
 		'
-		Me.ModificarArtículoToolStripMenuItem.Name = "ModificarArtículoToolStripMenuItem"
-		Me.ModificarArtículoToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
-		Me.ModificarArtículoToolStripMenuItem.Text = "Modificar artículo"
+		Me.ActualizarArtículoToolStripMenuItem.Name = "ActualizarArtículoToolStripMenuItem"
+		Me.ActualizarArtículoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+		Me.ActualizarArtículoToolStripMenuItem.Text = "Actulizar artículo"
 		'
 		'EliminarArtículoToolStripMenuItem
 		'
 		Me.EliminarArtículoToolStripMenuItem.Name = "EliminarArtículoToolStripMenuItem"
-		Me.EliminarArtículoToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+		Me.EliminarArtículoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
 		Me.EliminarArtículoToolStripMenuItem.Text = "Eliminar artículo"
+		'
+		'tblNombre
+		'
+		Me.tblNombre.HeaderText = "Nombre"
+		Me.tblNombre.Name = "tblNombre"
+		'
+		'tblcodigoAr
+		'
+		Me.tblcodigoAr.HeaderText = "Codigo articulo"
+		Me.tblcodigoAr.Name = "tblcodigoAr"
+		'
+		'tblpeso
+		'
+		Me.tblpeso.HeaderText = "peso"
+		Me.tblpeso.Name = "tblpeso"
+		'
+		'tblPrecio
+		'
+		Me.tblPrecio.HeaderText = "precio"
+		Me.tblPrecio.Name = "tblPrecio"
+		'
+		'tblFamilia
+		'
+		Me.tblFamilia.HeaderText = "Familia"
+		Me.tblFamilia.Name = "tblFamilia"
+		'
+		'tblSubFamilia
+		'
+		Me.tblSubFamilia.HeaderText = "Subfamilia"
+		Me.tblSubFamilia.Name = "tblSubFamilia"
+		'
+		'tblDescripcion
+		'
+		Me.tblDescripcion.HeaderText = "Descripcion"
+		Me.tblDescripcion.Name = "tblDescripcion"
 		'
 		'frmArticulo
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.ClientSize = New System.Drawing.Size(843, 559)
+		Me.ClientSize = New System.Drawing.Size(1079, 559)
 		Me.Controls.Add(Me.tblArticulos)
-		Me.Controls.Add(Me.btnBuscarProveedor)
 		Me.Controls.Add(Me.lblSubfamilia)
 		Me.Controls.Add(Me.lblFamilia)
 		Me.Controls.Add(Me.lblPrecio)
@@ -323,9 +356,15 @@ Partial Class frmArticulo
 	Friend WithEvents lblPrecio As Label
 	Friend WithEvents lblFamilia As Label
 	Friend WithEvents lblSubfamilia As Label
-	Friend WithEvents btnBuscarProveedor As Button
 	Friend WithEvents tblArticulos As DataGridView
 	Friend WithEvents cmsOpciones As ContextMenuStrip
-	Friend WithEvents ModificarArtículoToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents ActualizarArtículoToolStripMenuItem As ToolStripMenuItem
 	Friend WithEvents EliminarArtículoToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents tblNombre As DataGridViewTextBoxColumn
+	Friend WithEvents tblcodigoAr As DataGridViewTextBoxColumn
+	Friend WithEvents tblpeso As DataGridViewTextBoxColumn
+	Friend WithEvents tblPrecio As DataGridViewTextBoxColumn
+	Friend WithEvents tblFamilia As DataGridViewTextBoxColumn
+	Friend WithEvents tblSubFamilia As DataGridViewTextBoxColumn
+	Friend WithEvents tblDescripcion As DataGridViewTextBoxColumn
 End Class

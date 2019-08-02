@@ -25,20 +25,24 @@ Public Class ControladorArticulo
 		End Try
 	End Sub
 
+
+	Public Sub EliminarArticulo()
+
+	End Sub
 	Private Sub CargarTabla(ByVal Tabla As DataGridView)
 
 	End Sub
 
-	Public Sub CargarDatos(ByVal Codigo As String)
+	Public Sub CargarDatos(ByVal Codigo As String, ByVal Objetos As Array)
 		Try
 			Using BD As New ProyectoBDEntities1
 				Dim Seleccion = (From Articulo In BD.tblArticulo Where Articulo.Codigo = Codigo Select Articulo).ToList
 				If Seleccion.Count > 0 Then
-					TxtNombre.Text = Seleccion.SingleOrDefault.Nombre
-					TxtPriApellido.Text = Seleccion.SingleOrDefault.PrimerApellido
-					TxtSegApellido.Text = Seleccion.SingleOrDefault.SegundoApellido
-					TxtIdentificador.Text = Seleccion.SingleOrDefault.Identificador
-					Me.DateTimePicker1.Text = Seleccion.SingleOrDefault.FechaNacimiento
+					'TxtNombre.Text = Seleccion.SingleOrDefault.Nombre
+					'TxtPriApellido.Text = Seleccion.SingleOrDefault.PrimerApellido
+					'TxtSegApellido.Text = Seleccion.SingleOrDefault.SegundoApellido
+					'TxtIdentificador.Text = Seleccion.SingleOrDefault.Identificador
+					'Me.DateTimePicker1.Text = Seleccion.SingleOrDefault.FechaNacimiento
 				End If
 			End Using
 		Catch ex As Exception
