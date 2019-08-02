@@ -20,10 +20,8 @@ Namespace Proyecto_Sistema_Bolpa
         Public Property SubFamilia As String
         Public Property Descripcion As String
         Public Property Peso As Decimal
-        Public Property FechaCaducidad As Date
         Public Property Precio As Decimal
         Public Property Impuesto As Decimal
-        Public Property Estado As String
     
         Public Overridable Property tblDetalleFactura As ICollection(Of tblDetalleFactura) = New HashSet(Of tblDetalleFactura)
         Public Overridable Property tblInventario As ICollection(Of tblInventario) = New HashSet(Of tblInventario)

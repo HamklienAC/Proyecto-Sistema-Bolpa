@@ -1,13 +1,17 @@
-﻿Public Class FrmAgregarArticulo
+﻿Public Class frmArticulo
 	Public Sub New()
 		' Esta llamada es exigida por el diseñador.
 		InitializeComponent()
 		Size = New Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height)
-		dtpCaducidad.MinDate = Date.Now
+		AgregarArticulos()
+
 		' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 	End Sub
 
-
+	Private Sub AgregarArticulos()
+		'{CodigoArticulo, Nombre, Descripcion, Familia, Subfamilia, Peso, Precio}
+		tblArticulos.Rows.Add("Aguacate", "101", "01", "500", "800", "Plantas", "Frutas", "Rico en calorias")
+	End Sub
 
 	Private Sub CbAgregarFam_CheckedChanged(sender As Object, e As EventArgs) Handles cbAgregarFam.CheckedChanged
 		If cbAgregarFam.Checked Then
@@ -108,6 +112,24 @@
 		End If
 	End Sub
 
+	Private Sub cmsOpciones_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles cmsOpciones.ItemClicked
+		Try
+			Select Case e.ClickedItem.Name
+				Case "ModificarArtículoToolStripMenuItem"
+					Dim row As DataGridViewRow = tblArticulos.CurrentRow
+					RellenarEspacios(row)
+				Case "EliminarArtículoToolStripMenuItem"
+					Dim row As DataGridViewRow = tblArticulos.CurrentRow
+					tblArticulos.Rows.Remove(row)
+			End Select
+		Catch ex As Exception
+
+		End Try
+	End Sub
+
+	Private Sub RellenarEspacios(ByVal fila As DataGridViewRow)
+
+	End Sub
 	Public ReadOnly Property Nombre() As String
 		Get
 			Return txtNombre.Text
@@ -126,11 +148,6 @@
 	Public ReadOnly Property Peso() As Double
 		Get
 			Return txtPeso.Text
-		End Get
-	End Property
-	Public ReadOnly Property FechaCaducidad() As String
-		Get
-			Return dtpCaducidad.Text
 		End Get
 	End Property
 	Public ReadOnly Property Precio() As Double
@@ -161,5 +178,17 @@
 			Return txtDescripcion.Text
 		End Get
 	End Property
+	Public ReadOnly Property DatosArray() As String()
+		Get
+			Return {CodigoArticulo, Nombre, Descripcion, Familia, Subfamilia, Peso, Precio}
+		End Get
+	End Property
+	Public ReadOnly Property DatosObjeto() As Array
+		Get
+			Return {txtNombre, txtProveedor, txtCodigo, txtPeso, txtPrecio, cbFamilia, cbSubfamilia, txtDescripcion}
+		End Get
+	End Property
+	Private Sub BtnAgregarProducto_Click(sender As Object, e As EventArgs) Handles btnAgregarProducto.Click
 
+	End Sub
 End Class

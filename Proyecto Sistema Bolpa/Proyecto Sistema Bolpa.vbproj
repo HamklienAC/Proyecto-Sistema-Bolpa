@@ -108,18 +108,6 @@
     <Compile Include="Clases\clsProveedor.vb" />
     <Compile Include="Clases\clsUsuario.vb" />
     <Compile Include="Controladores\ControladorArticulo.vb" />
-    <Compile Include="Formularios\CRUDArticulos\FrmBuscarArticulo.Designer.vb">
-      <DependentUpon>FrmBuscarArticulo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\CRUDArticulos\FrmBuscarArticulo.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\CRUDArticulos\FrmActualizarArticulo.Designer.vb">
-      <DependentUpon>FrmActualizarArticulo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\CRUDArticulos\FrmActualizarArticulo.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Formularios\CRUDFacturaCliente\FrmActualizarFacturaCliente.Designer.vb">
       <DependentUpon>FrmActualizarFacturaCliente.vb</DependentUpon>
     </Compile>
@@ -145,10 +133,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Formularios\CRUDArticulos\FrmAgregarArticulo.Designer.vb">
-      <DependentUpon>FrmAgregarArticulo.vb</DependentUpon>
+    <Compile Include="Formularios\frmArticulo.Designer.vb">
+      <DependentUpon>frmArticulo.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\CRUDArticulos\FrmAgregarArticulo.vb">
+    <Compile Include="Formularios\frmArticulo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\CRUDFacturaCliente\FrmAgregarFacturaCliente.Designer.vb">
@@ -187,6 +175,9 @@
     <Compile Include="tblFacturaCliente.vb">
       <DependentUpon>ProyectoBD.tt</DependentUpon>
     </Compile>
+    <Compile Include="tblFacturaNula.vb">
+      <DependentUpon>ProyectoBD.tt</DependentUpon>
+    </Compile>
     <Compile Include="tblFacturaProveedor.vb">
       <DependentUpon>ProyectoBD.tt</DependentUpon>
     </Compile>
@@ -201,12 +192,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Formularios\CRUDArticulos\FrmBuscarArticulo.resx">
-      <DependentUpon>FrmBuscarArticulo.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\CRUDArticulos\FrmActualizarArticulo.resx">
-      <DependentUpon>FrmActualizarArticulo.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\CRUDFacturaCliente\FrmActualizarFacturaCliente.resx">
       <DependentUpon>FrmActualizarFacturaCliente.vb</DependentUpon>
     </EmbeddedResource>
@@ -216,8 +201,8 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\CRUDArticulos\FrmAgregarArticulo.resx">
-      <DependentUpon>FrmAgregarArticulo.vb</DependentUpon>
+    <EmbeddedResource Include="Formularios\frmArticulo.resx">
+      <DependentUpon>frmArticulo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\CRUDFacturaCliente\FrmAgregarFacturaCliente.resx">
       <DependentUpon>FrmAgregarFacturaCliente.vb</DependentUpon>
@@ -247,18 +232,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ProyectoBD.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ProyectoBD.edmx</DependentUpon>
-      <LastGenOutput>ProyectoBD.Context.vb</LastGenOutput>
-    </Content>
-    <Content Include="ProyectoBD.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ProyectoBD.edmx</DependentUpon>
-      <LastGenOutput>ProyectoBD.vb</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Formularios\CRUDFacturaProveedor\" />
   </ItemGroup>
   <ItemGroup>
@@ -272,6 +245,18 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ProyectoBD.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ProyectoBD.edmx</DependentUpon>
+      <LastGenOutput>ProyectoBD.Context.vb</LastGenOutput>
+    </Content>
+    <Content Include="ProyectoBD.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ProyectoBD.edmx</DependentUpon>
+      <LastGenOutput>ProyectoBD.vb</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

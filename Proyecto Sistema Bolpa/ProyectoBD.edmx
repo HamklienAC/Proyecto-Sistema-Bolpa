@@ -16,10 +16,8 @@
           <Property Name="SubFamilia" Type="varchar" MaxLength="20" />
           <Property Name="Descripcion" Type="varchar" MaxLength="150" />
           <Property Name="Peso" Type="decimal" Precision="18" Scale="2" Nullable="false" />
-          <Property Name="FechaCaducidad" Type="date" Nullable="false" />
           <Property Name="Precio" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="Impuesto" Type="decimal" Precision="18" Scale="2" Nullable="false" />
-          <Property Name="Estado" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="tblCliente">
           <Key>
@@ -77,6 +75,14 @@
           <Property Name="IdDetalle" Type="int" Nullable="false" />
           <Property Name="Estado" Type="varchar" MaxLength="20" />
         </EntityType>
+        <EntityType Name="tblFacturaNula">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CodFactura" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Descrpcion" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
         <EntityType Name="tblFacturaProveedor">
           <Key>
             <PropertyRef Name="Codigo" />
@@ -100,6 +106,8 @@
           <Property Name="IdArticulo" Type="int" Nullable="false" />
           <Property Name="UnidadesExistentes" Type="int" Nullable="false" />
           <Property Name="Monto" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="FechaCaducidad" Type="date" />
+          <Property Name="Estado" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="tblProveedor">
           <Key>
@@ -255,6 +263,7 @@
           <EntitySet Name="tblDetalleFactura" EntityType="Self.tblDetalleFactura" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblEmpleado" EntityType="Self.tblEmpleado" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblFacturaCliente" EntityType="Self.tblFacturaCliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblFacturaNula" EntityType="Self.tblFacturaNula" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblFacturaProveedor" EntityType="Self.tblFacturaProveedor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblInventario" EntityType="Self.tblInventario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblProveedor" EntityType="Self.tblProveedor" Schema="dbo" store:Type="Tables" />
@@ -316,10 +325,8 @@
           <Property Name="SubFamilia" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="Peso" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
-          <Property Name="FechaCaducidad" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Precio" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="Impuesto" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
-          <Property Name="Estado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="tblDetalleFactura" Relationship="Self.FK_tblDetalleFactura_tblArticulo" FromRole="tblArticulo" ToRole="tblDetalleFactura" />
           <NavigationProperty Name="tblInventario" Relationship="Self.FK_tblInventario_tblArticulo" FromRole="tblArticulo" ToRole="tblInventario" />
         </EntityType>
@@ -389,6 +396,14 @@
           <NavigationProperty Name="tblDetalleFactura" Relationship="Self.FK_tblFacturaCliente_tblDetalleFactura" FromRole="tblFacturaCliente" ToRole="tblDetalleFactura" />
           <NavigationProperty Name="tblEmpleado" Relationship="Self.FK_tblFacturaCliente_tblEmpleado" FromRole="tblFacturaCliente" ToRole="tblEmpleado" />
         </EntityType>
+        <EntityType Name="tblFacturaNula">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodFactura" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descrpcion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
         <EntityType Name="tblFacturaProveedor">
           <Key>
             <PropertyRef Name="Codigo" />
@@ -415,6 +430,8 @@
           <Property Name="IdArticulo" Type="Int32" Nullable="false" />
           <Property Name="UnidadesExistentes" Type="Int32" Nullable="false" />
           <Property Name="Monto" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="FechaCaducidad" Type="DateTime" Precision="0" />
+          <Property Name="Estado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="tblArticulo" Relationship="Self.FK_tblInventario_tblArticulo" FromRole="tblInventario" ToRole="tblArticulo" />
           <NavigationProperty Name="tblProveedor" Relationship="Self.FK_tblInventario_tblProveedor" FromRole="tblInventario" ToRole="tblProveedor" />
         </EntityType>
@@ -569,12 +586,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ProyectoBDEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ProyectoBDEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="tblArticulo" EntityType="Self.tblArticulo" />
           <EntitySet Name="tblCliente" EntityType="Self.tblCliente" />
           <EntitySet Name="tblDetalleFactura" EntityType="Self.tblDetalleFactura" />
           <EntitySet Name="tblEmpleado" EntityType="Self.tblEmpleado" />
           <EntitySet Name="tblFacturaCliente" EntityType="Self.tblFacturaCliente" />
+          <EntitySet Name="tblFacturaNula" EntityType="Self.tblFacturaNula" />
           <EntitySet Name="tblFacturaProveedor" EntityType="Self.tblFacturaProveedor" />
           <EntitySet Name="tblInventario" EntityType="Self.tblInventario" />
           <EntitySet Name="tblProveedor" EntityType="Self.tblProveedor" />
@@ -625,7 +643,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ProyectoBDModelStoreContainer" CdmEntityContainer="ProyectoBDEntities">
+        <EntityContainerMapping StorageEntityContainer="ProyectoBDModelStoreContainer" CdmEntityContainer="ProyectoBDEntities1">
           <EntitySetMapping Name="tblArticulo">
             <EntityTypeMapping TypeName="ProyectoBDModel.tblArticulo">
               <MappingFragment StoreEntitySet="tblArticulo">
@@ -636,10 +654,8 @@
                 <ScalarProperty Name="SubFamilia" ColumnName="SubFamilia" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
                 <ScalarProperty Name="Peso" ColumnName="Peso" />
-                <ScalarProperty Name="FechaCaducidad" ColumnName="FechaCaducidad" />
                 <ScalarProperty Name="Precio" ColumnName="Precio" />
                 <ScalarProperty Name="Impuesto" ColumnName="Impuesto" />
-                <ScalarProperty Name="Estado" ColumnName="Estado" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -703,6 +719,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="tblFacturaNula">
+            <EntityTypeMapping TypeName="ProyectoBDModel.tblFacturaNula">
+              <MappingFragment StoreEntitySet="tblFacturaNula">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CodFactura" ColumnName="CodFactura" />
+                <ScalarProperty Name="Descrpcion" ColumnName="Descrpcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="tblFacturaProveedor">
             <EntityTypeMapping TypeName="ProyectoBDModel.tblFacturaProveedor">
               <MappingFragment StoreEntitySet="tblFacturaProveedor">
@@ -726,6 +751,8 @@
                 <ScalarProperty Name="IdArticulo" ColumnName="IdArticulo" />
                 <ScalarProperty Name="UnidadesExistentes" ColumnName="UnidadesExistentes" />
                 <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="FechaCaducidad" ColumnName="FechaCaducidad" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

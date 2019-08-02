@@ -4,14 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9b59ac53f87a42ddb62df80a86bcf038" Name="Diagram1">
-        <EntityTypeShape EntityType="ProyectoBDModel.tblArticulo" Width="1.5" PointX="1.5" PointY="18.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProyectoBDModel.tblCliente" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="34122f4f8aa441b8b72bccaaadec7946" Name="Diagram1">
+        <EntityTypeShape EntityType="ProyectoBDModel.tblArticulo" Width="1.5" PointX="1.5" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoBDModel.tblCliente" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoBDModel.tblDetalleFactura" Width="1.5" PointX="0.75" PointY="11.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoBDModel.tblEmpleado" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoBDModel.tblFacturaCliente" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoBDModel.tblFacturaNula" Width="1.5" PointX="5.75" PointY="2" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoBDModel.tblFacturaProveedor" Width="1.5" PointX="6" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProyectoBDModel.tblInventario" Width="1.5" PointX="6" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoBDModel.tblInventario" Width="1.5" PointX="6" PointY="10.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoBDModel.tblProveedor" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoBDModel.tblUsuario" Width="1.5" PointX="3" PointY="14.75" IsExpanded="true" />
         <AssociationConnector Association="ProyectoBDModel.FK_tblDetalleFactura_tblArticulo" ManuallyRouted="false" />

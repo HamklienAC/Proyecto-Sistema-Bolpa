@@ -12,17 +12,10 @@ Imports System.Collections.Generic
 
 Namespace Proyecto_Sistema_Bolpa
 
-    Partial Public Class tblInventario
+    Partial Public Class tblFacturaNula
         Public Property Id As Integer
-        Public Property CedulaProveedor As String
-        Public Property IdArticulo As Integer
-        Public Property UnidadesExistentes As Integer
-        Public Property Monto As Decimal
-        Public Property FechaCaducidad As Nullable(Of Date)
-        Public Property Estado As String
-    
-        Public Overridable Property tblArticulo As tblArticulo
-        Public Overridable Property tblProveedor As tblProveedor
+        Public Property CodFactura As String
+        Public Property Descrpcion As String
     
     End Class
 

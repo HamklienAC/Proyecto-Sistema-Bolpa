@@ -34,13 +34,13 @@ Partial Class FrmActualizarFacturaCliente
 		Me.tblFactura.Size = New System.Drawing.Size(775, 591)
 		Me.tblFactura.TabIndex = 0
 		'
-		'FrmModificarFacturaCliente
+		'FrmActualizarFacturaCliente
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(800, 615)
 		Me.Controls.Add(Me.tblFactura)
-		Me.Name = "FrmModificarFacturaCliente"
+		Me.Name = "FrmActualizarFacturaCliente"
 		Me.Text = "FrmModificarFacturaCliente"
 		CType(Me.tblFactura, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)

@@ -13,11 +13,11 @@ Imports System.Data.Entity.Infrastructure
 
 Namespace Proyecto_Sistema_Bolpa
 
-    Partial Public Class ProyectoBDEntities
+    Partial Public Class ProyectoBDEntities1
         Inherits DbContext
     
         Public Sub New()
-            MyBase.New("name=ProyectoBDEntities")
+            MyBase.New("name=ProyectoBDEntities1")
         End Sub
     
         Protected Overrides Sub OnModelCreating(modelBuilder As DbModelBuilder)
@@ -29,6 +29,7 @@ Namespace Proyecto_Sistema_Bolpa
         Public Overridable Property tblDetalleFactura() As DbSet(Of tblDetalleFactura)
         Public Overridable Property tblEmpleado() As DbSet(Of tblEmpleado)
         Public Overridable Property tblFacturaCliente() As DbSet(Of tblFacturaCliente)
+        Public Overridable Property tblFacturaNula() As DbSet(Of tblFacturaNula)
         Public Overridable Property tblFacturaProveedor() As DbSet(Of tblFacturaProveedor)
         Public Overridable Property tblInventario() As DbSet(Of tblInventario)
         Public Overridable Property tblProveedor() As DbSet(Of tblProveedor)
