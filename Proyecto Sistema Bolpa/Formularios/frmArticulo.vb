@@ -1,13 +1,26 @@
 ﻿Public Class frmArticulo
+	Private ReadOnly controlador As ControladorArticulo
 	Public Sub New()
 		' Esta llamada es exigida por el diseñador.
 		InitializeComponent()
+		controlador = New ControladorArticulo
 		Size = New Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height)
 		AgregarArticulos()
-
+		CargarFamilia()
+		CargarSubfamilia()
+		CargarTabla()
 		' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 	End Sub
 
+	Private Sub CargarFamilia()
+		controlador.CargarFamilia(cbFamilia)
+	End Sub
+	Private Sub CargarSubfamilia()
+		controlador.CargarSubfamilias(cbSubfamilia)
+	End Sub
+	Private Sub CargarTabla()
+		controlador.CargarTabla(tblArticulos)
+	End Sub
 	Private Sub AgregarArticulos()
 		'{CodigoArticulo, Nombre, Descripcion, Familia, Subfamilia, Peso, Precio}
 		tblArticulos.Rows.Add("Aguacate", "101", "500", "800", "Plantas", "Frutas", "Rico en calorias")
@@ -120,24 +133,30 @@
 			Select Case e.ClickedItem.Name
 				Case "ActualizarArtículoToolStripMenuItem"
 					If MsgBox("Desea actualizar los datos del artíclo: " + tblArticulos.CurrentRow.Cells(0).Value.ToString + ", código: " + tblArticulos.CurrentRow.Cells(1).Value.ToString, MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+						btnAgregarProducto.Text = "Actualizar artículo"
 						RellenarEspacios(tblArticulos.CurrentRow.Cells(1).Value.ToString)
 					End If
 				Case "EliminarArtículoToolStripMenuItem"
 					If MsgBox("Desea eliminar el artíclo: " + tblArticulos.CurrentRow.Cells(0).Value.ToString + ", código: " + tblArticulos.CurrentRow.Cells(1).Value.ToString, MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
-						RellenarEspacios(tblArticulos.CurrentRow.Cells(1).Value.ToString)
-						Dim row As DataGridViewRow = tblArticulos.CurrentRow
-						tblArticulos.Rows.Remove(row)
+						controlador.EliminarArticulo(tblArticulos.CurrentRow.Cells(1).Value.ToString)
 					End If
 			End Select
 		Catch ex As Exception
 
 		End Try
 	End Sub
-
-	Private Sub RellenarEspacios(ByVal fila As String)
-		Dim Controlador As New ControladorArticulo
-		Controlador.CargarDatos(fila, DatosObjeto)
+	Private Sub BtnAgregarProducto_Click(sender As Object, e As EventArgs) Handles btnAgregarProducto.Click
+		If btnAgregarProducto.Text.Equals("Actualizar artículo") Then
+			controlador.ActualizarArticulo()
+			btnAgregarProducto.Text = " Agregar artículo"
+		Else
+			controlador.AgregarArticulo(DatosArray)
+		End If
 	End Sub
+	Private Sub RellenarEspacios(ByVal fila As String)
+		controlador.CargarDatos(fila, DatosObjeto)
+	End Sub
+
 	Public ReadOnly Property Nombre() As String
 		Get
 			Return txtNombre.Text
@@ -168,7 +187,7 @@
 			If cbAgregarFam.Enabled Then
 				Return cbAgregarFam.Text
 			Else
-				Return cbFamilia.Text
+				Return cbFamilia.SelectedItem.ToString
 			End If
 		End Get
 	End Property
@@ -177,7 +196,7 @@
 			If cbAgregarSub.Enabled Then
 				Return cbAgregarSub.Text
 			Else
-				Return cbSubfamilia.Text
+				Return cbSubfamilia.SelectedItem.ToString
 			End If
 		End Get
 	End Property
@@ -186,7 +205,6 @@
 			Return txtDescripcion.Text
 		End Get
 	End Property
-
 	''' <summary>
 	''' Retorna una array de string con los datos del articulo
 	''' </summary>
@@ -197,16 +215,14 @@
 		End Get
 	End Property
 	''' <summary>
-	''' Devuelve los los objetos en los caules se digita la informacion
+	''' Devuelve los los objetos en los cuales se digita la informacion
 	''' </summary>
 	''' <returns></returns>
 	Public ReadOnly Property DatosObjeto() As Array
 		Get
-			Return {txtNombre, txtProveedor, txtCodigo, txtPeso, txtPrecio, cbFamilia, cbSubfamilia, txtDescripcion}
+			Return {txtNombre, txtCodigo, txtPeso, txtPrecio, cbFamilia, cbSubfamilia, txtDescripcion}
 		End Get
 	End Property
-	Private Sub BtnAgregarProducto_Click(sender As Object, e As EventArgs) Handles btnAgregarProducto.Click
 
-	End Sub
 
 End Class

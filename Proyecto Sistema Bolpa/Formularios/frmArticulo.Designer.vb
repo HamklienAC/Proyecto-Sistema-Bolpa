@@ -45,9 +45,6 @@ Partial Class frmArticulo
 		Me.lblFamilia = New System.Windows.Forms.Label()
 		Me.lblSubfamilia = New System.Windows.Forms.Label()
 		Me.tblArticulos = New System.Windows.Forms.DataGridView()
-		Me.cmsOpciones = New System.Windows.Forms.ContextMenuStrip(Me.components)
-		Me.ActualizarArtículoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-		Me.EliminarArtículoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.tblNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
 		Me.tblcodigoAr = New System.Windows.Forms.DataGridViewTextBoxColumn()
 		Me.tblpeso = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -55,6 +52,9 @@ Partial Class frmArticulo
 		Me.tblFamilia = New System.Windows.Forms.DataGridViewTextBoxColumn()
 		Me.tblSubFamilia = New System.Windows.Forms.DataGridViewTextBoxColumn()
 		Me.tblDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+		Me.cmsOpciones = New System.Windows.Forms.ContextMenuStrip(Me.components)
+		Me.ActualizarArtículoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.EliminarArtículoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		CType(Me.tblArticulos, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.cmsOpciones.SuspendLayout()
 		Me.SuspendLayout()
@@ -68,6 +68,9 @@ Partial Class frmArticulo
 		'
 		'txtProveedor
 		'
+		Me.txtProveedor.AutoCompleteCustomSource.AddRange(New String() {"Cañas ", "Bagaces", "Cavacar"})
+		Me.txtProveedor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+		Me.txtProveedor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
 		Me.txtProveedor.Location = New System.Drawing.Point(122, 38)
 		Me.txtProveedor.Name = "txtProveedor"
 		Me.txtProveedor.Size = New System.Drawing.Size(200, 20)
@@ -119,6 +122,8 @@ Partial Class frmArticulo
 		'
 		'cbFamilia
 		'
+		Me.cbFamilia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+		Me.cbFamilia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
 		Me.cbFamilia.FormattingEnabled = True
 		Me.cbFamilia.Location = New System.Drawing.Point(122, 142)
 		Me.cbFamilia.Name = "cbFamilia"
@@ -127,6 +132,8 @@ Partial Class frmArticulo
 		'
 		'cbSubfamilia
 		'
+		Me.cbSubfamilia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+		Me.cbSubfamilia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
 		Me.cbSubfamilia.FormattingEnabled = True
 		Me.cbSubfamilia.Location = New System.Drawing.Point(122, 169)
 		Me.cbSubfamilia.Name = "cbSubfamilia"
@@ -174,7 +181,7 @@ Partial Class frmArticulo
 		'lblIdprovedor
 		'
 		Me.lblIdprovedor.AutoSize = True
-		Me.lblIdprovedor.Location = New System.Drawing.Point(13, 45)
+		Me.lblIdprovedor.Location = New System.Drawing.Point(13, 41)
 		Me.lblIdprovedor.Name = "lblIdprovedor"
 		Me.lblIdprovedor.Size = New System.Drawing.Size(106, 13)
 		Me.lblIdprovedor.TabIndex = 16
@@ -245,6 +252,48 @@ Partial Class frmArticulo
 		Me.tblArticulos.Size = New System.Drawing.Size(739, 377)
 		Me.tblArticulos.TabIndex = 13
 		'
+		'tblNombre
+		'
+		Me.tblNombre.HeaderText = "Nombre"
+		Me.tblNombre.Name = "tblNombre"
+		Me.tblNombre.ReadOnly = True
+		'
+		'tblcodigoAr
+		'
+		Me.tblcodigoAr.HeaderText = "Codigo articulo"
+		Me.tblcodigoAr.Name = "tblcodigoAr"
+		Me.tblcodigoAr.ReadOnly = True
+		'
+		'tblpeso
+		'
+		Me.tblpeso.HeaderText = "peso"
+		Me.tblpeso.Name = "tblpeso"
+		Me.tblpeso.ReadOnly = True
+		'
+		'tblPrecio
+		'
+		Me.tblPrecio.HeaderText = "precio"
+		Me.tblPrecio.Name = "tblPrecio"
+		Me.tblPrecio.ReadOnly = True
+		'
+		'tblFamilia
+		'
+		Me.tblFamilia.HeaderText = "Familia"
+		Me.tblFamilia.Name = "tblFamilia"
+		Me.tblFamilia.ReadOnly = True
+		'
+		'tblSubFamilia
+		'
+		Me.tblSubFamilia.HeaderText = "Subfamilia"
+		Me.tblSubFamilia.Name = "tblSubFamilia"
+		Me.tblSubFamilia.ReadOnly = True
+		'
+		'tblDescripcion
+		'
+		Me.tblDescripcion.HeaderText = "Descripcion"
+		Me.tblDescripcion.Name = "tblDescripcion"
+		Me.tblDescripcion.ReadOnly = True
+		'
 		'cmsOpciones
 		'
 		Me.cmsOpciones.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ActualizarArtículoToolStripMenuItem, Me.EliminarArtículoToolStripMenuItem})
@@ -254,49 +303,14 @@ Partial Class frmArticulo
 		'ActualizarArtículoToolStripMenuItem
 		'
 		Me.ActualizarArtículoToolStripMenuItem.Name = "ActualizarArtículoToolStripMenuItem"
-		Me.ActualizarArtículoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+		Me.ActualizarArtículoToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
 		Me.ActualizarArtículoToolStripMenuItem.Text = "Actulizar artículo"
 		'
 		'EliminarArtículoToolStripMenuItem
 		'
 		Me.EliminarArtículoToolStripMenuItem.Name = "EliminarArtículoToolStripMenuItem"
-		Me.EliminarArtículoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+		Me.EliminarArtículoToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
 		Me.EliminarArtículoToolStripMenuItem.Text = "Eliminar artículo"
-		'
-		'tblNombre
-		'
-		Me.tblNombre.HeaderText = "Nombre"
-		Me.tblNombre.Name = "tblNombre"
-		'
-		'tblcodigoAr
-		'
-		Me.tblcodigoAr.HeaderText = "Codigo articulo"
-		Me.tblcodigoAr.Name = "tblcodigoAr"
-		'
-		'tblpeso
-		'
-		Me.tblpeso.HeaderText = "peso"
-		Me.tblpeso.Name = "tblpeso"
-		'
-		'tblPrecio
-		'
-		Me.tblPrecio.HeaderText = "precio"
-		Me.tblPrecio.Name = "tblPrecio"
-		'
-		'tblFamilia
-		'
-		Me.tblFamilia.HeaderText = "Familia"
-		Me.tblFamilia.Name = "tblFamilia"
-		'
-		'tblSubFamilia
-		'
-		Me.tblSubFamilia.HeaderText = "Subfamilia"
-		Me.tblSubFamilia.Name = "tblSubFamilia"
-		'
-		'tblDescripcion
-		'
-		Me.tblDescripcion.HeaderText = "Descripcion"
-		Me.tblDescripcion.Name = "tblDescripcion"
 		'
 		'frmArticulo
 		'

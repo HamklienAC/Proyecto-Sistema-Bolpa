@@ -114,6 +114,12 @@
     <Compile Include="Formularios\CRUDFacturaCliente\FrmActualizarFacturaCliente.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\frmInventario.Designer.vb">
+      <DependentUpon>frmInventario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmInventario.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\frmMain.Designer.vb">
       <DependentUpon>frmMain.vb</DependentUpon>
       <SubType>Form</SubType>
