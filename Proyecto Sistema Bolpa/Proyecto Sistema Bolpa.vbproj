@@ -108,10 +108,10 @@
     <Compile Include="Clases\clsProveedor.vb" />
     <Compile Include="Clases\clsUsuario.vb" />
     <Compile Include="Controladores\ControladorArticulo.vb" />
-    <Compile Include="Formularios\CRUDFacturaCliente\FrmActualizarFacturaCliente.Designer.vb">
+    <Compile Include="Formularios\FrmActualizarFacturaCliente.Designer.vb">
       <DependentUpon>FrmActualizarFacturaCliente.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\CRUDFacturaCliente\FrmActualizarFacturaCliente.vb">
+    <Compile Include="Formularios\FrmActualizarFacturaCliente.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\frmInventario.Designer.vb">
@@ -145,10 +145,10 @@
     <Compile Include="Formularios\frmArticulo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\CRUDFacturaCliente\FrmAgregarFacturaCliente.Designer.vb">
-      <DependentUpon>FrmAgregarFacturaCliente.vb</DependentUpon>
+    <Compile Include="Formularios\frmFacturaCliente.Designer.vb">
+      <DependentUpon>frmFacturaCliente.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\CRUDFacturaCliente\FrmAgregarFacturaCliente.vb">
+    <Compile Include="Formularios\frmFacturaCliente.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ProyectoBD.Context.vb">
@@ -198,7 +198,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Formularios\CRUDFacturaCliente\FrmActualizarFacturaCliente.resx">
+    <EmbeddedResource Include="Formularios\FrmActualizarFacturaCliente.resx">
       <DependentUpon>FrmActualizarFacturaCliente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmInventario.resx">
@@ -213,8 +213,8 @@
     <EmbeddedResource Include="Formularios\frmArticulo.resx">
       <DependentUpon>frmArticulo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\CRUDFacturaCliente\FrmAgregarFacturaCliente.resx">
-      <DependentUpon>FrmAgregarFacturaCliente.vb</DependentUpon>
+    <EmbeddedResource Include="Formularios\frmFacturaCliente.resx">
+      <DependentUpon>frmFacturaCliente.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

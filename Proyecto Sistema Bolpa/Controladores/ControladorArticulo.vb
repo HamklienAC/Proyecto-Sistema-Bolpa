@@ -26,29 +26,72 @@ Public Class ControladorArticulo
 	End Sub
 
 	Public Sub ActualizarArticulo()
+		Try
 
+		Catch ex As Exception
+
+		End Try
 	End Sub
 
 	Public Sub EliminarArticulo(Codigo As String)
+		Try
 
+		Catch ex As Exception
+
+		End Try
 	End Sub
 
-	Public Sub CargarFamilia(ByVal Combobox As ComboBox)
 
-	End Sub
-	Public Sub CargarSubfamilias(ByVal Combobox As ComboBox)
-
-	End Sub
 	Public Sub CargarTabla(ByVal Tabla As DataGridView)
 
 	End Sub
 
-	Public Sub CargarProveedores(ByVal TextBox As TextBox)
+	Public Sub CargarProveedores(ByVal txtProveedores As TextBox)
 
 	End Sub
 
+	Public Sub CargarFamilia(ByVal Familia As ComboBox)
+		Try
+
+			EliminarFamilias(Familia)
+		Catch ex As Exception
+
+		End Try
+	End Sub
+
+	Public Sub CargarSubfamilias(ByVal Subfamilia As ComboBox)
+		Try
+
+			EliminarSubfamilia(Subfamilia)
+		Catch ex As Exception
+
+		End Try
+	End Sub
+
+	''' <summary>
+	''' Metodo se encarga de eliminar las familias repetidas que pueden tener el combobox familia
+	''' </summary>
+	''' <param name="Familia"></param>
+	Private Sub EliminarFamilias(ByVal Familia As ComboBox)
+		Try
+
+		Catch ex As Exception
+
+		End Try
+	End Sub
+	''' <summary>
+	''' Metodo se encarga de eliminar las subfamilias repetidas que pueden tener el combobox familia
+	''' </summary>
+	''' <param name="Subfamilia"></param>
+	Private Sub EliminarSubfamilia(ByVal Subfamilia As ComboBox)
+		Try
+
+		Catch ex As Exception
+
+		End Try
+	End Sub
+
 	Public Sub CargarDatos(ByVal Codigo As String, ByVal Objetos As Array)
-		'{txtNombre, txtProveedor, txtCodigo, txtPeso, txtPrecio, cbFamilia, cbSubfamilia, txtDescripcion}
 		Try
 			Using BD As New ProyectoBDEntities1
 				Dim datosArticulo = (From ArticuloBD In BD.tblArticulo Where ArticuloBD.Codigo = Codigo Select ArticuloBD).ToList

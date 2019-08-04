@@ -39,6 +39,7 @@ Partial Class frmInventario
 		Me.txtProveedor = New System.Windows.Forms.TextBox()
 		Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
 		Me.tblInventario = New System.Windows.Forms.DataGridView()
+		Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
 		Me.cmsOpciones = New System.Windows.Forms.ContextMenuStrip(Me.components)
 		Me.ActualizarLoteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.EliminarLoteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -232,11 +233,18 @@ Partial Class frmInventario
 			Or System.Windows.Forms.AnchorStyles.Left) _
 			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 		Me.tblInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+		Me.tblInventario.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo})
 		Me.tblInventario.ContextMenuStrip = Me.cmsOpciones
 		Me.tblInventario.Location = New System.Drawing.Point(4, 3)
 		Me.tblInventario.Name = "tblInventario"
+		Me.tblInventario.ReadOnly = True
 		Me.tblInventario.Size = New System.Drawing.Size(243, 539)
 		Me.tblInventario.TabIndex = 2
+		'
+		'codigo
+		'
+		Me.codigo.HeaderText = "Codigo"
+		Me.codigo.Name = "codigo"
 		'
 		'cmsOpciones
 		'
@@ -289,6 +297,7 @@ Partial Class frmInventario
 		Me.tblProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.tblProveedor.Location = New System.Drawing.Point(3, 3)
 		Me.tblProveedor.Name = "tblProveedor"
+		Me.tblProveedor.ReadOnly = True
 		Me.tblProveedor.Size = New System.Drawing.Size(160, 539)
 		Me.tblProveedor.TabIndex = 0
 		'
@@ -300,6 +309,7 @@ Partial Class frmInventario
 		Me.tblArticulo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.tblArticulo.Location = New System.Drawing.Point(3, 3)
 		Me.tblArticulo.Name = "tblArticulo"
+		Me.tblArticulo.ReadOnly = True
 		Me.tblArticulo.Size = New System.Drawing.Size(325, 539)
 		Me.tblArticulo.TabIndex = 0
 		'
@@ -353,4 +363,5 @@ Partial Class frmInventario
 	Friend WithEvents cmsOpciones As ContextMenuStrip
 	Friend WithEvents ActualizarLoteToolStripMenuItem As ToolStripMenuItem
 	Friend WithEvents EliminarLoteToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents codigo As DataGridViewTextBoxColumn
 End Class

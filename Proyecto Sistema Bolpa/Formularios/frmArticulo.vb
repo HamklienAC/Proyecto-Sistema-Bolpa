@@ -30,44 +30,56 @@
 	End Sub
 
 	Private Sub CbAgregarFam_CheckedChanged(sender As Object, e As EventArgs) Handles cbAgregarFam.CheckedChanged
-		If cbAgregarFam.Checked Then
-			CambiarEstado(1)
-		Else
-			CambiarEstado(2)
-		End If
+		Try
+			If cbAgregarFam.Checked Then
+				CambiarEstado(1)
+			Else
+				CambiarEstado(2)
+			End If
+		Catch ex As Exception
+
+		End Try
 	End Sub
 	Private Sub CbAgregarSub_CheckedChanged(sender As Object, e As EventArgs) Handles cbAgregarSub.CheckedChanged
-		If cbAgregarSub.Checked Then
-			CambiarEstado(3)
-		Else
-			CambiarEstado(4)
-		End If
+		Try
+			If cbAgregarSub.Checked Then
+				CambiarEstado(3)
+			Else
+				CambiarEstado(4)
+			End If
+		Catch ex As Exception
+
+		End Try
 	End Sub
 	Private Sub CambiarEstado(ByVal Opc As Integer)
-		Select Case (Opc)
-			Case 1
-				cbFamilia.Enabled = False
-				txtNuevaFamilia.Enabled = True
-				txtNuevaSubfamilia.Enabled = True
-				cbSubfamilia.Enabled = False
-				cbAgregarSub.Enabled = False
-			Case 2
-				cbFamilia.Enabled = True
-				txtNuevaFamilia.Enabled = False
-				txtNuevaSubfamilia.Enabled = False
-				cbSubfamilia.Enabled = True
-				cbAgregarSub.Enabled = True
-			Case 3
-				cbSubfamilia.Enabled = False
-				txtNuevaSubfamilia.Enabled = True
-				cbAgregarSub.Enabled = True
-				cbAgregarFam.Enabled = False
-			Case 4
-				cbAgregarFam.Enabled = True
-				cbSubfamilia.Enabled = True
-				txtNuevaSubfamilia.Enabled = False
-				cbAgregarSub.Enabled = True
-		End Select
+		Try
+			Select Case (Opc)
+				Case 1
+					cbFamilia.Enabled = False
+					txtNuevaFamilia.Enabled = True
+					txtNuevaSubfamilia.Enabled = True
+					cbSubfamilia.Enabled = False
+					cbAgregarSub.Enabled = False
+				Case 2
+					cbFamilia.Enabled = True
+					txtNuevaFamilia.Enabled = False
+					txtNuevaSubfamilia.Enabled = False
+					cbSubfamilia.Enabled = True
+					cbAgregarSub.Enabled = True
+				Case 3
+					cbSubfamilia.Enabled = False
+					txtNuevaSubfamilia.Enabled = True
+					cbAgregarSub.Enabled = True
+					cbAgregarFam.Enabled = False
+				Case 4
+					cbAgregarFam.Enabled = True
+					cbSubfamilia.Enabled = True
+					txtNuevaSubfamilia.Enabled = False
+					cbAgregarSub.Enabled = True
+			End Select
+		Catch ex As Exception
+
+		End Try
 	End Sub
 
 	Private Sub TxtPrecio_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPrecio.KeyPress
@@ -83,8 +95,6 @@
 	''' <param name="Valor"></param>
 	Private Sub VerificarContenidosTXTPP(e As KeyPressEventArgs, ByVal Valor As String)
 		e.Handled = Not VerificarContenidoPuntos(Valor, e) AndAlso Not IsNumeric(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not e.KeyChar.Equals(",")
-
-		'e.Handled = Not VerificarContenidoPuntos(Valor) AndAlso Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
 	End Sub
 	''' <summary>
 	''' Método se encarga se verificar si la cifra tiene un punto
@@ -148,12 +158,17 @@
 		End Try
 	End Sub
 	Private Sub BtnAgregarProducto_Click(sender As Object, e As EventArgs) Handles btnAgregarProducto.Click
-		If btnAgregarProducto.Text.Equals("Actualizar artículo") Then
-			controlador.ActualizarArticulo()
-			btnAgregarProducto.Text = " Agregar artículo"
-		Else
-			controlador.AgregarArticulo(DatosArray)
-		End If
+		Try
+			If btnAgregarProducto.Text.Equals("Actualizar artículo") Then
+				controlador.ActualizarArticulo()
+				btnAgregarProducto.Text = " Agregar artículo"
+			Else
+				controlador.AgregarArticulo(DatosArray)
+			End If
+		Catch ex As Exception
+
+		End Try
+
 	End Sub
 	Private Sub RellenarEspacios(ByVal fila As String)
 		controlador.CargarDatos(fila, DatosObjeto)
