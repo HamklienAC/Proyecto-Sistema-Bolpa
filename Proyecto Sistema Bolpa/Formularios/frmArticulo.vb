@@ -170,8 +170,9 @@
 		End Try
 
 	End Sub
+
 	Private Sub RellenarEspacios(ByVal fila As String)
-		controlador.CargarDatos(fila, DatosObjeto)
+		'controlador.CargarDatos(fila, DatosObjeto)
 	End Sub
 
 	Public ReadOnly Property Nombre() As String

@@ -1,2 +1,2 @@
-﻿Public Class FrmActualizarFacturaCliente
+﻿Public Class frmInventarioExistente
 End Class

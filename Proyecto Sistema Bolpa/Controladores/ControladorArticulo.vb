@@ -91,22 +91,22 @@ Public Class ControladorArticulo
 		End Try
 	End Sub
 
-	Public Sub CargarDatos(ByVal Codigo As String, ByVal Objetos As Array)
-		Try
-			Using BD As New ProyectoBDEntities1
-				Dim datosArticulo = (From ArticuloBD In BD.tblArticulo Where ArticuloBD.Codigo = Codigo Select ArticuloBD).ToList
-				If datosArticulo.Count > 0 Then
-					Objetos(0) = datosArticulo.SingleOrDefault.Nombre
-					Objetos(1) = datosArticulo.SingleOrDefault.Codigo
-					Objetos(2) = datosArticulo.SingleOrDefault.Peso
-					Objetos(3) = datosArticulo.SingleOrDefault.Precio
-					Objetos(4) = datosArticulo.SingleOrDefault.Familia
-					Objetos(5) = datosArticulo.SingleOrDefault.SubFamilia
-					Objetos(6) = datosArticulo.SingleOrDefault.Descripcion
-				End If
-			End Using
-		Catch ex As Exception
+	'Public Sub CargarDatos(ByVal Codigo As String, ByVal Objetos As Array)
+	'	Try
+	'		Using BD As New ProyectoBDEntities1
+	'			Dim datosArticulo = (From ArticuloBD In BD.tblArticulo Where ArticuloBD.Codigo = Codigo Select ArticuloBD).ToList
+	'			If datosArticulo.Count > 0 Then
+	'				Objetos(0) = datosArticulo.SingleOrDefault.Nombre
+	'				Objetos(1) = datosArticulo.SingleOrDefault.Codigo
+	'				Objetos(2) = datosArticulo.SingleOrDefault.Peso
+	'				Objetos(3) = datosArticulo.SingleOrDefault.Precio
+	'				Objetos(4) = datosArticulo.SingleOrDefault.Familia
+	'				Objetos(5) = datosArticulo.SingleOrDefault.SubFamilia
+	'				Objetos(6) = datosArticulo.SingleOrDefault.Descripcion
+	'			End If
+	'		End Using
+	'	Catch ex As Exception
 
-		End Try
-	End Sub
+	'	End Try
+	'End Sub
 End Class

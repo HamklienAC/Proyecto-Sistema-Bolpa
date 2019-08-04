@@ -1,58 +1,36 @@
-﻿Imports System.ComponentModel
-
-Public Class frmFacturaCliente
-	Private posicionCelda As String = String.Empty
-
+﻿Public Class frmFacturaCliente
 
 	Public Sub New()
 		' Esta llamada es exigida por el diseñador.
 		InitializeComponent()
 		Size = New Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height)
+		AjustarCeldas()
 		SurroundingSub()
+		Nah()
+
 		' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+	End Sub
+
+	Private Sub AjustarCeldas()
+		Dim Tamano As Integer = tblProductos.Width / 4
+		CProducto.Width = Tamano
+		CCodigo.Width = Tamano
+		CCantidad.Width = Tamano
+		CPrecio.Width = Tamano
+
+	End Sub
+	Private Sub Nah()
+		txtIngresarCodigo.AutoCompleteCustomSource.Add("Arroz")
+		'txtIngresarCodigo.AutoCompleteSource = "Papaya"
+		'txtIngresarCodigo.AutoCompleteSource = "Leche dos pinos"
 	End Sub
 
 	Private Sub SurroundingSub()
 		tblProductos.Rows.Add("Peras", "101", "508.3", "5")
 		tblProductos.Rows.Add("Arroz tio pelon", "102", "1980", "5")
 	End Sub
-	''
-	'Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-	'	If tblProductos.CellBorderStyle = 4 Then
-	'		tblProductos.CellBorderStyle = DataGridViewCellBorderStyle.Raised
-	'		Label1.Text = DataGridViewCellBorderStyle.Raised.ToString
-	'	ElseIf tblProductos.CellBorderStyle = 2 Then
-	'		tblProductos.CellBorderStyle = DataGridViewCellBorderStyle.RaisedHorizontal
-	'		Label1.Text = DataGridViewCellBorderStyle.RaisedHorizontal.ToString
-	'	ElseIf tblProductos.CellBorderStyle = 9 Then
-	'		tblProductos.CellBorderStyle = DataGridViewCellBorderStyle.RaisedVertical
-	'		Label1.Text = DataGridViewCellBorderStyle.RaisedVertical.ToString
-	'	ElseIf tblProductos.CellBorderStyle = 6 Then
-	'		tblProductos.CellBorderStyle = DataGridViewCellBorderStyle.Single
-	'		Label1.Text = DataGridViewCellBorderStyle.Single.ToString
-	'	ElseIf tblProductos.CellBorderStyle = 1 Then
-	'		tblProductos.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal
-	'		Label1.Text = DataGridViewCellBorderStyle.SingleHorizontal.ToString
-	'	ElseIf tblProductos.CellBorderStyle = 8 Then
-	'		tblProductos.CellBorderStyle = DataGridViewCellBorderStyle.SingleVertical
-	'		Label1.Text = DataGridViewCellBorderStyle.SingleVertical.ToString
-	'	ElseIf tblProductos.CellBorderStyle = 5 Then
-	'		tblProductos.CellBorderStyle = DataGridViewCellBorderStyle.Sunken
-	'		Label1.Text = DataGridViewCellBorderStyle.Sunken.ToString
-	'	ElseIf tblProductos.CellBorderStyle = 3 Then
-	'		tblProductos.CellBorderStyle = DataGridViewCellBorderStyle.SunkenHorizontal
-	'		Label1.Text = DataGridViewCellBorderStyle.SunkenHorizontal.ToString
-	'	ElseIf tblProductos.CellBorderStyle = 10 Then
-	'		tblProductos.CellBorderStyle = DataGridViewCellBorderStyle.SunkenVertical
-	'		Label1.Text = DataGridViewCellBorderStyle.SunkenVertical.ToString
-	'	ElseIf tblProductos.CellBorderStyle = 7 Then
-	'		tblProductos.CellBorderStyle = DataGridViewCellBorderStyle.None
-	'		Label1.Text = DataGridViewCellBorderStyle.None.ToString
-	'	End If
-	'End Sub
 
-
-	Private Sub MenuDesplegable_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuDesplegable.ItemClicked
+	Private Sub CmsOpciones_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles cmsOpciones.ItemClicked
 		Try
 			Select Case e.ClickedItem.Name
 				Case "EliminarArticulosDeLaCompraToolStripMenuItem"
@@ -65,4 +43,52 @@ Public Class frmFacturaCliente
 
 		End Try
 	End Sub
+
+	Private Sub TxtIngresarCodigo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtIngresarCodigo.KeyPress
+
+	End Sub
+
+	Private Sub TxtCantidad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCantidad.KeyPress
+		e.Handled = Not VerificarContenidoPuntos(txtCantidad.Text, e) AndAlso Not IsNumeric(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not e.KeyChar.Equals(",")
+	End Sub
+
+	Private Sub TxtIngresarCodigo_KeyDown(sender As Object, e As KeyEventArgs) Handles txtIngresarCodigo.KeyDown
+		If e.KeyData = Keys.Enter Then
+			txtCantidad.Focus()
+		End If
+	End Sub
+
+	Private Sub TxtCantidad_KeyDown(sender As Object, e As KeyEventArgs) Handles txtCantidad.KeyDown
+		If e.KeyData = Keys.Enter Then
+			txtIngresarCodigo.Focus()
+		End If
+	End Sub
+
+	Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+		Dim Inventario As New frmInventarioExistente
+		Inventario.Show()
+	End Sub
+
+	Private Function VerificarContenidoPuntos(ByVal Cadena As String, e As KeyPressEventArgs) As Boolean
+		Try
+			If Cadena = Nothing AndAlso Char.IsPunctuation(e.KeyChar) Then
+				Return False
+			Else
+				Dim Verificacion As Double = Cadena + e.KeyChar + "1"
+			End If
+		Catch ex As Exception
+			Return False
+		End Try
+		Return True
+	End Function
+
+	Public ReadOnly Property Cantidad As Decimal
+		Get
+			If txtCantidad.Text = Nothing Then
+				Return 1
+			Else
+				Return txtCantidad.Text
+			End If
+		End Get
+	End Property
 End Class
