@@ -23,18 +23,18 @@ Partial Class frmInicioSesion
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.pnlImagen = New System.Windows.Forms.Panel()
+        Me.pibLogo = New System.Windows.Forms.PictureBox()
         Me.pnlControles = New System.Windows.Forms.Panel()
         Me.txtUsuario = New System.Windows.Forms.TextBox()
         Me.btnIngresar = New System.Windows.Forms.Button()
         Me.txtContrasena = New System.Windows.Forms.TextBox()
-        Me.pibLogo = New System.Windows.Forms.PictureBox()
-        Me.lblReporte = New System.Windows.Forms.LinkLabel()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.linUsuario = New Microsoft.VisualBasic.PowerPacks.LineShape()
         Me.linContrasena = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        Me.linUsuario = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        Me.lblReporte = New System.Windows.Forms.LinkLabel()
         Me.pnlImagen.SuspendLayout()
-        Me.pnlControles.SuspendLayout()
         CType(Me.pibLogo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlControles.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnlImagen
@@ -46,6 +46,16 @@ Partial Class frmInicioSesion
         Me.pnlImagen.Name = "pnlImagen"
         Me.pnlImagen.Size = New System.Drawing.Size(334, 150)
         Me.pnlImagen.TabIndex = 9
+        '
+        'pibLogo
+        '
+        Me.pibLogo.Image = Global.Proyecto_Sistema_Bolpa.My.Resources.Resources.Logo_Bolpa
+        Me.pibLogo.Location = New System.Drawing.Point(12, 14)
+        Me.pibLogo.Name = "pibLogo"
+        Me.pibLogo.Size = New System.Drawing.Size(310, 123)
+        Me.pibLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pibLogo.TabIndex = 0
+        Me.pibLogo.TabStop = False
         '
         'pnlControles
         '
@@ -68,7 +78,7 @@ Partial Class frmInicioSesion
         Me.txtUsuario.Location = New System.Drawing.Point(30, 86)
         Me.txtUsuario.Name = "txtUsuario"
         Me.txtUsuario.Size = New System.Drawing.Size(250, 16)
-        Me.txtUsuario.TabIndex = 1
+        Me.txtUsuario.TabIndex = 7
         Me.txtUsuario.Tag = ""
         Me.txtUsuario.Text = "Usuario"
         '
@@ -95,30 +105,8 @@ Partial Class frmInicioSesion
         Me.txtContrasena.Location = New System.Drawing.Point(30, 166)
         Me.txtContrasena.Name = "txtContrasena"
         Me.txtContrasena.Size = New System.Drawing.Size(250, 16)
-        Me.txtContrasena.TabIndex = 2
+        Me.txtContrasena.TabIndex = 8
         Me.txtContrasena.Text = "Contraseña"
-        '
-        'pibLogo
-        '
-        Me.pibLogo.Image = Global.Proyecto_Sistema_Bolpa.My.Resources.Resources.Logo_Bolpa
-        Me.pibLogo.Location = New System.Drawing.Point(12, 14)
-        Me.pibLogo.Name = "pibLogo"
-        Me.pibLogo.Size = New System.Drawing.Size(310, 123)
-        Me.pibLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pibLogo.TabIndex = 0
-        Me.pibLogo.TabStop = False
-        '
-        'lblReporte
-        '
-        Me.lblReporte.AutoSize = True
-        Me.lblReporte.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblReporte.LinkColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(91, Byte), Integer), CType(CType(91, Byte), Integer))
-        Me.lblReporte.Location = New System.Drawing.Point(12, 582)
-        Me.lblReporte.Name = "lblReporte"
-        Me.lblReporte.Size = New System.Drawing.Size(186, 17)
-        Me.lblReporte.TabIndex = 11
-        Me.lblReporte.TabStop = True
-        Me.lblReporte.Text = "¿Has olvidado tú contraseña?"
         '
         'ShapeContainer1
         '
@@ -129,6 +117,17 @@ Partial Class frmInicioSesion
         Me.ShapeContainer1.Size = New System.Drawing.Size(310, 381)
         Me.ShapeContainer1.TabIndex = 6
         Me.ShapeContainer1.TabStop = False
+        '
+        'linContrasena
+        '
+        Me.linContrasena.BorderColor = System.Drawing.Color.White
+        Me.linContrasena.BorderWidth = 2
+        Me.linContrasena.Enabled = False
+        Me.linContrasena.Name = "linContrasena"
+        Me.linContrasena.X1 = 30
+        Me.linContrasena.X2 = 280
+        Me.linContrasena.Y1 = 184
+        Me.linContrasena.Y2 = 184
         '
         'linUsuario
         '
@@ -141,16 +140,17 @@ Partial Class frmInicioSesion
         Me.linUsuario.Y1 = 103
         Me.linUsuario.Y2 = 103
         '
-        'linContrasena
+        'lblReporte
         '
-        Me.linContrasena.BorderColor = System.Drawing.Color.White
-        Me.linContrasena.BorderWidth = 2
-        Me.linContrasena.Enabled = False
-        Me.linContrasena.Name = "linContrasena"
-        Me.linContrasena.X1 = 30
-        Me.linContrasena.X2 = 280
-        Me.linContrasena.Y1 = 184
-        Me.linContrasena.Y2 = 184
+        Me.lblReporte.AutoSize = True
+        Me.lblReporte.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblReporte.LinkColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(91, Byte), Integer), CType(CType(91, Byte), Integer))
+        Me.lblReporte.Location = New System.Drawing.Point(12, 582)
+        Me.lblReporte.Name = "lblReporte"
+        Me.lblReporte.Size = New System.Drawing.Size(186, 17)
+        Me.lblReporte.TabIndex = 11
+        Me.lblReporte.TabStop = True
+        Me.lblReporte.Text = "¿Has olvidado tú contraseña?"
         '
         'frmInicioSesion
         '
@@ -167,9 +167,9 @@ Partial Class frmInicioSesion
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmInicioSesion"
         Me.pnlImagen.ResumeLayout(False)
+        CType(Me.pibLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlControles.ResumeLayout(False)
         Me.pnlControles.PerformLayout()
-        CType(Me.pibLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

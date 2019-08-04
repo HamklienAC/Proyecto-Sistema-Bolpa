@@ -137,6 +137,9 @@
     <EmbeddedResource Include="Formularios\frmInicioSesion.resx">
       <DependentUpon>frmInicioSesion.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmMenuPrincipal.resx">
+      <DependentUpon>frmMenuPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
     </EmbeddedResource>

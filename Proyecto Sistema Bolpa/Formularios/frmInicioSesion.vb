@@ -29,9 +29,8 @@
     End Sub
 
     Private Sub BtnIngresar_Click(sender As Object, e As EventArgs) Handles btnIngresar.Click
-        Dim menu As New frmMenuPrincipal
-        Me.Visible = False
-        menu.Show()
+        frmMenuPrincipal.Show()
+        Me.Close()
     End Sub
 
 
