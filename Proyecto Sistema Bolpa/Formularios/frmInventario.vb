@@ -7,7 +7,9 @@
 		' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 	End Sub
 
+	Private Sub CargarTablas()
 
+	End Sub
 
 	Public ReadOnly Property Proveedor() As String
 		Get
@@ -19,12 +21,13 @@
 			Return txtArticulo.Text
 		End Get
 	End Property
-	Public ReadOnly Property Unidades() As String
+	Public ReadOnly Property Unidades() As Decimal
 		Get
-			Return txtUnidades.Text
+			Dim numero As Integer
+			Return If(Integer.TryParse(txtUnidades.Text, numero), txtUnidades.Text + ",0", txtUnidades.Text)
 		End Get
 	End Property
-	Public ReadOnly Property Monto() As String
+	Public ReadOnly Property Monto() As Double
 		Get
 			Return txtMonto.Text
 		End Get
@@ -57,6 +60,24 @@
 	End Property
 
 	Private Sub BtnCrud_Click(sender As Object, e As EventArgs) Handles btnCrud.Click
+		MsgBox(Unidades)
+	End Sub
+
+	Private Sub CmsOpciones_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles cmsOpciones.ItemClicked
+		Select Case e.ClickedItem.Name
+			Case "ActualizarLoteToolStripMenuItem"
+				MsgBox("Actulizar")
+			Case "EliminarLoteToolStripMenuItem"
+				MsgBox("Eliminar")
+		End Select
+	End Sub
+
+	Private Sub TblProveedor_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles tblProveedor.CellMouseDoubleClick
 
 	End Sub
+
+	Private Sub TblArticulo_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles tblArticulo.CellMouseDoubleClick
+
+	End Sub
+
 End Class

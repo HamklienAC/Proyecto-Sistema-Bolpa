@@ -82,16 +82,22 @@
 	''' <param name="e"></param>
 	''' <param name="Valor"></param>
 	Private Sub VerificarContenidosTXTPP(e As KeyPressEventArgs, ByVal Valor As String)
-		e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar) AndAlso Not VerificarContenidoPuntos(Valor)
+		e.Handled = Not VerificarContenidoPuntos(Valor, e) AndAlso Not IsNumeric(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not e.KeyChar.Equals(",")
+
+		'e.Handled = Not VerificarContenidoPuntos(Valor) AndAlso Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
 	End Sub
 	''' <summary>
 	''' Método se encarga se verificar si la cifra tiene un punto
 	''' </summary>
 	''' <param name="Cadena"></param>
 	''' <returns></returns>
-	Private Function VerificarContenidoPuntos(ByVal Cadena As String) As Boolean
+	Private Function VerificarContenidoPuntos(ByVal Cadena As String, e As KeyPressEventArgs) As Boolean
 		Try
-			Dim Verificacion As Double = Cadena
+			If Cadena = Nothing AndAlso Char.IsPunctuation(e.KeyChar) Then
+				Return False
+			Else
+				Dim Verificacion As Double = Cadena + e.KeyChar + "1"
+			End If
 		Catch ex As Exception
 			Return False
 		End Try
@@ -121,11 +127,7 @@
 	''' </summary>
 	''' <param name="e"></param>
 	Private Sub VerificarEntradadas(e As KeyPressEventArgs)
-		If Not Char.IsPunctuation(e.KeyChar) OrElse Char.IsSeparator(e.KeyChar) Then
-			e.Handled = False
-		Else
-			e.Handled = True
-		End If
+		e.Handled = Char.IsPunctuation(e.KeyChar) AndAlso Not Char.IsSeparator(e.KeyChar)
 	End Sub
 
 	Private Sub CmsOpciones_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles cmsOpciones.ItemClicked
