@@ -55,8 +55,11 @@ Partial Class frmArticulo
 		Me.cmsOpciones = New System.Windows.Forms.ContextMenuStrip(Me.components)
 		Me.ActualizarArtículoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.EliminarArtículoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.pbImagen = New System.Windows.Forms.PictureBox()
+		Me.btnImagen = New System.Windows.Forms.Button()
 		CType(Me.tblArticulos, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.cmsOpciones.SuspendLayout()
+		CType(Me.pbImagen, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'txtNombre
@@ -107,7 +110,7 @@ Partial Class frmArticulo
 		'txtNuevaSubfamilia
 		'
 		Me.txtNuevaSubfamilia.Enabled = False
-		Me.txtNuevaSubfamilia.Location = New System.Drawing.Point(122, 299)
+		Me.txtNuevaSubfamilia.Location = New System.Drawing.Point(122, 304)
 		Me.txtNuevaSubfamilia.Name = "txtNuevaSubfamilia"
 		Me.txtNuevaSubfamilia.Size = New System.Drawing.Size(200, 20)
 		Me.txtNuevaSubfamilia.TabIndex = 11
@@ -115,7 +118,7 @@ Partial Class frmArticulo
 		'txtNuevaFamilia
 		'
 		Me.txtNuevaFamilia.Enabled = False
-		Me.txtNuevaFamilia.Location = New System.Drawing.Point(122, 245)
+		Me.txtNuevaFamilia.Location = New System.Drawing.Point(122, 250)
 		Me.txtNuevaFamilia.Name = "txtNuevaFamilia"
 		Me.txtNuevaFamilia.Size = New System.Drawing.Size(200, 20)
 		Me.txtNuevaFamilia.TabIndex = 8
@@ -143,7 +146,7 @@ Partial Class frmArticulo
 		'cbAgregarFam
 		'
 		Me.cbAgregarFam.AutoSize = True
-		Me.cbAgregarFam.Location = New System.Drawing.Point(122, 222)
+		Me.cbAgregarFam.Location = New System.Drawing.Point(122, 227)
 		Me.cbAgregarFam.Name = "cbAgregarFam"
 		Me.cbAgregarFam.Size = New System.Drawing.Size(152, 17)
 		Me.cbAgregarFam.TabIndex = 9
@@ -153,7 +156,7 @@ Partial Class frmArticulo
 		'cbAgregarSub
 		'
 		Me.cbAgregarSub.AutoSize = True
-		Me.cbAgregarSub.Location = New System.Drawing.Point(122, 276)
+		Me.cbAgregarSub.Location = New System.Drawing.Point(122, 281)
 		Me.cbAgregarSub.Name = "cbAgregarSub"
 		Me.cbAgregarSub.Size = New System.Drawing.Size(166, 17)
 		Me.cbAgregarSub.TabIndex = 10
@@ -162,7 +165,7 @@ Partial Class frmArticulo
 		'
 		'btnAgregarProducto
 		'
-		Me.btnAgregarProducto.Location = New System.Drawing.Point(122, 325)
+		Me.btnAgregarProducto.Location = New System.Drawing.Point(122, 330)
 		Me.btnAgregarProducto.Name = "btnAgregarProducto"
 		Me.btnAgregarProducto.Size = New System.Drawing.Size(200, 39)
 		Me.btnAgregarProducto.TabIndex = 12
@@ -181,7 +184,7 @@ Partial Class frmArticulo
 		'lblIdprovedor
 		'
 		Me.lblIdprovedor.AutoSize = True
-		Me.lblIdprovedor.Location = New System.Drawing.Point(10, 45)
+		Me.lblIdprovedor.Location = New System.Drawing.Point(13, 45)
 		Me.lblIdprovedor.Name = "lblIdprovedor"
 		Me.lblIdprovedor.Size = New System.Drawing.Size(106, 13)
 		Me.lblIdprovedor.TabIndex = 16
@@ -217,7 +220,7 @@ Partial Class frmArticulo
 		'lblPrecio
 		'
 		Me.lblPrecio.AutoSize = True
-		Me.lblPrecio.Location = New System.Drawing.Point(13, 125)
+		Me.lblPrecio.Location = New System.Drawing.Point(13, 123)
 		Me.lblPrecio.Name = "lblPrecio"
 		Me.lblPrecio.Size = New System.Drawing.Size(93, 13)
 		Me.lblPrecio.TabIndex = 21
@@ -243,13 +246,15 @@ Partial Class frmArticulo
 		'
 		'tblArticulos
 		'
+		Me.tblArticulos.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 		Me.tblArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.tblArticulos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.tblNombre, Me.tblcodigoAr, Me.tblpeso, Me.tblPrecio, Me.tblFamilia, Me.tblSubFamilia, Me.tblDescripcion})
 		Me.tblArticulos.ContextMenuStrip = Me.cmsOpciones
-		Me.tblArticulos.Location = New System.Drawing.Point(328, 12)
+		Me.tblArticulos.Location = New System.Drawing.Point(534, 12)
 		Me.tblArticulos.Name = "tblArticulos"
 		Me.tblArticulos.ReadOnly = True
-		Me.tblArticulos.Size = New System.Drawing.Size(739, 377)
+		Me.tblArticulos.Size = New System.Drawing.Size(533, 377)
 		Me.tblArticulos.TabIndex = 13
 		'
 		'tblNombre
@@ -312,11 +317,31 @@ Partial Class frmArticulo
 		Me.EliminarArtículoToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
 		Me.EliminarArtículoToolStripMenuItem.Text = "Eliminar artículo"
 		'
+		'pbImagen
+		'
+		Me.pbImagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+		Me.pbImagen.Location = New System.Drawing.Point(328, 11)
+		Me.pbImagen.Name = "pbImagen"
+		Me.pbImagen.Size = New System.Drawing.Size(200, 125)
+		Me.pbImagen.TabIndex = 24
+		Me.pbImagen.TabStop = False
+		'
+		'btnImagen
+		'
+		Me.btnImagen.Location = New System.Drawing.Point(328, 142)
+		Me.btnImagen.Name = "btnImagen"
+		Me.btnImagen.Size = New System.Drawing.Size(200, 22)
+		Me.btnImagen.TabIndex = 26
+		Me.btnImagen.Text = "Seleccionar imagen"
+		Me.btnImagen.UseVisualStyleBackColor = True
+		'
 		'frmArticulo
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.ClientSize = New System.Drawing.Size(1079, 559)
+		Me.ClientSize = New System.Drawing.Size(1079, 537)
+		Me.Controls.Add(Me.btnImagen)
+		Me.Controls.Add(Me.pbImagen)
 		Me.Controls.Add(Me.tblArticulos)
 		Me.Controls.Add(Me.lblSubfamilia)
 		Me.Controls.Add(Me.lblFamilia)
@@ -344,6 +369,7 @@ Partial Class frmArticulo
 		Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
 		CType(Me.tblArticulos, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.cmsOpciones.ResumeLayout(False)
+		CType(Me.pbImagen, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -381,4 +407,6 @@ Partial Class frmArticulo
 	Friend WithEvents tblFamilia As DataGridViewTextBoxColumn
 	Friend WithEvents tblSubFamilia As DataGridViewTextBoxColumn
 	Friend WithEvents tblDescripcion As DataGridViewTextBoxColumn
+	Friend WithEvents pbImagen As PictureBox
+	Friend WithEvents btnImagen As Button
 End Class

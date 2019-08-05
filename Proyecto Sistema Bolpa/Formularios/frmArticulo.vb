@@ -168,8 +168,18 @@
 		Catch ex As Exception
 
 		End Try
-
 	End Sub
+
+	Private Sub BtnImagen_Click(sender As Object, e As EventArgs) Handles btnImagen.Click
+		Dim dlg As New OpenFileDialog With {
+			.Filter = "Imagenes JPG|*.jpg|Imagenes PNG|*.png|Imagenes GIF|*.gif"
+		}
+		If dlg.ShowDialog = Windows.Forms.DialogResult.OK Then
+			pbImagen.SizeMode = PictureBoxSizeMode.StretchImage
+			pbImagen.Image = Image.FromFile(dlg.FileName)
+		End If
+	End Sub
+
 
 	Private Sub RellenarEspacios(ByVal fila As String)
 		'controlador.CargarDatos(fila, DatosObjeto)

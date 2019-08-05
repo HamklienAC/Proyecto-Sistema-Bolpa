@@ -108,10 +108,10 @@
     <Compile Include="Clases\clsProveedor.vb" />
     <Compile Include="Clases\clsUsuario.vb" />
     <Compile Include="Controladores\ControladorArticulo.vb" />
-    <Compile Include="Formularios\FrmActualizarFacturaCliente.Designer.vb">
-      <DependentUpon>FrmActualizarFacturaCliente.vb</DependentUpon>
+    <Compile Include="Formularios\frmInventarioExistente.Designer.vb">
+      <DependentUpon>frmInventarioExistente.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmActualizarFacturaCliente.vb">
+    <Compile Include="Formularios\frmInventarioExistente.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\frmInventario.Designer.vb">
@@ -198,8 +198,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Formularios\FrmActualizarFacturaCliente.resx">
-      <DependentUpon>FrmActualizarFacturaCliente.vb</DependentUpon>
+    <EmbeddedResource Include="Formularios\frmInventarioExistente.resx">
+      <DependentUpon>frmInventarioExistente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmInventario.resx">
       <DependentUpon>frmInventario.vb</DependentUpon>
