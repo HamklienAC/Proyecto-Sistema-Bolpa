@@ -245,6 +245,7 @@ Partial Class frmInventario
 		'
 		Me.codigo.HeaderText = "Codigo"
 		Me.codigo.Name = "codigo"
+		Me.codigo.ReadOnly = True
 		'
 		'cmsOpciones
 		'

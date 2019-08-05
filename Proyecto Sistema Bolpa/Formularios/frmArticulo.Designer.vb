@@ -181,7 +181,7 @@ Partial Class frmArticulo
 		'lblIdprovedor
 		'
 		Me.lblIdprovedor.AutoSize = True
-		Me.lblIdprovedor.Location = New System.Drawing.Point(13, 41)
+		Me.lblIdprovedor.Location = New System.Drawing.Point(10, 45)
 		Me.lblIdprovedor.Name = "lblIdprovedor"
 		Me.lblIdprovedor.Size = New System.Drawing.Size(106, 13)
 		Me.lblIdprovedor.TabIndex = 16
