@@ -99,8 +99,10 @@
     <Compile Include="Formularios\CRUDFacturaCliente\FrmModificarFacturaCliente.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmMain.Designer.vb">
-      <DependentUpon>frmMain.vb</DependentUpon>
+    <Compile Include="Formularios\frmPrueba.Designer.vb">
+      <DependentUpon>frmPrueba.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmPrueba.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -185,6 +187,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Formularios\CRUDFacturaCliente\FrmModificarFacturaCliente.resx">
       <DependentUpon>FrmModificarFacturaCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmPrueba.resx">
+      <DependentUpon>frmPrueba.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

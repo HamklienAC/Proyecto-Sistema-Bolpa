@@ -5,6 +5,8 @@
     Private _descuento As Integer
 
     Public Sub New()
+        MyBase.New()
+        Me._facturas = New List(Of clsFactura)
     End Sub
 
     Public Sub New(cedula As String, nombre As String, fechaNac As Date, nacionalidad As String, telefono As String, direccion As String, email As String, fechaIngreso As Date)

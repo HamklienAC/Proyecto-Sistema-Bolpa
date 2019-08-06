@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmMain
+Partial Class frmPrueba
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,42 +22,51 @@ Partial Class frmMain
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.lblEdad = New System.Windows.Forms.Label()
+        Me.txt = New System.Windows.Forms.TextBox()
         Me.btn = New System.Windows.Forms.Button()
+        Me.lbl = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'lblEdad
+        'txt
         '
-        Me.lblEdad.AutoSize = True
-        Me.lblEdad.Location = New System.Drawing.Point(12, 9)
-        Me.lblEdad.Name = "lblEdad"
-        Me.lblEdad.Size = New System.Drawing.Size(66, 13)
-        Me.lblEdad.TabIndex = 0
-        Me.lblEdad.Text = "La edad es: "
+        Me.txt.Location = New System.Drawing.Point(12, 12)
+        Me.txt.Name = "txt"
+        Me.txt.Size = New System.Drawing.Size(329, 20)
+        Me.txt.TabIndex = 0
         '
         'btn
         '
-        Me.btn.Location = New System.Drawing.Point(35, 141)
+        Me.btn.Location = New System.Drawing.Point(348, 8)
         Me.btn.Name = "btn"
-        Me.btn.Size = New System.Drawing.Size(75, 23)
+        Me.btn.Size = New System.Drawing.Size(178, 23)
         Me.btn.TabIndex = 1
         Me.btn.Text = "Button1"
         Me.btn.UseVisualStyleBackColor = True
         '
-        'frmMain
+        'lbl
+        '
+        Me.lbl.AutoSize = True
+        Me.lbl.Location = New System.Drawing.Point(22, 41)
+        Me.lbl.Name = "lbl"
+        Me.lbl.Size = New System.Drawing.Size(0, 13)
+        Me.lbl.TabIndex = 2
+        '
+        'frmPrueba
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.lbl)
         Me.Controls.Add(Me.btn)
-        Me.Controls.Add(Me.lblEdad)
-        Me.Name = "frmMain"
-        Me.Text = "Home"
+        Me.Controls.Add(Me.txt)
+        Me.Name = "frmPrueba"
+        Me.Text = "frmPrueba"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents lblEdad As Label
+    Friend WithEvents txt As TextBox
     Friend WithEvents btn As Button
+    Friend WithEvents lbl As Label
 End Class

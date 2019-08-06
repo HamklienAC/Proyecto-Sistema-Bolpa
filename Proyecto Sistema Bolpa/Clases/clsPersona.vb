@@ -1,4 +1,6 @@
-﻿Public MustInherit Class ClsPersona
+﻿Imports System.Text.RegularExpressions
+
+Public MustInherit Class ClsPersona
     Private _cedula As String
     Private _nombre As String
     Private _primerApe As String
@@ -64,7 +66,7 @@
         Me.FechaIngreso = fechaIngreso
     End Sub
 
-    Protected Property Cedula As String
+    Public Property Cedula As String
         Get
             Return _cedula
         End Get
@@ -77,7 +79,7 @@
         End Set
     End Property
 
-    Protected Property Nombre As String
+    Public Property Nombre As String
         Get
             Return _nombre
         End Get
@@ -90,7 +92,7 @@
         End Set
     End Property
 
-    Protected Property PrimerApe As String
+    Public Property PrimerApe As String
         Get
             Return _primerApe
         End Get
@@ -104,7 +106,7 @@
         End Set
     End Property
 
-    Protected Property SegundoApe As String
+    Public Property SegundoApe As String
         Get
             Return _segundoApe
         End Get
@@ -128,7 +130,7 @@
         End Get
     End Property
 
-    Protected Property FechaNac As Date
+    Public Property FechaNac As Date
         Get
             Return _fechaNac
         End Get
@@ -137,7 +139,7 @@
         End Set
     End Property
 
-    Protected Property Nacionalidad As String
+    Public Property Nacionalidad As String
         Get
             Return _nacionalidad
         End Get
@@ -151,7 +153,7 @@
         End Set
     End Property
 
-    Protected Property Telefono As String
+    Public Property Telefono As String
         Get
             Return _telefono
         End Get
@@ -165,7 +167,7 @@
         End Set
     End Property
 
-    Protected Property Direccion As String
+    Public Property Direccion As String
         Get
             Return _direccion
         End Get
@@ -179,7 +181,7 @@
         End Set
     End Property
 
-    Protected Property Email As String
+    Public Property Email As String
         Get
             Return _email
         End Get
@@ -193,7 +195,7 @@
         End Set
     End Property
 
-    Protected Property FechaIngreso As Date
+    Public Property FechaIngreso As Date
         Get
             Return _fechaIngreso
         End Get
@@ -215,22 +217,8 @@
                 "Nacionalidad: " + Me.Nacionalidad + " Telefono: " + Me.Telefono + " Direccion: " + Me.Direccion + " E-Mail: " + Me.Email
     End Function
 
-    Private Function ValidarEMail(ByVal EMail As String) As Boolean
-        If Not EMail.Contains("@") Then
-            Return False
-        End If
-
-        Dim SeccionesEMail As String() = EMail.Split(CChar("@"))
-
-        If SeccionesEMail.Length <> 2 Then
-            Return False
-        End If
-
-        If Not SeccionesEMail(1).Contains(".") Or Not SeccionesEMail(1).Length >= 3 Then
-            Return False
-        End If
-
-        Return True
-
+    Public Function ValidarEmail(email As String) As Boolean
+        Return Regex.IsMatch(email, "^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$")
     End Function
+
 End Class
