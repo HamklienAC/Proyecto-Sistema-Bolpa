@@ -118,7 +118,7 @@
 		VerificarEntradadas(e)
 	End Sub
 	Private Sub TxtCodigo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCodigo.KeyPress
-		VerificarEntradadas(e)
+		e.Handled = Not IsNumeric(e.KeyChar) AndAlso Not Char.IsSeparator(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar)
 	End Sub
 	Private Sub TxtNuevaFamilia_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNuevaFamilia.KeyPress
 		VerificarEntradadas(e)
@@ -126,7 +126,7 @@
 	Private Sub TxtNuevaSubfamilia_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNuevaSubfamilia.KeyPress
 		VerificarEntradadas(e)
 	End Sub
-	Private Sub TxtDescripcion_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDescripcion.KeyPress
+	Private Sub TxtDescripcion_KeyPress(sender As Object, e As KeyPressEventArgs)
 		VerificarEntradadas(e)
 	End Sub
 	Private Sub TxtProveedor_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtProveedor.KeyPress
@@ -159,17 +159,20 @@
 	End Sub
 	Private Sub BtnAgregarProducto_Click(sender As Object, e As EventArgs) Handles btnAgregarProducto.Click
 		Try
-			If btnAgregarProducto.Text.Equals("Actualizar artículo") Then
-				controlador.ActualizarArticulo()
-				btnAgregarProducto.Text = " Agregar artículo"
+			If VerficarDatos() Then
+				If btnAgregarProducto.Text.Equals("Actualizar artículo") Then
+					controlador.ActualizarArticulo()
+					btnAgregarProducto.Text = " Agregar artículo"
+				Else
+					controlador.AgregarArticulo(DatosArray)
+				End If
 			Else
-				controlador.AgregarArticulo(DatosArray)
+				MsgBox("Los datos ingresados son incorrectos", MsgBoxStyle.Critical)
 			End If
 		Catch ex As Exception
-
+			MsgBox(ex.Message)
 		End Try
 	End Sub
-
 	Private Sub BtnImagen_Click(sender As Object, e As EventArgs) Handles btnImagen.Click
 		Dim dlg As New OpenFileDialog With {
 			.Filter = "Imagenes JPG|*.jpg|Imagenes PNG|*.png|Imagenes GIF|*.gif"
@@ -180,6 +183,34 @@
 		End If
 	End Sub
 
+	Private Function VerficarDatos() As Boolean
+		Dim incorrectos As Integer = 0
+		If Nombre = Nothing Then
+			incorrectos = +1
+		End If
+		If CodigoProveedor = Nothing Then
+			incorrectos = +1
+		End If
+		If CodigoArticulo = Nothing Then
+			incorrectos = +1
+		End If
+		If Descripcion = Nothing Then
+			incorrectos = +1
+		End If
+		If Familia = Nothing Then
+			incorrectos = +1
+		End If
+		If Subfamilia = Nothing Then
+			incorrectos = +1
+		End If
+		If Peso = 0 Then
+			incorrectos = +1
+		End If
+		If Precio = 0 Then
+			incorrectos = +1
+		End If
+		Return incorrectos = 0
+	End Function
 
 	Private Sub RellenarEspacios(ByVal fila As String)
 		'controlador.CargarDatos(fila, DatosObjeto)
@@ -202,35 +233,27 @@
 	End Property
 	Public ReadOnly Property Peso() As Double
 		Get
-			Return txtPeso.Text
+			Return If(txtPeso.Text = Nothing, 0, CDbl(txtPeso.Text))
 		End Get
 	End Property
 	Public ReadOnly Property Precio() As Double
 		Get
-			Return txtPrecio.Text
+			Return If(txtPrecio.Text = Nothing, 0, CDbl(txtPrecio.Text))
 		End Get
 	End Property
 	Public ReadOnly Property Familia() As String
 		Get
-			If cbAgregarFam.Enabled Then
-				Return cbAgregarFam.Text
-			Else
-				Return cbFamilia.SelectedItem.ToString
-			End If
+			Return If(cbAgregarFam.Enabled, txtNuevaFamilia.Text, cbFamilia.Text)
 		End Get
 	End Property
 	Public ReadOnly Property Subfamilia() As String
 		Get
-			If cbAgregarSub.Enabled Then
-				Return cbAgregarSub.Text
-			Else
-				Return cbSubfamilia.SelectedItem.ToString
-			End If
+			Return If(cbAgregarFam.Enabled Or cbAgregarSub.Enabled, txtNuevaSubfamilia.Text, cbSubfamilia.Text)
 		End Get
 	End Property
 	Public ReadOnly Property Descripcion() As String
 		Get
-			Return txtDescripcion.Text
+			Return cbDescripcion.Text
 		End Get
 	End Property
 	''' <summary>
@@ -244,11 +267,11 @@
 	End Property
 	''' <summary>
 	''' Devuelve los los objetos en los cuales se digita la informacion
-	''' </summary>
+	''' </summary>cb
 	''' <returns></returns>
 	Public ReadOnly Property DatosObjeto() As Array
 		Get
-			Return {txtNombre, txtCodigo, txtPeso, txtPrecio, cbFamilia, cbSubfamilia, txtDescripcion}
+			Return {txtNombre, txtCodigo, txtPeso, txtPrecio, cbFamilia, cbSubfamilia, cbDescripcion}
 		End Get
 	End Property
 

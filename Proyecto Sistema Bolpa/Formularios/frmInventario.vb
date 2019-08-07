@@ -18,7 +18,7 @@
 	End Sub
 
 	Private Sub BtnCrud_Click(sender As Object, e As EventArgs) Handles btnCrud.Click
-		MsgBox(Unidades)
+
 	End Sub
 
 	Private Sub CmsOpciones_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles cmsOpciones.ItemClicked

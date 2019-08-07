@@ -26,7 +26,6 @@ Partial Class frmArticulo
 		Me.txtNombre = New System.Windows.Forms.TextBox()
 		Me.txtProveedor = New System.Windows.Forms.TextBox()
 		Me.txtCodigo = New System.Windows.Forms.TextBox()
-		Me.txtDescripcion = New System.Windows.Forms.TextBox()
 		Me.txtPeso = New System.Windows.Forms.TextBox()
 		Me.txtPrecio = New System.Windows.Forms.TextBox()
 		Me.txtNuevaSubfamilia = New System.Windows.Forms.TextBox()
@@ -57,6 +56,7 @@ Partial Class frmArticulo
 		Me.EliminarArtículoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.pbImagen = New System.Windows.Forms.PictureBox()
 		Me.btnImagen = New System.Windows.Forms.Button()
+		Me.cbDescripcion = New System.Windows.Forms.ComboBox()
 		CType(Me.tblArticulos, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.cmsOpciones.SuspendLayout()
 		CType(Me.pbImagen, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -64,6 +64,7 @@ Partial Class frmArticulo
 		'
 		'txtNombre
 		'
+		Me.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
 		Me.txtNombre.Location = New System.Drawing.Point(122, 12)
 		Me.txtNombre.Name = "txtNombre"
 		Me.txtNombre.Size = New System.Drawing.Size(200, 20)
@@ -85,13 +86,6 @@ Partial Class frmArticulo
 		Me.txtCodigo.Name = "txtCodigo"
 		Me.txtCodigo.Size = New System.Drawing.Size(200, 20)
 		Me.txtCodigo.TabIndex = 2
-		'
-		'txtDescripcion
-		'
-		Me.txtDescripcion.Location = New System.Drawing.Point(122, 196)
-		Me.txtDescripcion.Name = "txtDescripcion"
-		Me.txtDescripcion.Size = New System.Drawing.Size(200, 20)
-		Me.txtDescripcion.TabIndex = 8
 		'
 		'txtPeso
 		'
@@ -335,11 +329,23 @@ Partial Class frmArticulo
 		Me.btnImagen.Text = "Seleccionar imagen"
 		Me.btnImagen.UseVisualStyleBackColor = True
 		'
+		'cbDescripcion
+		'
+		Me.cbDescripcion.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+		Me.cbDescripcion.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+		Me.cbDescripcion.FormattingEnabled = True
+		Me.cbDescripcion.Items.AddRange(New Object() {"Kilo", "Unidad"})
+		Me.cbDescripcion.Location = New System.Drawing.Point(122, 196)
+		Me.cbDescripcion.Name = "cbDescripcion"
+		Me.cbDescripcion.Size = New System.Drawing.Size(200, 21)
+		Me.cbDescripcion.TabIndex = 27
+		'
 		'frmArticulo
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(1079, 537)
+		Me.Controls.Add(Me.cbDescripcion)
 		Me.Controls.Add(Me.btnImagen)
 		Me.Controls.Add(Me.pbImagen)
 		Me.Controls.Add(Me.tblArticulos)
@@ -360,10 +366,10 @@ Partial Class frmArticulo
 		Me.Controls.Add(Me.txtNuevaSubfamilia)
 		Me.Controls.Add(Me.txtPrecio)
 		Me.Controls.Add(Me.txtPeso)
-		Me.Controls.Add(Me.txtDescripcion)
 		Me.Controls.Add(Me.txtCodigo)
 		Me.Controls.Add(Me.txtProveedor)
 		Me.Controls.Add(Me.txtNombre)
+		Me.Cursor = System.Windows.Forms.Cursors.Default
 		Me.Name = "frmArticulo"
 		Me.Text = "FrmAgregarArticulo"
 		Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -378,7 +384,6 @@ Partial Class frmArticulo
 	Friend WithEvents txtNombre As TextBox
 	Friend WithEvents txtProveedor As TextBox
 	Friend WithEvents txtCodigo As TextBox
-	Friend WithEvents txtDescripcion As TextBox
 	Friend WithEvents txtPeso As TextBox
 	Friend WithEvents txtPrecio As TextBox
 	Friend WithEvents txtNuevaSubfamilia As TextBox
@@ -409,4 +414,5 @@ Partial Class frmArticulo
 	Friend WithEvents tblDescripcion As DataGridViewTextBoxColumn
 	Friend WithEvents pbImagen As PictureBox
 	Friend WithEvents btnImagen As Button
+	Friend WithEvents cbDescripcion As ComboBox
 End Class

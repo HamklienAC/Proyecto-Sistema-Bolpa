@@ -23,12 +23,16 @@ Partial Class frmFacturaCliente
 	<System.Diagnostics.DebuggerStepThrough()>
 	Private Sub InitializeComponent()
 		Me.components = New System.ComponentModel.Container()
-		Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-		Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-		Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-		Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
 		Me.txtIngresarCodigo = New System.Windows.Forms.TextBox()
 		Me.tblProductos = New System.Windows.Forms.DataGridView()
+		Me.CProducto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+		Me.CCodigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+		Me.CCantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+		Me.CPrecio = New System.Windows.Forms.DataGridViewTextBoxColumn()
 		Me.cmsOpciones = New System.Windows.Forms.ContextMenuStrip(Me.components)
 		Me.EliminarArticulosDeLaCompraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.lblSubtotal = New System.Windows.Forms.Label()
@@ -38,10 +42,6 @@ Partial Class frmFacturaCliente
 		Me.lblIngreseProducto = New System.Windows.Forms.Label()
 		Me.lblCantidad = New System.Windows.Forms.Label()
 		Me.txtCantidad = New System.Windows.Forms.TextBox()
-		Me.CProducto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-		Me.CCodigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-		Me.CCantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-		Me.CPrecio = New System.Windows.Forms.DataGridViewTextBoxColumn()
 		CType(Me.tblProductos, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.cmsOpciones.SuspendLayout()
 		Me.SuspendLayout()
@@ -67,6 +67,49 @@ Partial Class frmFacturaCliente
 		Me.tblProductos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
 		Me.tblProductos.Size = New System.Drawing.Size(644, 601)
 		Me.tblProductos.TabIndex = 2
+		'
+		'CProducto
+		'
+		DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+		DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+		DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlLight
+		DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
+		Me.CProducto.DefaultCellStyle = DataGridViewCellStyle1
+		Me.CProducto.HeaderText = "Producto"
+		Me.CProducto.Name = "CProducto"
+		Me.CProducto.ReadOnly = True
+		Me.CProducto.Width = 75
+		'
+		'CCodigo
+		'
+		DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlLight
+		DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
+		Me.CCodigo.DefaultCellStyle = DataGridViewCellStyle2
+		Me.CCodigo.HeaderText = "Codigo"
+		Me.CCodigo.Name = "CCodigo"
+		Me.CCodigo.ReadOnly = True
+		Me.CCodigo.Width = 65
+		'
+		'CCantidad
+		'
+		DataGridViewCellStyle3.Format = "N0"
+		DataGridViewCellStyle3.NullValue = Nothing
+		DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlLight
+		DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+		Me.CCantidad.DefaultCellStyle = DataGridViewCellStyle3
+		Me.CCantidad.HeaderText = "Cantidad"
+		Me.CCantidad.Name = "CCantidad"
+		Me.CCantidad.Width = 74
+		'
+		'CPrecio
+		'
+		DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlLight
+		DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
+		Me.CPrecio.DefaultCellStyle = DataGridViewCellStyle4
+		Me.CPrecio.HeaderText = "Precio"
+		Me.CPrecio.Name = "CPrecio"
+		Me.CPrecio.ReadOnly = True
+		Me.CPrecio.Width = 62
 		'
 		'cmsOpciones
 		'
@@ -140,49 +183,6 @@ Partial Class frmFacturaCliente
 		Me.txtCantidad.Name = "txtCantidad"
 		Me.txtCantidad.Size = New System.Drawing.Size(176, 20)
 		Me.txtCantidad.TabIndex = 13
-		'
-		'CProducto
-		'
-		DataGridViewCellStyle13.BackColor = System.Drawing.Color.White
-		DataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black
-		DataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.ControlLight
-		DataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black
-		Me.CProducto.DefaultCellStyle = DataGridViewCellStyle13
-		Me.CProducto.HeaderText = "Producto"
-		Me.CProducto.Name = "CProducto"
-		Me.CProducto.ReadOnly = True
-		Me.CProducto.Width = 75
-		'
-		'CCodigo
-		'
-		DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.ControlLight
-		DataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black
-		Me.CCodigo.DefaultCellStyle = DataGridViewCellStyle14
-		Me.CCodigo.HeaderText = "Codigo"
-		Me.CCodigo.Name = "CCodigo"
-		Me.CCodigo.ReadOnly = True
-		Me.CCodigo.Width = 65
-		'
-		'CCantidad
-		'
-		DataGridViewCellStyle15.Format = "N0"
-		DataGridViewCellStyle15.NullValue = Nothing
-		DataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.ControlLight
-		DataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black
-		Me.CCantidad.DefaultCellStyle = DataGridViewCellStyle15
-		Me.CCantidad.HeaderText = "Cantidad"
-		Me.CCantidad.Name = "CCantidad"
-		Me.CCantidad.Width = 74
-		'
-		'CPrecio
-		'
-		DataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.ControlLight
-		DataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black
-		Me.CPrecio.DefaultCellStyle = DataGridViewCellStyle16
-		Me.CPrecio.HeaderText = "Precio"
-		Me.CPrecio.Name = "CPrecio"
-		Me.CPrecio.ReadOnly = True
-		Me.CPrecio.Width = 62
 		'
 		'frmFacturaCliente
 		'
