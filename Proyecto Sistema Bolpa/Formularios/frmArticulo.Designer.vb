@@ -24,7 +24,6 @@ Partial Class frmArticulo
 	Private Sub InitializeComponent()
 		Me.components = New System.ComponentModel.Container()
 		Me.txtNombre = New System.Windows.Forms.TextBox()
-		Me.txtProveedor = New System.Windows.Forms.TextBox()
 		Me.txtCodigo = New System.Windows.Forms.TextBox()
 		Me.txtPeso = New System.Windows.Forms.TextBox()
 		Me.txtPrecio = New System.Windows.Forms.TextBox()
@@ -44,22 +43,22 @@ Partial Class frmArticulo
 		Me.lblFamilia = New System.Windows.Forms.Label()
 		Me.lblSubfamilia = New System.Windows.Forms.Label()
 		Me.tblArticulos = New System.Windows.Forms.DataGridView()
-		Me.tblNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-		Me.tblcodigoAr = New System.Windows.Forms.DataGridViewTextBoxColumn()
-		Me.tblpeso = New System.Windows.Forms.DataGridViewTextBoxColumn()
-		Me.tblPrecio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-		Me.tblFamilia = New System.Windows.Forms.DataGridViewTextBoxColumn()
-		Me.tblSubFamilia = New System.Windows.Forms.DataGridViewTextBoxColumn()
-		Me.tblDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
 		Me.cmsOpciones = New System.Windows.Forms.ContextMenuStrip(Me.components)
 		Me.ActualizarArtículoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.EliminarArtículoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.pbImagen = New System.Windows.Forms.PictureBox()
 		Me.btnImagen = New System.Windows.Forms.Button()
 		Me.cbDescripcion = New System.Windows.Forms.ComboBox()
+		Me.EPError = New System.Windows.Forms.ErrorProvider(Me.components)
+		Me.CbProveedor = New System.Windows.Forms.ComboBox()
+		Me.EPErrorFamilia = New System.Windows.Forms.ErrorProvider(Me.components)
+		Me.EPErrorSubfamila = New System.Windows.Forms.ErrorProvider(Me.components)
 		CType(Me.tblArticulos, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.cmsOpciones.SuspendLayout()
 		CType(Me.pbImagen, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.EPError, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.EPErrorFamilia, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.EPErrorSubfamila, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'txtNombre
@@ -70,33 +69,23 @@ Partial Class frmArticulo
 		Me.txtNombre.Size = New System.Drawing.Size(200, 20)
 		Me.txtNombre.TabIndex = 0
 		'
-		'txtProveedor
-		'
-		Me.txtProveedor.AutoCompleteCustomSource.AddRange(New String() {"Cañas ", "Bagaces", "Cavacar"})
-		Me.txtProveedor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-		Me.txtProveedor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
-		Me.txtProveedor.Location = New System.Drawing.Point(122, 38)
-		Me.txtProveedor.Name = "txtProveedor"
-		Me.txtProveedor.Size = New System.Drawing.Size(200, 20)
-		Me.txtProveedor.TabIndex = 1
-		'
 		'txtCodigo
 		'
-		Me.txtCodigo.Location = New System.Drawing.Point(122, 64)
+		Me.txtCodigo.Location = New System.Drawing.Point(122, 65)
 		Me.txtCodigo.Name = "txtCodigo"
 		Me.txtCodigo.Size = New System.Drawing.Size(200, 20)
 		Me.txtCodigo.TabIndex = 2
 		'
 		'txtPeso
 		'
-		Me.txtPeso.Location = New System.Drawing.Point(122, 90)
+		Me.txtPeso.Location = New System.Drawing.Point(122, 91)
 		Me.txtPeso.Name = "txtPeso"
 		Me.txtPeso.Size = New System.Drawing.Size(200, 20)
 		Me.txtPeso.TabIndex = 4
 		'
 		'txtPrecio
 		'
-		Me.txtPrecio.Location = New System.Drawing.Point(122, 116)
+		Me.txtPrecio.Location = New System.Drawing.Point(122, 117)
 		Me.txtPrecio.Name = "txtPrecio"
 		Me.txtPrecio.Size = New System.Drawing.Size(200, 20)
 		Me.txtPrecio.TabIndex = 5
@@ -104,7 +93,7 @@ Partial Class frmArticulo
 		'txtNuevaSubfamilia
 		'
 		Me.txtNuevaSubfamilia.Enabled = False
-		Me.txtNuevaSubfamilia.Location = New System.Drawing.Point(122, 304)
+		Me.txtNuevaSubfamilia.Location = New System.Drawing.Point(122, 296)
 		Me.txtNuevaSubfamilia.Name = "txtNuevaSubfamilia"
 		Me.txtNuevaSubfamilia.Size = New System.Drawing.Size(200, 20)
 		Me.txtNuevaSubfamilia.TabIndex = 11
@@ -112,7 +101,7 @@ Partial Class frmArticulo
 		'txtNuevaFamilia
 		'
 		Me.txtNuevaFamilia.Enabled = False
-		Me.txtNuevaFamilia.Location = New System.Drawing.Point(122, 250)
+		Me.txtNuevaFamilia.Location = New System.Drawing.Point(122, 247)
 		Me.txtNuevaFamilia.Name = "txtNuevaFamilia"
 		Me.txtNuevaFamilia.Size = New System.Drawing.Size(200, 20)
 		Me.txtNuevaFamilia.TabIndex = 8
@@ -122,7 +111,7 @@ Partial Class frmArticulo
 		Me.cbFamilia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
 		Me.cbFamilia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
 		Me.cbFamilia.FormattingEnabled = True
-		Me.cbFamilia.Location = New System.Drawing.Point(122, 142)
+		Me.cbFamilia.Location = New System.Drawing.Point(122, 143)
 		Me.cbFamilia.Name = "cbFamilia"
 		Me.cbFamilia.Size = New System.Drawing.Size(200, 21)
 		Me.cbFamilia.TabIndex = 6
@@ -132,7 +121,7 @@ Partial Class frmArticulo
 		Me.cbSubfamilia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
 		Me.cbSubfamilia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
 		Me.cbSubfamilia.FormattingEnabled = True
-		Me.cbSubfamilia.Location = New System.Drawing.Point(122, 169)
+		Me.cbSubfamilia.Location = New System.Drawing.Point(122, 170)
 		Me.cbSubfamilia.Name = "cbSubfamilia"
 		Me.cbSubfamilia.Size = New System.Drawing.Size(200, 21)
 		Me.cbSubfamilia.TabIndex = 7
@@ -140,7 +129,7 @@ Partial Class frmArticulo
 		'cbAgregarFam
 		'
 		Me.cbAgregarFam.AutoSize = True
-		Me.cbAgregarFam.Location = New System.Drawing.Point(122, 227)
+		Me.cbAgregarFam.Location = New System.Drawing.Point(122, 224)
 		Me.cbAgregarFam.Name = "cbAgregarFam"
 		Me.cbAgregarFam.Size = New System.Drawing.Size(152, 17)
 		Me.cbAgregarFam.TabIndex = 9
@@ -150,7 +139,7 @@ Partial Class frmArticulo
 		'cbAgregarSub
 		'
 		Me.cbAgregarSub.AutoSize = True
-		Me.cbAgregarSub.Location = New System.Drawing.Point(122, 281)
+		Me.cbAgregarSub.Location = New System.Drawing.Point(122, 273)
 		Me.cbAgregarSub.Name = "cbAgregarSub"
 		Me.cbAgregarSub.Size = New System.Drawing.Size(166, 17)
 		Me.cbAgregarSub.TabIndex = 10
@@ -159,7 +148,7 @@ Partial Class frmArticulo
 		'
 		'btnAgregarProducto
 		'
-		Me.btnAgregarProducto.Location = New System.Drawing.Point(122, 330)
+		Me.btnAgregarProducto.Location = New System.Drawing.Point(122, 322)
 		Me.btnAgregarProducto.Name = "btnAgregarProducto"
 		Me.btnAgregarProducto.Size = New System.Drawing.Size(200, 39)
 		Me.btnAgregarProducto.TabIndex = 12
@@ -180,9 +169,9 @@ Partial Class frmArticulo
 		Me.lblIdprovedor.AutoSize = True
 		Me.lblIdprovedor.Location = New System.Drawing.Point(13, 45)
 		Me.lblIdprovedor.Name = "lblIdprovedor"
-		Me.lblIdprovedor.Size = New System.Drawing.Size(106, 13)
+		Me.lblIdprovedor.Size = New System.Drawing.Size(56, 13)
 		Me.lblIdprovedor.TabIndex = 16
-		Me.lblIdprovedor.Text = "Codigo de proveedor"
+		Me.lblIdprovedor.Text = "Proveedor"
 		'
 		'lblCodigo
 		'
@@ -243,55 +232,12 @@ Partial Class frmArticulo
 		Me.tblArticulos.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
 			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 		Me.tblArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.tblArticulos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.tblNombre, Me.tblcodigoAr, Me.tblpeso, Me.tblPrecio, Me.tblFamilia, Me.tblSubFamilia, Me.tblDescripcion})
 		Me.tblArticulos.ContextMenuStrip = Me.cmsOpciones
 		Me.tblArticulos.Location = New System.Drawing.Point(534, 12)
 		Me.tblArticulos.Name = "tblArticulos"
 		Me.tblArticulos.ReadOnly = True
 		Me.tblArticulos.Size = New System.Drawing.Size(533, 377)
 		Me.tblArticulos.TabIndex = 13
-		'
-		'tblNombre
-		'
-		Me.tblNombre.HeaderText = "Nombre"
-		Me.tblNombre.Name = "tblNombre"
-		Me.tblNombre.ReadOnly = True
-		'
-		'tblcodigoAr
-		'
-		Me.tblcodigoAr.HeaderText = "Codigo articulo"
-		Me.tblcodigoAr.Name = "tblcodigoAr"
-		Me.tblcodigoAr.ReadOnly = True
-		'
-		'tblpeso
-		'
-		Me.tblpeso.HeaderText = "peso"
-		Me.tblpeso.Name = "tblpeso"
-		Me.tblpeso.ReadOnly = True
-		'
-		'tblPrecio
-		'
-		Me.tblPrecio.HeaderText = "precio"
-		Me.tblPrecio.Name = "tblPrecio"
-		Me.tblPrecio.ReadOnly = True
-		'
-		'tblFamilia
-		'
-		Me.tblFamilia.HeaderText = "Familia"
-		Me.tblFamilia.Name = "tblFamilia"
-		Me.tblFamilia.ReadOnly = True
-		'
-		'tblSubFamilia
-		'
-		Me.tblSubFamilia.HeaderText = "Subfamilia"
-		Me.tblSubFamilia.Name = "tblSubFamilia"
-		Me.tblSubFamilia.ReadOnly = True
-		'
-		'tblDescripcion
-		'
-		Me.tblDescripcion.HeaderText = "Descripcion"
-		Me.tblDescripcion.Name = "tblDescripcion"
-		Me.tblDescripcion.ReadOnly = True
 		'
 		'cmsOpciones
 		'
@@ -335,16 +281,40 @@ Partial Class frmArticulo
 		Me.cbDescripcion.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
 		Me.cbDescripcion.FormattingEnabled = True
 		Me.cbDescripcion.Items.AddRange(New Object() {"Kilo", "Unidad"})
-		Me.cbDescripcion.Location = New System.Drawing.Point(122, 196)
+		Me.cbDescripcion.Location = New System.Drawing.Point(122, 197)
 		Me.cbDescripcion.Name = "cbDescripcion"
 		Me.cbDescripcion.Size = New System.Drawing.Size(200, 21)
 		Me.cbDescripcion.TabIndex = 27
+		'
+		'EPError
+		'
+		Me.EPError.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
+		Me.EPError.ContainerControl = Me
+		'
+		'CbProveedor
+		'
+		Me.CbProveedor.FormattingEnabled = True
+		Me.CbProveedor.Location = New System.Drawing.Point(122, 38)
+		Me.CbProveedor.Name = "CbProveedor"
+		Me.CbProveedor.Size = New System.Drawing.Size(200, 21)
+		Me.CbProveedor.TabIndex = 28
+		'
+		'EPErrorFamilia
+		'
+		Me.EPErrorFamilia.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
+		Me.EPErrorFamilia.ContainerControl = Me
+		'
+		'EPErrorSubfamila
+		'
+		Me.EPErrorSubfamila.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
+		Me.EPErrorSubfamila.ContainerControl = Me
 		'
 		'frmArticulo
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(1079, 537)
+		Me.Controls.Add(Me.CbProveedor)
 		Me.Controls.Add(Me.cbDescripcion)
 		Me.Controls.Add(Me.btnImagen)
 		Me.Controls.Add(Me.pbImagen)
@@ -367,7 +337,6 @@ Partial Class frmArticulo
 		Me.Controls.Add(Me.txtPrecio)
 		Me.Controls.Add(Me.txtPeso)
 		Me.Controls.Add(Me.txtCodigo)
-		Me.Controls.Add(Me.txtProveedor)
 		Me.Controls.Add(Me.txtNombre)
 		Me.Cursor = System.Windows.Forms.Cursors.Default
 		Me.Name = "frmArticulo"
@@ -376,13 +345,15 @@ Partial Class frmArticulo
 		CType(Me.tblArticulos, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.cmsOpciones.ResumeLayout(False)
 		CType(Me.pbImagen, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.EPError, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.EPErrorFamilia, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.EPErrorSubfamila, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
 	End Sub
 
 	Friend WithEvents txtNombre As TextBox
-	Friend WithEvents txtProveedor As TextBox
 	Friend WithEvents txtCodigo As TextBox
 	Friend WithEvents txtPeso As TextBox
 	Friend WithEvents txtPrecio As TextBox
@@ -405,14 +376,11 @@ Partial Class frmArticulo
 	Friend WithEvents cmsOpciones As ContextMenuStrip
 	Friend WithEvents ActualizarArtículoToolStripMenuItem As ToolStripMenuItem
 	Friend WithEvents EliminarArtículoToolStripMenuItem As ToolStripMenuItem
-	Friend WithEvents tblNombre As DataGridViewTextBoxColumn
-	Friend WithEvents tblcodigoAr As DataGridViewTextBoxColumn
-	Friend WithEvents tblpeso As DataGridViewTextBoxColumn
-	Friend WithEvents tblPrecio As DataGridViewTextBoxColumn
-	Friend WithEvents tblFamilia As DataGridViewTextBoxColumn
-	Friend WithEvents tblSubFamilia As DataGridViewTextBoxColumn
-	Friend WithEvents tblDescripcion As DataGridViewTextBoxColumn
 	Friend WithEvents pbImagen As PictureBox
 	Friend WithEvents btnImagen As Button
 	Friend WithEvents cbDescripcion As ComboBox
+	Friend WithEvents EPError As ErrorProvider
+	Friend WithEvents CbProveedor As ComboBox
+	Friend WithEvents EPErrorFamilia As ErrorProvider
+	Friend WithEvents EPErrorSubfamila As ErrorProvider
 End Class

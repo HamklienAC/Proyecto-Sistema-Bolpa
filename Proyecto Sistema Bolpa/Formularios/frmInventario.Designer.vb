@@ -46,8 +46,6 @@ Partial Class frmInventario
 		Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
 		Me.tblProveedor = New System.Windows.Forms.DataGridView()
 		Me.tblArticulo = New System.Windows.Forms.DataGridView()
-		Me.ListBox1 = New System.Windows.Forms.ListBox()
-		Me.ListBox2 = New System.Windows.Forms.ListBox()
 		Me.Panel1.SuspendLayout()
 		CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SplitContainer1.Panel1.SuspendLayout()
@@ -67,8 +65,6 @@ Partial Class frmInventario
 		'
 		Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
 			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-		Me.Panel1.Controls.Add(Me.ListBox2)
-		Me.Panel1.Controls.Add(Me.ListBox1)
 		Me.Panel1.Controls.Add(Me.btnCrud)
 		Me.Panel1.Controls.Add(Me.lblEstado)
 		Me.Panel1.Controls.Add(Me.lblCaducidad)
@@ -89,9 +85,9 @@ Partial Class frmInventario
 		'
 		'btnCrud
 		'
-		Me.btnCrud.Location = New System.Drawing.Point(3, 200)
+		Me.btnCrud.Location = New System.Drawing.Point(6, 202)
 		Me.btnCrud.Name = "btnCrud"
-		Me.btnCrud.Size = New System.Drawing.Size(316, 23)
+		Me.btnCrud.Size = New System.Drawing.Size(313, 23)
 		Me.btnCrud.TabIndex = 12
 		Me.btnCrud.Text = "Agregar lote"
 		Me.btnCrud.UseVisualStyleBackColor = True
@@ -310,22 +306,6 @@ Partial Class frmInventario
 		Me.tblArticulo.Size = New System.Drawing.Size(325, 539)
 		Me.tblArticulo.TabIndex = 0
 		'
-		'ListBox1
-		'
-		Me.ListBox1.FormattingEnabled = True
-		Me.ListBox1.Location = New System.Drawing.Point(6, 251)
-		Me.ListBox1.Name = "ListBox1"
-		Me.ListBox1.Size = New System.Drawing.Size(120, 95)
-		Me.ListBox1.TabIndex = 13
-		'
-		'ListBox2
-		'
-		Me.ListBox2.FormattingEnabled = True
-		Me.ListBox2.Location = New System.Drawing.Point(6, 368)
-		Me.ListBox2.Name = "ListBox2"
-		Me.ListBox2.Size = New System.Drawing.Size(120, 95)
-		Me.ListBox2.TabIndex = 14
-		'
 		'frmInventario
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -376,6 +356,4 @@ Partial Class frmInventario
 	Friend WithEvents cmsOpciones As ContextMenuStrip
 	Friend WithEvents ActualizarLoteToolStripMenuItem As ToolStripMenuItem
 	Friend WithEvents EliminarLoteToolStripMenuItem As ToolStripMenuItem
-	Friend WithEvents ListBox2 As ListBox
-	Friend WithEvents ListBox1 As ListBox
 End Class
