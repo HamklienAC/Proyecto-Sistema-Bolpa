@@ -28,7 +28,7 @@
 
 	Private Function CorfimacionFechaCadudcidad() As Boolean
 		Try
-			If FechaCaducidad = Date.Now Then
+			If FechaCaducidad = Today Then
 				If MsgBox("La fecha de caducidad del lote es igual a la del presenten día, desea agregarlo de toda manera", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
 					Return True
 				Else
@@ -182,8 +182,7 @@
 	Public ReadOnly Property Unidades() As Decimal
 		Get
 			Try
-				Dim numero As Integer
-				Return If(Integer.TryParse(txtUnidades.Text, numero), txtUnidades.Text + ",0", txtUnidades.Text)
+				Return txtUnidades.Text
 			Catch ex As Exception
 				Return 0
 			End Try
@@ -201,7 +200,7 @@
 	End Property
 	Public ReadOnly Property FechaCaducidad() As String
 		Get
-			Return dtpCaducidad.Text
+			Return dtpCaducidad.Value.Date.ToString
 		End Get
 	End Property
 	Public ReadOnly Property Estado() As String
