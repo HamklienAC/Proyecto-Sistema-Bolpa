@@ -91,19 +91,19 @@
 	End Sub
 
 	Private Sub LimpiarControles()
-
+		txtArticulo.Clear()
+		txtProveedor.Clear()
+		txtMonto.Clear()
+		txtEstado.Clear()
+		dtpCaducidad.Text=today 
 	End Sub
 
 	Private Sub TxtArticulo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtArticulo.KeyPress
-		e.Handled = Not Char.IsNumber(e.KeyChar)
+		e.Handled = Not IsNumeric(e.KeyChar) AndAlso Not Char.IsSeparator(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar)
 	End Sub
 
 	Private Sub TxtProveedor_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtProveedor.KeyPress
-		e.Handled = Not Char.IsNumber(e.KeyChar)
-	End Sub
-
-	Private Sub TxtEstado_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtEstado.KeyPress
-		e.Handled = Char.IsPunctuation(e.KeyChar) AndAlso Not Char.IsSeparator(e.KeyChar)
+		e.Handled = Not IsNumeric(e.KeyChar) AndAlso Not Char.IsSeparator(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar)
 	End Sub
 
 	Private Sub TxtUnidades_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtUnidades.KeyPress

@@ -5,18 +5,10 @@
 		InitializeComponent()
 		controlador = New ControladorArticulo
 		Size = New Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height)
-		agee()
 		CargarFamilia()
 		CargarSubfamilia()
 		CargarTabla()
 		' Agregue cualquier inicialización después de la llamada a InitializeComponent().
-	End Sub
-
-	Private Sub agee()
-		tblArticulos.Rows.Add("Plata")
-		tblArticulos.Rows.Add("Plata1")
-		tblArticulos.Rows.Add("Plata2")
-		tblArticulos.Rows.Add("Plata3")
 	End Sub
 	Private Sub CargarFamilia()
 		controlador.CargarFamilia(cbFamilia)

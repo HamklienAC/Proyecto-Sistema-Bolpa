@@ -53,7 +53,6 @@ Partial Class frmArticulo
 		Me.CbProveedor = New System.Windows.Forms.ComboBox()
 		Me.EPErrorFamilia = New System.Windows.Forms.ErrorProvider(Me.components)
 		Me.EPErrorSubfamila = New System.Windows.Forms.ErrorProvider(Me.components)
-		Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
 		CType(Me.tblArticulos, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.cmsOpciones.SuspendLayout()
 		CType(Me.pbImagen, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -75,7 +74,7 @@ Partial Class frmArticulo
 		Me.txtCodigo.Location = New System.Drawing.Point(122, 65)
 		Me.txtCodigo.Name = "txtCodigo"
 		Me.txtCodigo.Size = New System.Drawing.Size(200, 20)
-		Me.txtCodigo.TabIndex = 2
+		Me.txtCodigo.TabIndex = 3
 		'
 		'txtPeso
 		'
@@ -233,7 +232,6 @@ Partial Class frmArticulo
 		Me.tblArticulos.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
 			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 		Me.tblArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.tblArticulos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1})
 		Me.tblArticulos.ContextMenuStrip = Me.cmsOpciones
 		Me.tblArticulos.Location = New System.Drawing.Point(534, 12)
 		Me.tblArticulos.Name = "tblArticulos"
@@ -295,11 +293,13 @@ Partial Class frmArticulo
 		'
 		'CbProveedor
 		'
+		Me.CbProveedor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+		Me.CbProveedor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
 		Me.CbProveedor.FormattingEnabled = True
 		Me.CbProveedor.Location = New System.Drawing.Point(122, 38)
 		Me.CbProveedor.Name = "CbProveedor"
 		Me.CbProveedor.Size = New System.Drawing.Size(200, 21)
-		Me.CbProveedor.TabIndex = 28
+		Me.CbProveedor.TabIndex = 2
 		'
 		'EPErrorFamilia
 		'
@@ -310,12 +310,6 @@ Partial Class frmArticulo
 		'
 		Me.EPErrorSubfamila.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
 		Me.EPErrorSubfamila.ContainerControl = Me
-		'
-		'Column1
-		'
-		Me.Column1.HeaderText = "Column1"
-		Me.Column1.Name = "Column1"
-		Me.Column1.ReadOnly = True
 		'
 		'frmArticulo
 		'
@@ -391,5 +385,4 @@ Partial Class frmArticulo
 	Friend WithEvents CbProveedor As ComboBox
 	Friend WithEvents EPErrorFamilia As ErrorProvider
 	Friend WithEvents EPErrorSubfamila As ErrorProvider
-	Friend WithEvents Column1 As DataGridViewTextBoxColumn
 End Class
