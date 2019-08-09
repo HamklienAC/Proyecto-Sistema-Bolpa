@@ -46,6 +46,7 @@ Partial Class frmInventario
 		Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
 		Me.tblProveedor = New System.Windows.Forms.DataGridView()
 		Me.tblArticulo = New System.Windows.Forms.DataGridView()
+		Me.EPError = New System.Windows.Forms.ErrorProvider(Me.components)
 		Me.Panel1.SuspendLayout()
 		CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SplitContainer1.Panel1.SuspendLayout()
@@ -59,6 +60,7 @@ Partial Class frmInventario
 		Me.SplitContainer2.SuspendLayout()
 		CType(Me.tblProveedor, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.tblArticulo, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.EPError, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'Panel1
@@ -88,7 +90,7 @@ Partial Class frmInventario
 		Me.btnCrud.Location = New System.Drawing.Point(6, 202)
 		Me.btnCrud.Name = "btnCrud"
 		Me.btnCrud.Size = New System.Drawing.Size(313, 23)
-		Me.btnCrud.TabIndex = 12
+		Me.btnCrud.TabIndex = 6
 		Me.btnCrud.Text = "Agregar lote"
 		Me.btnCrud.UseVisualStyleBackColor = True
 		'
@@ -169,14 +171,14 @@ Partial Class frmInventario
 		Me.dtpCaducidad.Location = New System.Drawing.Point(117, 128)
 		Me.dtpCaducidad.Name = "dtpCaducidad"
 		Me.dtpCaducidad.Size = New System.Drawing.Size(202, 20)
-		Me.dtpCaducidad.TabIndex = 5
+		Me.dtpCaducidad.TabIndex = 4
 		'
 		'txtEstado
 		'
 		Me.txtEstado.Location = New System.Drawing.Point(117, 154)
 		Me.txtEstado.Name = "txtEstado"
 		Me.txtEstado.Size = New System.Drawing.Size(202, 20)
-		Me.txtEstado.TabIndex = 4
+		Me.txtEstado.TabIndex = 5
 		'
 		'txtMonto
 		'
@@ -306,6 +308,11 @@ Partial Class frmInventario
 		Me.tblArticulo.Size = New System.Drawing.Size(325, 539)
 		Me.tblArticulo.TabIndex = 0
 		'
+		'EPError
+		'
+		Me.EPError.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
+		Me.EPError.ContainerControl = Me
+		'
 		'frmInventario
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -330,6 +337,7 @@ Partial Class frmInventario
 		Me.SplitContainer2.ResumeLayout(False)
 		CType(Me.tblProveedor, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.tblArticulo, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.EPError, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 
 	End Sub
@@ -356,4 +364,5 @@ Partial Class frmInventario
 	Friend WithEvents cmsOpciones As ContextMenuStrip
 	Friend WithEvents ActualizarLoteToolStripMenuItem As ToolStripMenuItem
 	Friend WithEvents EliminarLoteToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents EPError As ErrorProvider
 End Class

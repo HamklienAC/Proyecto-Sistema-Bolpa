@@ -105,7 +105,7 @@
 	''' <returns></returns>
 	Private Function VerificarContenidoPuntos(ByVal Cadena As String, e As KeyPressEventArgs) As Boolean
 		Try
-			If Cadena = Nothing AndAlso Char.IsPunctuation(e.KeyChar) Or e.KeyChar.ToString.Equals("e") Then
+			If Cadena = Nothing AndAlso Char.IsPunctuation(e.KeyChar) Or Char.IsLetter(e.KeyChar) Then
 				Return False
 			Else
 				Dim Verificacion As Double = Cadena + e.KeyChar + "1"
