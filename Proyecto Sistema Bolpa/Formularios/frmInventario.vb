@@ -82,12 +82,16 @@
 	End Sub
 
 	Private Sub CargarDatos()
-		txtProveedor.Text = tblInventario.CurrentRow.Cells(0).Value.ToString
-		txtArticulo.Text = tblInventario.CurrentRow.Cells(1).Value.ToString
-		txtUnidades.Text = tblInventario.CurrentRow.Cells(2).Value.ToString
-		txtMonto.Text = tblInventario.CurrentRow.Cells(3).Value.ToString
-		dtpCaducidad.Text = tblInventario.CurrentRow.Cells(4).Value.ToString
-		txtEstado.Text = tblInventario.CurrentRow.Cells(5).Value.ToString
+		Try
+			txtProveedor.Text = tblInventario.CurrentRow.Cells(0).Value.ToString
+			txtArticulo.Text = tblInventario.CurrentRow.Cells(1).Value.ToString
+			txtUnidades.Text = tblInventario.CurrentRow.Cells(2).Value.ToString
+			txtMonto.Text = tblInventario.CurrentRow.Cells(3).Value.ToString
+			dtpCaducidad.Text = tblInventario.CurrentRow.Cells(4).Value.ToString
+			txtEstado.Text = tblInventario.CurrentRow.Cells(5).Value.ToString
+		Catch ex As Exception
+
+		End Try
 	End Sub
 
 	Private Sub LimpiarControles()
