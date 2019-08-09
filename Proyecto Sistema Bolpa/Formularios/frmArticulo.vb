@@ -5,12 +5,19 @@
 		InitializeComponent()
 		controlador = New ControladorArticulo
 		Size = New Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height)
+		agee()
 		CargarFamilia()
 		CargarSubfamilia()
 		CargarTabla()
 		' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 	End Sub
 
+	Private Sub agee()
+		tblArticulos.Rows.Add("Plata")
+		tblArticulos.Rows.Add("Plata1")
+		tblArticulos.Rows.Add("Plata2")
+		tblArticulos.Rows.Add("Plata3")
+	End Sub
 	Private Sub CargarFamilia()
 		controlador.CargarFamilia(cbFamilia)
 	End Sub
@@ -108,7 +115,6 @@
 		End Try
 		Return True
 	End Function
-
 	Private Sub TxtNombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNombre.KeyPress
 		VerificarEntradadas(e)
 	End Sub
@@ -137,8 +143,8 @@
 			Select Case e.ClickedItem.Name
 				Case "ActualizarArtículoToolStripMenuItem"
 					If MsgBox("Desea actualizar los datos del artíclo: " + tblArticulos.CurrentRow.Cells(0).Value.ToString + ", código: " + tblArticulos.CurrentRow.Cells(1).Value.ToString, MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+						RellenarEspacios()
 						btnAgregarProducto.Text = "Actualizar artículo"
-						RellenarEspacios(tblArticulos.CurrentRow.Cells(1).Value.ToString)
 					End If
 				Case "EliminarArtículoToolStripMenuItem"
 					If MsgBox("Desea eliminar el artíclo: " + tblArticulos.CurrentRow.Cells(0).Value.ToString + ", código: " + tblArticulos.CurrentRow.Cells(1).Value.ToString, MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
@@ -226,13 +232,42 @@
 		Return incorrectos = 0
 	End Function
 
-	Private Sub RellenarEspacios(ByVal fila As String)
-		'controlador.CargarDatos(fila, DatosObjeto)
+	Private Sub RellenarEspacios()
+		txtNombre.Text = tblArticulos.CurrentRow.Cells(0).Value.ToString
+		txtCodigo.Text = tblArticulos.CurrentRow.Cells(1).Value.ToString
+		txtCodigo.Enabled = False
+		txtPeso.Text = tblArticulos.CurrentRow.Cells(2).Value.ToString
+		txtPrecio.Text = tblArticulos.CurrentRow.Cells(3).Value.ToString
+		SeleccionarFamilia()
+		SeleccionarSubfamilia()
+		SeleccionarDescripcion()
+	End Sub
+
+	Private Sub SeleccionarFamilia()
+
+	End Sub
+
+	Private Sub SeleccionarSubfamilia()
+
+	End Sub
+
+	Private Sub SeleccionarDescripcion()
+
 	End Sub
 
 	Private Sub LimpiarControles()
-
+		txtNombre.Clear()
+		txtCodigo.Clear()
+		txtPeso.Clear()
+		txtPrecio.Clear()
+		txtNuevaFamilia.Clear()
+		txtNuevaSubfamilia.Clear()
+		CbProveedor.SelectedIndex = -1
+		cbFamilia.SelectedIndex = -1
+		cbSubfamilia.SelectedIndex = -1
+		cbDescripcion.SelectedIndex = -1
 	End Sub
+
 
 	Public ReadOnly Property Nombre() As String
 		Get
@@ -246,17 +281,32 @@
 	End Property
 	Public ReadOnly Property CodigoArticulo() As String
 		Get
-			Return txtCodigo.Text
+			Try
+				Dim Verificacion As Double = txtCodigo.Text
+				Return txtCodigo.Text
+			Catch ex As Exception
+				MsgBox(ex.Message)
+				Return ""
+			End Try
+
 		End Get
 	End Property
 	Public ReadOnly Property Peso() As Double
 		Get
-			Return If(txtPeso.Text = Nothing, 0, CDbl(txtPeso.Text))
+			Try
+				Return If(txtPeso.Text = Nothing, 0, CDbl(txtPeso.Text))
+			Catch ex As Exception
+				Return 0
+			End Try
 		End Get
 	End Property
 	Public ReadOnly Property Precio() As Double
 		Get
-			Return If(txtPrecio.Text = Nothing, 0, CDbl(txtPrecio.Text))
+			Try
+				Return If(txtPrecio.Text = Nothing, 0, CDbl(txtPrecio.Text))
+			Catch ex As Exception
+				Return 0
+			End Try
 		End Get
 	End Property
 	Public ReadOnly Property Familia() As String

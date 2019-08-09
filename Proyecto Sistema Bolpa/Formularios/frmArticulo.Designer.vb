@@ -53,6 +53,7 @@ Partial Class frmArticulo
 		Me.CbProveedor = New System.Windows.Forms.ComboBox()
 		Me.EPErrorFamilia = New System.Windows.Forms.ErrorProvider(Me.components)
 		Me.EPErrorSubfamila = New System.Windows.Forms.ErrorProvider(Me.components)
+		Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
 		CType(Me.tblArticulos, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.cmsOpciones.SuspendLayout()
 		CType(Me.pbImagen, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -232,6 +233,7 @@ Partial Class frmArticulo
 		Me.tblArticulos.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
 			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 		Me.tblArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+		Me.tblArticulos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1})
 		Me.tblArticulos.ContextMenuStrip = Me.cmsOpciones
 		Me.tblArticulos.Location = New System.Drawing.Point(534, 12)
 		Me.tblArticulos.Name = "tblArticulos"
@@ -309,6 +311,12 @@ Partial Class frmArticulo
 		Me.EPErrorSubfamila.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
 		Me.EPErrorSubfamila.ContainerControl = Me
 		'
+		'Column1
+		'
+		Me.Column1.HeaderText = "Column1"
+		Me.Column1.Name = "Column1"
+		Me.Column1.ReadOnly = True
+		'
 		'frmArticulo
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -383,4 +391,5 @@ Partial Class frmArticulo
 	Friend WithEvents CbProveedor As ComboBox
 	Friend WithEvents EPErrorFamilia As ErrorProvider
 	Friend WithEvents EPErrorSubfamila As ErrorProvider
+	Friend WithEvents Column1 As DataGridViewTextBoxColumn
 End Class
