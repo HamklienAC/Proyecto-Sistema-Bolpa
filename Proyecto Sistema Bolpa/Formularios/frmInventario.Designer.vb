@@ -46,7 +46,7 @@ Partial Class frmInventario
 		Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
 		Me.tblProveedor = New System.Windows.Forms.DataGridView()
 		Me.tblArticulo = New System.Windows.Forms.DataGridView()
-		Me.EPError = New System.Windows.Forms.ErrorProvider(Me.components)
+		Me.epError = New System.Windows.Forms.ErrorProvider(Me.components)
 		Me.Panel1.SuspendLayout()
 		CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SplitContainer1.Panel1.SuspendLayout()
@@ -60,7 +60,7 @@ Partial Class frmInventario
 		Me.SplitContainer2.SuspendLayout()
 		CType(Me.tblProveedor, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.tblArticulo, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.EPError, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.epError, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'Panel1
@@ -308,10 +308,10 @@ Partial Class frmInventario
 		Me.tblArticulo.Size = New System.Drawing.Size(325, 539)
 		Me.tblArticulo.TabIndex = 0
 		'
-		'EPError
+		'epError
 		'
-		Me.EPError.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
-		Me.EPError.ContainerControl = Me
+		Me.epError.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
+		Me.epError.ContainerControl = Me
 		'
 		'frmInventario
 		'
@@ -337,7 +337,7 @@ Partial Class frmInventario
 		Me.SplitContainer2.ResumeLayout(False)
 		CType(Me.tblProveedor, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.tblArticulo, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.EPError, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.epError, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 
 	End Sub
@@ -364,5 +364,5 @@ Partial Class frmInventario
 	Friend WithEvents cmsOpciones As ContextMenuStrip
 	Friend WithEvents ActualizarLoteToolStripMenuItem As ToolStripMenuItem
 	Friend WithEvents EliminarLoteToolStripMenuItem As ToolStripMenuItem
-	Friend WithEvents EPError As ErrorProvider
+	Friend WithEvents epError As ErrorProvider
 End Class

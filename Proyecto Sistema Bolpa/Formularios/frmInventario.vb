@@ -1,5 +1,4 @@
 ﻿Public Class frmInventario
-	Private posicioncelda As Integer
 	Public Sub New()
 		' Esta llamada es exigida por el diseñador.
 		InitializeComponent()
@@ -97,9 +96,10 @@
 	Private Sub LimpiarControles()
 		txtArticulo.Clear()
 		txtProveedor.Clear()
+		txtUnidades.Clear()
 		txtMonto.Clear()
 		txtEstado.Clear()
-		dtpCaducidad.Text=today 
+		dtpCaducidad.Text = Today
 	End Sub
 
 	Private Sub TxtArticulo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtArticulo.KeyPress
@@ -136,25 +136,26 @@
 	End Function
 
 	Private Function VerficarDatos() As Boolean
+		epError.Clear()
 		Dim incorrectos As Integer = 0
 		If Proveedor = Nothing Then
-			EPError.SetError(txtProveedor, "No se ha asignado la cedula del proveedor correctactamente")
+			epError.SetError(txtProveedor, "No se ha asignado la cedula del proveedor correctactamente")
 			incorrectos = +1
 		End If
 		If Articulo = Nothing Then
-			EPError.SetError(txtArticulo, "No se ha asignado el identificador artículo correctactamente")
+			epError.SetError(txtArticulo, "No se ha asignado el identificador artículo correctactamente")
 			incorrectos = +1
 		End If
 		If Unidades = 0 Then
-			EPError.SetError(txtUnidades, "No se han asignado unidades correctactamente")
+			epError.SetError(txtUnidades, "No se han asignado unidades correctactamente")
 			incorrectos = +1
 		End If
 		If Monto = 0 Then
-			EPError.SetError(txtMonto, "No se ha asignado un monto correctactamente")
+			epError.SetError(txtMonto, "No se ha asignado un monto correctactamente")
 			incorrectos = +1
 		End If
 		If Estado = Nothing Then
-			EPError.SetError(txtEstado, "No se ha asignado un estado correctactamente")
+			epError.SetError(txtEstado, "No se ha asignado un estado correctactamente")
 			incorrectos = +1
 		End If
 		Return incorrectos = 0
@@ -199,7 +200,6 @@
 			Catch ex As Exception
 				Return 0
 			End Try
-
 		End Get
 	End Property
 	Public ReadOnly Property FechaCaducidad() As String
@@ -221,7 +221,6 @@
 			Return {Proveedor, Articulo, Unidades, Monto, FechaCaducidad, Estado}
 		End Get
 	End Property
-
 	Public ReadOnly Property TablaInventario() As DataGridView
 		Get
 			Return tblInventario
