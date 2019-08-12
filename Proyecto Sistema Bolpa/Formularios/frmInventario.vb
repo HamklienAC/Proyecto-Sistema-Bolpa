@@ -10,6 +10,7 @@
 
 	Private Sub BtnCrud_Click(sender As Object, e As EventArgs) Handles btnCrud.Click
 		Try
+			MsgBox(FechaCaducidad)
 			If VerficarDatos() AndAlso CorfimacionFechaCadudcidad() Then
 				If btnCrud.Text = "Actualizar lote" Then
 					'DatosArray()
@@ -58,7 +59,6 @@
 		Catch ex As Exception
 
 		End Try
-
 	End Sub
 
 	Private Sub TblProveedor_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles tblProveedor.CellClick
@@ -204,7 +204,7 @@
 	End Property
 	Public ReadOnly Property FechaCaducidad() As String
 		Get
-			Return dtpCaducidad.Value.Date.ToString
+			Return dtpCaducidad.Value.ToShortDateString
 		End Get
 	End Property
 	Public ReadOnly Property Estado() As String

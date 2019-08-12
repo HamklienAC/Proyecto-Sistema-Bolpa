@@ -23,30 +23,21 @@ Partial Class frmInventarioExistente
 	<System.Diagnostics.DebuggerStepThrough()> _
 	Private Sub InitializeComponent()
 		Me.tblFactura = New System.Windows.Forms.DataGridView()
-		Me.cbCodigo = New System.Windows.Forms.ComboBox()
 		Me.lblCodigo = New System.Windows.Forms.Label()
+		Me.txtFiltro = New System.Windows.Forms.TextBox()
 		CType(Me.tblFactura, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'tblFactura
 		'
+		Me.tblFactura.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+			Or System.Windows.Forms.AnchorStyles.Left) _
+			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 		Me.tblFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.tblFactura.Location = New System.Drawing.Point(13, 52)
 		Me.tblFactura.Name = "tblFactura"
 		Me.tblFactura.Size = New System.Drawing.Size(775, 551)
 		Me.tblFactura.TabIndex = 0
-		'
-		'cbCodigo
-		'
-		Me.cbCodigo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-		Me.cbCodigo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-		Me.cbCodigo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-		Me.cbCodigo.FormattingEnabled = True
-		Me.cbCodigo.Location = New System.Drawing.Point(12, 25)
-		Me.cbCodigo.Name = "cbCodigo"
-		Me.cbCodigo.Size = New System.Drawing.Size(776, 21)
-		Me.cbCodigo.TabIndex = 1
 		'
 		'lblCodigo
 		'
@@ -57,13 +48,24 @@ Partial Class frmInventarioExistente
 		Me.lblCodigo.TabIndex = 2
 		Me.lblCodigo.Text = "Ingrese el codigo"
 		'
+		'txtFiltro
+		'
+		Me.txtFiltro.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+			Or System.Windows.Forms.AnchorStyles.Left) _
+			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.txtFiltro.Location = New System.Drawing.Point(15, 26)
+		Me.txtFiltro.MaximumSize = New System.Drawing.Size(0, 200)
+		Me.txtFiltro.Name = "txtFiltro"
+		Me.txtFiltro.Size = New System.Drawing.Size(773, 20)
+		Me.txtFiltro.TabIndex = 3
+		'
 		'frmInventarioExistente
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(800, 615)
+		Me.Controls.Add(Me.txtFiltro)
 		Me.Controls.Add(Me.lblCodigo)
-		Me.Controls.Add(Me.cbCodigo)
 		Me.Controls.Add(Me.tblFactura)
 		Me.Name = "frmInventarioExistente"
 		Me.Text = "frmInventarioExistente"
@@ -74,6 +76,6 @@ Partial Class frmInventarioExistente
 	End Sub
 
 	Friend WithEvents tblFactura As DataGridView
-	Friend WithEvents cbCodigo As ComboBox
 	Friend WithEvents lblCodigo As Label
+	Friend WithEvents txtFiltro As TextBox
 End Class

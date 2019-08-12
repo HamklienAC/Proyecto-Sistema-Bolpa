@@ -1,33 +1,54 @@
-﻿Public Class frmFacturaCliente
-
+﻿Public Class frmFactura
+	Private ReadOnly Caducidad As New DateTimePicker
+	Dim Area As Rectangle
 	Public Sub New()
 		' Esta llamada es exigida por el diseñador.
 		InitializeComponent()
 		Size = New Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height)
-		AjustarCeldas()
-		SurroundingSub()
-		Nah()
-
+		'Cadudcidad.
+		tblProductos.Controls.Add(Caducidad)
+		Caducidad.Visible = False
+		Caducidad.Format = DateTimePickerFormat.Long
+		AddHandler Caducidad.TextChanged, AddressOf FechaCaducidad
 		' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 	End Sub
 
-	Private Sub AjustarCeldas()
-		Dim Tamano As Integer = tblProductos.Width / 4
-		CProducto.Width = Tamano
-		CCodigo.Width = Tamano
-		CCantidad.Width = Tamano
-		CPrecio.Width = Tamano
+	Private Sub FomularioCaja()
 
 	End Sub
-	Private Sub Nah()
-		txtIngresarCodigo.AutoCompleteCustomSource.Add("Arroz")
-		'txtIngresarCodigo.AutoCompleteSource = "Papaya"
-		'txtIngresarCodigo.AutoCompleteSource = "Leche dos pinos"
+
+	Private Sub FomularioBodega()
+
 	End Sub
 
-	Private Sub SurroundingSub()
-		tblProductos.Rows.Add("Peras", "101", "508.3", "5")
-		tblProductos.Rows.Add("Arroz tio pelon", "102", "1980", "5")
+	Private Sub FomularioAdministracion()
+
+	End Sub
+
+	Private Sub TblProductos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles tblProductos.CellClick
+		Try
+			Select Case tblProductos.Columns(e.ColumnIndex).Name
+				Case "dtpCaducidad"
+					Area = tblProductos.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, True)
+					Caducidad.Size = New Size(Area.Size)
+					Caducidad.Location = New Point(Area.Location.X, Area.Location.Y)
+					Caducidad.Visible = True
+			End Select
+		Catch ex As Exception
+
+		End Try
+	End Sub
+
+	Private Sub TblProductos_ColumnWidthChanged(sender As Object, e As DataGridViewColumnEventArgs) Handles tblProductos.ColumnWidthChanged
+		Caducidad.Visible = False
+	End Sub
+
+	Private Sub TblProductos_Scroll(sender As Object, e As ScrollEventArgs) Handles tblProductos.Scroll
+		Caducidad.Visible = False
+	End Sub
+
+	Private Sub FechaCaducidad(sender As Object, e As EventArgs)
+		tblProductos.CurrentCell.Value = Caducidad.Value.ToShortDateString
 	End Sub
 
 	Private Sub CmsOpciones_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles cmsOpciones.ItemClicked
@@ -82,6 +103,13 @@
 		Return True
 	End Function
 
+	Private Sub tblProductos_KeyUp(sender As Object, e As KeyEventArgs) Handles tblProductos.KeyUp
+		If e.KeyData = Keys.Control + Keys.B Then
+			Dim Inventario As New frmInventarioExistente
+			Inventario.Show()
+		End If
+	End Sub
+
 	Public ReadOnly Property Cantidad As Decimal
 		Get
 			If txtCantidad.Text = Nothing Then
@@ -91,4 +119,5 @@
 			End If
 		End Get
 	End Property
+
 End Class

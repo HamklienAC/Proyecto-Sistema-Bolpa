@@ -145,10 +145,10 @@
     <Compile Include="Formularios\frmArticulo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmFacturaCliente.Designer.vb">
-      <DependentUpon>frmFacturaCliente.vb</DependentUpon>
+    <Compile Include="Formularios\frmFactura.Designer.vb">
+      <DependentUpon>frmFactura.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmFacturaCliente.vb">
+    <Compile Include="Formularios\frmFactura.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ProyectoBD.Context.vb">
@@ -213,8 +213,8 @@
     <EmbeddedResource Include="Formularios\frmArticulo.resx">
       <DependentUpon>frmArticulo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmFacturaCliente.resx">
-      <DependentUpon>frmFacturaCliente.vb</DependentUpon>
+    <EmbeddedResource Include="Formularios\frmFactura.resx">
+      <DependentUpon>frmFactura.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

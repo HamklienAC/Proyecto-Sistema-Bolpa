@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class frmFacturaCliente
+Partial Class frmFactura
 	Inherits System.Windows.Forms.Form
 
 	'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -29,10 +29,6 @@ Partial Class frmFacturaCliente
 		Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
 		Me.txtIngresarCodigo = New System.Windows.Forms.TextBox()
 		Me.tblProductos = New System.Windows.Forms.DataGridView()
-		Me.CProducto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-		Me.CCodigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-		Me.CCantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-		Me.CPrecio = New System.Windows.Forms.DataGridViewTextBoxColumn()
 		Me.cmsOpciones = New System.Windows.Forms.ContextMenuStrip(Me.components)
 		Me.EliminarArticulosDeLaCompraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.lblSubtotal = New System.Windows.Forms.Label()
@@ -42,6 +38,15 @@ Partial Class frmFacturaCliente
 		Me.lblIngreseProducto = New System.Windows.Forms.Label()
 		Me.lblCantidad = New System.Windows.Forms.Label()
 		Me.txtCantidad = New System.Windows.Forms.TextBox()
+		Me.txtArticulo = New System.Windows.Forms.TextBox()
+		Me.Panel1 = New System.Windows.Forms.Panel()
+		Me.CProducto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+		Me.cbArticulo = New System.Windows.Forms.DataGridViewComboBoxColumn()
+		Me.dtpCaducidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+		Me.CCantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+		Me.CPrecio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+		Me.CCodigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+		Me.txtEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
 		CType(Me.tblProductos, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.cmsOpciones.SuspendLayout()
 		Me.SuspendLayout()
@@ -51,65 +56,26 @@ Partial Class frmFacturaCliente
 		Me.txtIngresarCodigo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
 		Me.txtIngresarCodigo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
 		Me.txtIngresarCodigo.Location = New System.Drawing.Point(12, 25)
+		Me.txtIngresarCodigo.MaximumSize = New System.Drawing.Size(4, 200)
 		Me.txtIngresarCodigo.Name = "txtIngresarCodigo"
-		Me.txtIngresarCodigo.Size = New System.Drawing.Size(462, 20)
+		Me.txtIngresarCodigo.Size = New System.Drawing.Size(0, 20)
 		Me.txtIngresarCodigo.TabIndex = 3
 		'
 		'tblProductos
 		'
+		Me.tblProductos.AllowUserToOrderColumns = True
+		Me.tblProductos.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 		Me.tblProductos.BorderStyle = System.Windows.Forms.BorderStyle.None
 		Me.tblProductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal
 		Me.tblProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.tblProductos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CProducto, Me.CCodigo, Me.CCantidad, Me.CPrecio})
+		Me.tblProductos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CProducto, Me.cbArticulo, Me.dtpCaducidad, Me.CCantidad, Me.CPrecio, Me.CCodigo, Me.txtEstado})
 		Me.tblProductos.ContextMenuStrip = Me.cmsOpciones
-		Me.tblProductos.Location = New System.Drawing.Point(12, 51)
+		Me.tblProductos.Location = New System.Drawing.Point(15, 51)
 		Me.tblProductos.Name = "tblProductos"
 		Me.tblProductos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-		Me.tblProductos.Size = New System.Drawing.Size(644, 601)
+		Me.tblProductos.Size = New System.Drawing.Size(641, 510)
 		Me.tblProductos.TabIndex = 2
-		'
-		'CProducto
-		'
-		DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-		DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-		DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlLight
-		DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
-		Me.CProducto.DefaultCellStyle = DataGridViewCellStyle1
-		Me.CProducto.HeaderText = "Producto"
-		Me.CProducto.Name = "CProducto"
-		Me.CProducto.ReadOnly = True
-		Me.CProducto.Width = 75
-		'
-		'CCodigo
-		'
-		DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlLight
-		DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
-		Me.CCodigo.DefaultCellStyle = DataGridViewCellStyle2
-		Me.CCodigo.HeaderText = "Codigo"
-		Me.CCodigo.Name = "CCodigo"
-		Me.CCodigo.ReadOnly = True
-		Me.CCodigo.Width = 65
-		'
-		'CCantidad
-		'
-		DataGridViewCellStyle3.Format = "N0"
-		DataGridViewCellStyle3.NullValue = Nothing
-		DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlLight
-		DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
-		Me.CCantidad.DefaultCellStyle = DataGridViewCellStyle3
-		Me.CCantidad.HeaderText = "Cantidad"
-		Me.CCantidad.Name = "CCantidad"
-		Me.CCantidad.Width = 74
-		'
-		'CPrecio
-		'
-		DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlLight
-		DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
-		Me.CPrecio.DefaultCellStyle = DataGridViewCellStyle4
-		Me.CPrecio.HeaderText = "Precio"
-		Me.CPrecio.Name = "CPrecio"
-		Me.CPrecio.ReadOnly = True
-		Me.CPrecio.Width = 62
 		'
 		'cmsOpciones
 		'
@@ -126,7 +92,7 @@ Partial Class frmFacturaCliente
 		'lblSubtotal
 		'
 		Me.lblSubtotal.AutoSize = True
-		Me.lblSubtotal.Location = New System.Drawing.Point(662, 456)
+		Me.lblSubtotal.Location = New System.Drawing.Point(662, 557)
 		Me.lblSubtotal.Name = "lblSubtotal"
 		Me.lblSubtotal.Size = New System.Drawing.Size(49, 13)
 		Me.lblSubtotal.TabIndex = 7
@@ -135,7 +101,7 @@ Partial Class frmFacturaCliente
 		'lblIVA
 		'
 		Me.lblIVA.AutoSize = True
-		Me.lblIVA.Location = New System.Drawing.Point(662, 490)
+		Me.lblIVA.Location = New System.Drawing.Point(662, 591)
 		Me.lblIVA.Name = "lblIVA"
 		Me.lblIVA.Size = New System.Drawing.Size(27, 13)
 		Me.lblIVA.TabIndex = 8
@@ -144,7 +110,7 @@ Partial Class frmFacturaCliente
 		'lblTotal
 		'
 		Me.lblTotal.AutoSize = True
-		Me.lblTotal.Location = New System.Drawing.Point(662, 523)
+		Me.lblTotal.Location = New System.Drawing.Point(662, 624)
 		Me.lblTotal.Name = "lblTotal"
 		Me.lblTotal.Size = New System.Drawing.Size(34, 13)
 		Me.lblTotal.TabIndex = 9
@@ -184,11 +150,88 @@ Partial Class frmFacturaCliente
 		Me.txtCantidad.Size = New System.Drawing.Size(176, 20)
 		Me.txtCantidad.TabIndex = 13
 		'
-		'frmFacturaCliente
+		'txtArticulo
+		'
+		Me.txtArticulo.Location = New System.Drawing.Point(15, 25)
+		Me.txtArticulo.Name = "txtArticulo"
+		Me.txtArticulo.Size = New System.Drawing.Size(459, 20)
+		Me.txtArticulo.TabIndex = 14
+		'
+		'Panel1
+		'
+		Me.Panel1.Location = New System.Drawing.Point(12, 567)
+		Me.Panel1.Name = "Panel1"
+		Me.Panel1.Size = New System.Drawing.Size(644, 74)
+		Me.Panel1.TabIndex = 15
+		'
+		'CProducto
+		'
+		Me.CProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+		DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+		DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+		DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlLight
+		DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
+		Me.CProducto.DefaultCellStyle = DataGridViewCellStyle1
+		Me.CProducto.HeaderText = "Producto"
+		Me.CProducto.Name = "CProducto"
+		Me.CProducto.ReadOnly = True
+		'
+		'cbArticulo
+		'
+		Me.cbArticulo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+		Me.cbArticulo.HeaderText = "Articulo"
+		Me.cbArticulo.Name = "cbArticulo"
+		'
+		'dtpCaducidad
+		'
+		Me.dtpCaducidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+		Me.dtpCaducidad.HeaderText = "Fecha de caducidad"
+		Me.dtpCaducidad.Name = "dtpCaducidad"
+		'
+		'CCantidad
+		'
+		Me.CCantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+		DataGridViewCellStyle2.Format = "N0"
+		DataGridViewCellStyle2.NullValue = Nothing
+		DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlLight
+		DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
+		Me.CCantidad.DefaultCellStyle = DataGridViewCellStyle2
+		Me.CCantidad.HeaderText = "Cantidad"
+		Me.CCantidad.Name = "CCantidad"
+		'
+		'CPrecio
+		'
+		Me.CPrecio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+		DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlLight
+		DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+		Me.CPrecio.DefaultCellStyle = DataGridViewCellStyle3
+		Me.CPrecio.HeaderText = "Precio"
+		Me.CPrecio.Name = "CPrecio"
+		Me.CPrecio.ReadOnly = True
+		'
+		'CCodigo
+		'
+		Me.CCodigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+		DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlLight
+		DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
+		Me.CCodigo.DefaultCellStyle = DataGridViewCellStyle4
+		Me.CCodigo.HeaderText = "Codigo"
+		Me.CCodigo.Name = "CCodigo"
+		Me.CCodigo.ReadOnly = True
+		'
+		'txtEstado
+		'
+		Me.txtEstado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+		Me.txtEstado.HeaderText = "Estado"
+		Me.txtEstado.Name = "txtEstado"
+		'
+		'frmFactura
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.ClientSize = New System.Drawing.Size(953, 625)
+		Me.ClientSize = New System.Drawing.Size(953, 649)
+		Me.Controls.Add(Me.Panel1)
+		Me.Controls.Add(Me.txtArticulo)
 		Me.Controls.Add(Me.txtCantidad)
 		Me.Controls.Add(Me.lblCantidad)
 		Me.Controls.Add(Me.lblIngreseProducto)
@@ -198,7 +241,7 @@ Partial Class frmFacturaCliente
 		Me.Controls.Add(Me.lblSubtotal)
 		Me.Controls.Add(Me.txtIngresarCodigo)
 		Me.Controls.Add(Me.tblProductos)
-		Me.Name = "frmFacturaCliente"
+		Me.Name = "frmFactura"
 		Me.Text = "frmFacturaCliente"
 		Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
 		CType(Me.tblProductos, System.ComponentModel.ISupportInitialize).EndInit()
@@ -219,8 +262,13 @@ Partial Class frmFacturaCliente
 	Friend WithEvents lblIngreseProducto As Label
 	Friend WithEvents lblCantidad As Label
 	Friend WithEvents txtCantidad As TextBox
+	Friend WithEvents txtArticulo As TextBox
+	Friend WithEvents Panel1 As Panel
 	Friend WithEvents CProducto As DataGridViewTextBoxColumn
-	Friend WithEvents CCodigo As DataGridViewTextBoxColumn
+	Friend WithEvents cbArticulo As DataGridViewComboBoxColumn
+	Friend WithEvents dtpCaducidad As DataGridViewTextBoxColumn
 	Friend WithEvents CCantidad As DataGridViewTextBoxColumn
 	Friend WithEvents CPrecio As DataGridViewTextBoxColumn
+	Friend WithEvents CCodigo As DataGridViewTextBoxColumn
+	Friend WithEvents txtEstado As DataGridViewTextBoxColumn
 End Class
