@@ -129,7 +129,6 @@
 	Private Sub VerificarEntradadas(e As KeyPressEventArgs)
 		e.Handled = Char.IsPunctuation(e.KeyChar) AndAlso Not Char.IsSeparator(e.KeyChar)
 	End Sub
-
 	Private Sub CmsOpciones_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles cmsOpciones.ItemClicked
 		Try
 			Select Case e.ClickedItem.Name
