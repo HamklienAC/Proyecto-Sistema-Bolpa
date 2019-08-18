@@ -22,15 +22,22 @@ Partial Class frmBuscarFactura
 	'No lo modifique con el editor de código.
 	<System.Diagnostics.DebuggerStepThrough()> _
 	Private Sub InitializeComponent()
+		Me.components = New System.ComponentModel.Container()
 		Me.tblFacturas = New System.Windows.Forms.DataGridView()
 		Me.lblFiltro = New System.Windows.Forms.Label()
 		Me.txtFiltro = New System.Windows.Forms.TextBox()
+		Me.cmsOpciones = New System.Windows.Forms.ContextMenuStrip(Me.components)
+		Me.AnularFacturaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.CancelarFacturaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.cbTipoFactura = New System.Windows.Forms.CheckBox()
 		CType(Me.tblFacturas, System.ComponentModel.ISupportInitialize).BeginInit()
+		Me.cmsOpciones.SuspendLayout()
 		Me.SuspendLayout()
 		'
 		'tblFacturas
 		'
 		Me.tblFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+		Me.tblFacturas.ContextMenuStrip = Me.cmsOpciones
 		Me.tblFacturas.Location = New System.Drawing.Point(12, 51)
 		Me.tblFacturas.Name = "tblFacturas"
 		Me.tblFacturas.Size = New System.Drawing.Size(776, 447)
@@ -52,17 +59,47 @@ Partial Class frmBuscarFactura
 		Me.txtFiltro.Size = New System.Drawing.Size(776, 20)
 		Me.txtFiltro.TabIndex = 2
 		'
-		'frmVistaFacturas
+		'cmsOpciones
+		'
+		Me.cmsOpciones.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AnularFacturaToolStripMenuItem, Me.CancelarFacturaToolStripMenuItem})
+		Me.cmsOpciones.Name = "cmsOpciones"
+		Me.cmsOpciones.Size = New System.Drawing.Size(161, 48)
+		'
+		'AnularFacturaToolStripMenuItem
+		'
+		Me.AnularFacturaToolStripMenuItem.Name = "AnularFacturaToolStripMenuItem"
+		Me.AnularFacturaToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+		Me.AnularFacturaToolStripMenuItem.Text = "Anular factura"
+		'
+		'CancelarFacturaToolStripMenuItem
+		'
+		Me.CancelarFacturaToolStripMenuItem.Name = "CancelarFacturaToolStripMenuItem"
+		Me.CancelarFacturaToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+		Me.CancelarFacturaToolStripMenuItem.Text = "Cancelar factura"
+		'
+		'cbTipoFactura
+		'
+		Me.cbTipoFactura.AutoSize = True
+		Me.cbTipoFactura.Location = New System.Drawing.Point(644, 5)
+		Me.cbTipoFactura.Name = "cbTipoFactura"
+		Me.cbTipoFactura.Size = New System.Drawing.Size(144, 17)
+		Me.cbTipoFactura.TabIndex = 3
+		Me.cbTipoFactura.Text = "Facturas de proveedores"
+		Me.cbTipoFactura.UseVisualStyleBackColor = True
+		'
+		'frmBuscarFactura
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(800, 510)
+		Me.Controls.Add(Me.cbTipoFactura)
 		Me.Controls.Add(Me.txtFiltro)
 		Me.Controls.Add(Me.lblFiltro)
 		Me.Controls.Add(Me.tblFacturas)
-		Me.Name = "frmVistaFacturas"
+		Me.Name = "frmBuscarFactura"
 		Me.Text = "frmBuscarFactura"
 		CType(Me.tblFacturas, System.ComponentModel.ISupportInitialize).EndInit()
+		Me.cmsOpciones.ResumeLayout(False)
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -71,4 +108,8 @@ Partial Class frmBuscarFactura
 	Friend WithEvents tblFacturas As DataGridView
 	Friend WithEvents lblFiltro As Label
 	Friend WithEvents txtFiltro As TextBox
+	Friend WithEvents cmsOpciones As ContextMenuStrip
+	Friend WithEvents AnularFacturaToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents CancelarFacturaToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents cbTipoFactura As CheckBox
 End Class

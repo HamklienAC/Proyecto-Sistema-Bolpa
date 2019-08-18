@@ -83,8 +83,8 @@
 	Private Sub TblProveedor_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles tblProveedor.CellClick
 		Try
 			'los numero que esta dentro de los parentesis corresponde al orden en la base de datos
-			If MsgBox("Desea agregar el proveedor " + tblProveedor.CurrentRow.Cells(2).Value.ToString, MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
-				tblLote.CurrentRow.Cells(1).Value = tblProveedor.CurrentRow.Cells(2).Value.ToString
+			If MsgBox("Desea agregar el proveedor " + tblProveedor.CurrentRow.Cells(0).Value.ToString, MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+				tblLote.CurrentRow.Cells(1).Value = tblProveedor.CurrentRow.Cells(0).Value.ToString
 			End If
 		Catch ex As Exception
 		End Try
@@ -92,8 +92,8 @@
 	Private Sub TblArticulo_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles tblArticulo.CellClick
 		Try
 			'los numero que esta dentro de los parentesis corresponde al orden en la base de datos
-			If MsgBox("Desea agregar el artículo " + tblArticulo.CurrentRow.Cells(3).Value.ToString, MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
-				tblLote.CurrentRow.Cells(0).Value = tblArticulo.CurrentRow.Cells(3).Value.ToString
+			If MsgBox("Desea agregar el artículo " + tblArticulo.CurrentRow.Cells(0).Value.ToString, MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+				tblLote.CurrentRow.Cells(0).Value = tblArticulo.CurrentRow.Cells(1).Value.ToString
 			End If
 		Catch ex As Exception
 			MsgBox(ex.Message)
@@ -179,4 +179,5 @@
 			End Try
 		End Get
 	End Property
+
 End Class

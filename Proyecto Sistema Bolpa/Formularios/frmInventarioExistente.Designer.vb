@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmInventarioExistente
 	Inherits System.Windows.Forms.Form
 
 	'Form reemplaza a Dispose para limpiar la lista de componentes.
-	<System.Diagnostics.DebuggerNonUserCode()> _
+	<System.Diagnostics.DebuggerNonUserCode()>
 	Protected Overrides Sub Dispose(ByVal disposing As Boolean)
 		Try
 			If disposing AndAlso components IsNot Nothing Then
@@ -20,24 +20,25 @@ Partial Class frmInventarioExistente
 	'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
 	'Se puede modificar usando el Diseñador de Windows Forms.  
 	'No lo modifique con el editor de código.
-	<System.Diagnostics.DebuggerStepThrough()> _
+	<System.Diagnostics.DebuggerStepThrough()>
 	Private Sub InitializeComponent()
-		Me.tblFactura = New System.Windows.Forms.DataGridView()
+		Me.tblInventario = New System.Windows.Forms.DataGridView()
 		Me.lblCodigo = New System.Windows.Forms.Label()
 		Me.txtFiltro = New System.Windows.Forms.TextBox()
-		CType(Me.tblFactura, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.tblInventario, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
-		'tblFactura
+		'tblInventario
 		'
-		Me.tblFactura.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+		Me.tblInventario.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
 			Or System.Windows.Forms.AnchorStyles.Left) _
 			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-		Me.tblFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.tblFactura.Location = New System.Drawing.Point(13, 52)
-		Me.tblFactura.Name = "tblFactura"
-		Me.tblFactura.Size = New System.Drawing.Size(775, 551)
-		Me.tblFactura.TabIndex = 0
+		Me.tblInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+		Me.tblInventario.Location = New System.Drawing.Point(13, 52)
+		Me.tblInventario.Name = "tblInventario"
+		Me.tblInventario.ReadOnly = True
+		Me.tblInventario.Size = New System.Drawing.Size(775, 551)
+		Me.tblInventario.TabIndex = 0
 		'
 		'lblCodigo
 		'
@@ -50,13 +51,9 @@ Partial Class frmInventarioExistente
 		'
 		'txtFiltro
 		'
-		Me.txtFiltro.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-			Or System.Windows.Forms.AnchorStyles.Left) _
-			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-		Me.txtFiltro.Location = New System.Drawing.Point(15, 26)
-		Me.txtFiltro.MaximumSize = New System.Drawing.Size(0, 200)
+		Me.txtFiltro.Location = New System.Drawing.Point(12, 26)
 		Me.txtFiltro.Name = "txtFiltro"
-		Me.txtFiltro.Size = New System.Drawing.Size(773, 20)
+		Me.txtFiltro.Size = New System.Drawing.Size(776, 20)
 		Me.txtFiltro.TabIndex = 3
 		'
 		'frmInventarioExistente
@@ -66,16 +63,16 @@ Partial Class frmInventarioExistente
 		Me.ClientSize = New System.Drawing.Size(800, 615)
 		Me.Controls.Add(Me.txtFiltro)
 		Me.Controls.Add(Me.lblCodigo)
-		Me.Controls.Add(Me.tblFactura)
+		Me.Controls.Add(Me.tblInventario)
 		Me.Name = "frmInventarioExistente"
 		Me.Text = "frmInventarioExistente"
-		CType(Me.tblFactura, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.tblInventario, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
 	End Sub
 
-	Friend WithEvents tblFactura As DataGridView
+	Friend WithEvents tblInventario As DataGridView
 	Friend WithEvents lblCodigo As Label
 	Friend WithEvents txtFiltro As TextBox
 End Class

@@ -23,10 +23,10 @@ Partial Class frmInventario
 	<System.Diagnostics.DebuggerStepThrough()>
 	Private Sub InitializeComponent()
 		Me.components = New System.ComponentModel.Container()
-		Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-		Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-		Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-		Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
 		Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
 		Me.tblInventario = New System.Windows.Forms.DataGridView()
 		Me.cmsOpcionesInventario = New System.Windows.Forms.ContextMenuStrip(Me.components)
@@ -188,32 +188,32 @@ Partial Class frmInventario
 		'txtProveedor
 		'
 		Me.txtProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-		DataGridViewCellStyle1.NullValue = Nothing
-		Me.txtProveedor.DefaultCellStyle = DataGridViewCellStyle1
+		DataGridViewCellStyle5.NullValue = Nothing
+		Me.txtProveedor.DefaultCellStyle = DataGridViewCellStyle5
 		Me.txtProveedor.HeaderText = "Código del proveedor"
 		Me.txtProveedor.Name = "txtProveedor"
 		'
 		'txtArticulo
 		'
 		Me.txtArticulo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-		DataGridViewCellStyle2.NullValue = Nothing
-		Me.txtArticulo.DefaultCellStyle = DataGridViewCellStyle2
+		DataGridViewCellStyle6.NullValue = Nothing
+		Me.txtArticulo.DefaultCellStyle = DataGridViewCellStyle6
 		Me.txtArticulo.HeaderText = "Código del artículo"
 		Me.txtArticulo.Name = "txtArticulo"
 		'
 		'txtUnidades
 		'
 		Me.txtUnidades.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-		DataGridViewCellStyle3.NullValue = Nothing
-		Me.txtUnidades.DefaultCellStyle = DataGridViewCellStyle3
+		DataGridViewCellStyle7.NullValue = Nothing
+		Me.txtUnidades.DefaultCellStyle = DataGridViewCellStyle7
 		Me.txtUnidades.HeaderText = "Unidades"
 		Me.txtUnidades.Name = "txtUnidades"
 		'
 		'txtMonto
 		'
 		Me.txtMonto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-		DataGridViewCellStyle4.NullValue = Nothing
-		Me.txtMonto.DefaultCellStyle = DataGridViewCellStyle4
+		DataGridViewCellStyle8.NullValue = Nothing
+		Me.txtMonto.DefaultCellStyle = DataGridViewCellStyle8
 		Me.txtMonto.HeaderText = "Monto"
 		Me.txtMonto.Name = "txtMonto"
 		'

@@ -130,6 +130,12 @@
     <Compile Include="Formularios\frmBuscarFactura.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\frmTotalFactura.Designer.vb">
+      <DependentUpon>frmTotalFactura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmTotalFactura.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -212,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmBuscarFactura.resx">
       <DependentUpon>frmBuscarFactura.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmTotalFactura.resx">
+      <DependentUpon>frmTotalFactura.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
